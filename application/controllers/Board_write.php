@@ -791,6 +791,7 @@ class Board_write extends CB_Controller
 			$metadata = array();
 
 			$post_title = $this->input->post('post_title', null, '');
+			$post_sub_title = $this->input->post('post_sub_title', null, '');
 			$post_content = $this->input->post('post_content', null, '');
 			if (element('save_external_image', $board)) {
 				$post_content = $this->imagelib->replace_external_image($post_content);
@@ -800,6 +801,7 @@ class Board_write extends CB_Controller
 				'post_num' => $post_num,
 				'post_reply' => $post_reply,
 				'post_title' => $post_title,
+				'post_sub_title' => $post_sub_title,
 				'post_content' => $post_content,
 				'post_html' => $content_type,
 				'post_datetime' => cdate('Y-m-d H:i:s'),
@@ -2095,6 +2097,7 @@ class Board_write extends CB_Controller
 			$content_type = $use_dhtml ? 1 : 0;
 
 			$post_title = $this->input->post('post_title', null, '');
+			$post_sub_title = $this->input->post('post_sub_title', null, '');
 			$post_content = $this->input->post('post_content', null, '');
 			if (element('save_external_image', $board)) {
 				$post_content = $this->imagelib->replace_external_image($post_content);
@@ -2103,6 +2106,7 @@ class Board_write extends CB_Controller
 			$metadata = array();
 			$updatedata = array(
 				'post_title' => $post_title,
+				'post_sub_title' => $post_sub_title,
 				'post_content' => $post_content,
 				'post_html' => $content_type,
 				'post_updated_datetime' => cdate('Y-m-d H:i:s'),

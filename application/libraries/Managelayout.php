@@ -43,8 +43,10 @@ class Managelayout extends CI_Controller
 		if ($menu_files) {
 			asort($menu_files);
 		}
+		
 		$data['admin_page_menu'] = array();
 		foreach($menu_files as $file){
+			if($file ==="admin_menu_500" || $file ==="admin_menu_600" || $file ==="admin_menu_700") continue;
 			$CI->load->config($file);
 			$res = config_item('admin_page_menu');
 			$data['admin_page_menu'] += config_item('admin_page_menu');
@@ -375,4 +377,42 @@ class Managelayout extends CI_Controller
 		}
 		return $return;
 	}
+
+	function display_footer()
+    {   
+        
+        $CI = & get_instance();
+        if($CI->member->is_member()){
+            $return = '
+            <footer>
+        		<div class="container">
+        			<ul class="company pull-left">
+        			<li><a href="'.document_url('aboutus').'" title="회사소개">회사소개</a></li>
+        			<li><a href="'.document_url('provision').'" title="이용약관">이용약관</a></li>
+        			<li><a href="'.document_url('privacy').'" title="개인정보 취급방침">개인정보 취급방침</a></li>
+        			
+        			</ul>
+        			
+        		</div>
+        	</footer>       
+            ';
+        } else {
+            $return = '
+            <footer>
+        		<div class="container">
+        			<ul class="company pull-left">
+        			<li><a href="'.document_url('aboutus').'" title="회사소개">회사소개</a></li>
+        			<li><a href="'.document_url('provision').'" title="이용약관">이용약관</a></li>
+        			<li><a href="'.document_url('privacy').'" title="개인정보 취급방침">개인정보 취급방침</a></li>
+        			
+        			</ul>
+        			
+        		</div>
+        	</footer>              
+            ';
+        }
+        
+        
+        return $return;
+    }
 }
