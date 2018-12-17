@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,9 @@
 <?php if (element('favicon', $layout)) { ?><link rel="shortcut icon" type="image/x-icon" href="<?php echo element('favicon', $layout); ?>" /><?php } ?>
 <?php if (element('canonical', $view)) { ?><link rel="canonical" href="<?php echo element('canonical', $view); ?>" /><?php } ?>
 <link rel="stylesheet" type="text/css" href="<?php echo element('layout_skin_url', $layout); ?>/css/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/page.css'); ?>" />
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans" >
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" />
 <?php echo $this->managelayout->display_css(); ?>
@@ -49,25 +51,23 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 <body <?php echo isset($view) ? element('body_script', $view) : ''; ?>>
 <div class="wrapper">
 	<!-- header start -->
-
-	<div class="header_line"></div>
 	<!-- nav start -->
-	<nav class="navbar">
+	<header class="header navbar">
 		<div class="container">
-			<div class="logo pull-left">
-				<a href="<?php echo site_url(); ?>" title="<?php echo html_escape($this->cbconfig->item('site_title'));?>"><?php echo $this->cbconfig->item('site_logo'); ?></a>
-			</div>
-			<div class="m_nav pull-right" >
-				<a href="javascript:;" id="btn_side"><img src="<?php echo element('layout_skin_url', $layout); ?>/images/m_menu.jpg" alt="menu" title="menu" /></a>
+			<h1 class="logo">
+				<a href="<?php echo site_url(); ?>" title="<?php echo html_escape($this->cbconfig->item('site_title'));?>"><img src="<?php echo base_url('assets/images/h_logo.png'); ?>" alt="Artisan bakery"></a>
+			</h1>
+			<div class="h_btn m_nav pull-right" >
+				<a href="javascript:;" id="btn_side"><img src="<?php echo base_url('assets/images/h_icon_ham.png'); ?>" alt="menu" title="menu" /></a>
 			</div>
 		</div>
-	</nav>
+	</header>
 	<!-- nav end -->
 	<!-- header end -->
 
 	<!-- main start -->
 	<div class="main">
-		<div class="container">
+		<div class="container wrap wrap01">
 
 				<!-- 본문 시작 -->
 				<?php if (isset($yield))echo $yield; ?>
@@ -79,26 +79,28 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 
 	<!-- footer start -->
     <?php echo $this->managelayout->display_footer(); ?>
-    <!-- footer end -->
+	<!-- footer end -->
 </div>
 
-<div class="menu" id="side_menu">
+<aside class="menu" id="side_menu">
 	<div class="side_wr add_side_wr">
 		<div id="isroll_wrap" class="side_inner_rel">
 			<div class="side_inner_abs">
-				<div class="m_search">
-					<form name="mobile_header_search" id="mobile_header_search" action="<?php echo site_url('search'); ?>" onSubmit="return headerSearch(this);">
-						<input type="text" placeholder="Search" class="input" name="skeyword" accesskey="s" />
-					</form>
-				</div>
-				<div class="m_login">
-					<?php if ($this->member->is_member()) { ?>
-						<span><a href="<?php echo site_url('login/logout?url=' . urlencode(current_full_url())); ?>" class="btn btn-primary" title="로그아웃"><i class="fa fa-sign-out"></i> 로그아웃</a></span>
-						<span><a href="<?php echo site_url('mypage'); ?>" class="btn btn-primary" title="로그아웃"><i class="fa fa-user"></i> 마이페이지</a></span>
-					<?php } else { ?>
-						<span><a href="<?php echo site_url('login?url=' . urlencode(current_full_url())); ?>" class="btn btn-primary" title="로그인"><i class="fa fa-sign-in"></i> 로그인</a></span>
-						<span><a href="<?php echo site_url('register'); ?>" class="btn btn-primary" title="회원가입"><i class="fa fa-user"></i> 회원가입</a></span>
-					<?php } ?>
+				<div class="side_menu_top">
+					<div class="m_search">
+						<form name="mobile_header_search" id="mobile_header_search" action="<?php echo site_url('search'); ?>" onSubmit="return headerSearch(this);">
+							<input type="text" placeholder="Search" class="input" name="skeyword" accesskey="s" />
+						</form>
+					</div>
+					<div class="m_login">
+						<?php if ($this->member->is_member()) { ?>
+							<span><a href="<?php echo site_url('login/logout?url=' . urlencode(current_full_url())); ?>" class="btn btn-primary" title="로그아웃"><i class="fa fa-sign-out"></i> LOGOUT</a></span>
+							<span><a href="<?php echo site_url('mypage'); ?>" class="btn btn-primary" title="로그아웃"><i class="fa fa-user"></i> 마이페이지</a></span>
+						<?php } else { ?>
+							<span><a href="<?php echo site_url('login?url=' . urlencode(current_full_url())); ?>" class="btn btn-primary" title="로그인"><i class="fa fa-sign-in"></i> LOGIN</a></span>
+							<span><a href="<?php echo site_url('register'); ?>" class="btn btn-primary" title="회원가입"><i class="fa fa-user"></i> 회원가입</a></span>
+						<?php } ?>
+					</div>
 				</div>
 				<ul class="m_board">
 					<?php if ($this->cbconfig->item('open_currentvisitor')) { ?>
@@ -128,7 +130,7 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 									if (element('men_target', $mval)) {
 										$menuhtml .= ' target="' . element('men_target', $mval) . '"';
 									}
-									$menuhtml .= ' title="' . html_escape(element('men_name', $mval)) . '">' . html_escape(element('men_name', $mval)) . '</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="' . $mkey . '"><i class="fa fa-chevron-down"></i></a>
+									$menuhtml .= ' title="' . html_escape(element('men_name', $mval)) . '" class="menu_category"><span class="icon_back"></span>' . html_escape(element('men_name', $mval)) . '</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="' . $mkey . '"><i class="fa fa-chevron-down"></i></a>
 									<ul class="dropdown-menu drop-downorder-' . $mkey . '">';
 
 									foreach (element(element('men_id', $mval), $menu) as $skey => $sval) {
@@ -157,7 +159,7 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 			</div>
 		</div>
 	</div>
-</div>
+</aside>
 
 <script type="text/javascript">
 $(document).on('click', '.viewpcversion', function(){
