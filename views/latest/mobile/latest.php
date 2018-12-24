@@ -1,4 +1,4 @@
-<div class="main_box1 pull-left">
+<div class="wrap02 latest">
 	<div class="table-box">
 		<!-- Default panel contents -->
 		<div class="table-heading">
@@ -17,10 +17,10 @@
 				foreach (element('latest', $view) as $key => $value) {
 			?>
 				<tr>
-					<td><a href="<?php echo element('url', $value); ?>" title="<?php echo html_escape(element('title', $value)); ?>"><?php echo html_escape(element('title', $value)); ?></a>
+					<td><a href="<?php echo element('url', $value); ?>" title="<?php echo html_escape(element('title', $value)); ?>" class="txt_tit"><?php echo html_escape(element('title', $value)); ?></a>
 						<?php if (element('post_comment_count', $value)) { ?> <span class="latest_comment_count"> +<?php echo element('post_comment_count', $value); ?></span><?php } ?>
 					</td>
-					<td class="px80"><?php echo element('display_datetime', $value); ?></td>
+					<td class="txt_date"><?php echo element('display_datetime', $value); ?></td>
 				</tr>
 			<?php
 					$i++;

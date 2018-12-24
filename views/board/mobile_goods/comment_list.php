@@ -14,7 +14,7 @@ if (element('best_list', $view)) {
 			<h4 class="media-heading">
 				<?php if (element('is_admin', $view)) { ?><input type="checkbox" name="chk_comment_id[]" value="<?php echo element('cmt_id', $result); ?>" /><?php } ?>
 				<span class="label label-warning">베플</span>
-				<?php echo element('display_name', $result); ?>
+				<b class="user_name"><?php echo element('display_name', $result); ?></b>
 				<span class="time"><i class="fa fa-clock-o"></i> <?php echo element('display_datetime', $result); ?></span>
 				<?php if (element('display_ip', $result)) { ?>
 					<span class="ip"><i class="fa fa-map-marker"></i> <?php echo element('display_ip', $result); ?></span>
@@ -25,7 +25,7 @@ if (element('best_list', $view)) {
 				?>
 					<span class="reply">
 						<?php if (element('use_comment_like', element('board', $view))) { ?>
-							<a class="good" href="javascript:;" id="btn-comment-like-<?php echo element('cmt_id', $result); ?>" onClick="comment_like('<?php echo element('cmt_id', $result); ?>', '1', 'comment-like-<?php echo element('cmt_id', $result); ?>');" title="추천하기"><i class="fa fa-thumbs-o-up fa-xs"></i> 추천 <span class="comment-like-<?php echo element('cmt_id', $result); ?>"><?php echo number_format(element('cmt_like', $result)); ?></span></a>
+							<a class="good text-success" href="javascript:;" id="btn-comment-like-<?php echo element('cmt_id', $result); ?>" onClick="comment_like('<?php echo element('cmt_id', $result); ?>', '1', 'comment-like-<?php echo element('cmt_id', $result); ?>');" title="추천하기"><i class="fa fa-thumbs-o-up fa-xs"></i> 추천 <span class="comment-like-<?php echo element('cmt_id', $result); ?>"><?php echo number_format(element('cmt_like', $result)); ?></span></a>
 						<?php } ?>
 						<?php if (element('use_comment_dislike', element('board', $view))) { ?>
 							<a class="bad" href="javascript:;" id="btn-comment-dislike-<?php echo element('cmt_id', $result); ?>" onClick="comment_like('<?php echo element('cmt_id', $result); ?>', '2', 'comment-dislike-<?php echo element('cmt_id', $result); ?>');" title="비추하기"><i class="fa fa-thumbs-o-down fa-xs"></i> 비추 <span class="comment-dislike-<?php echo element('cmt_id', $result); ?>"><?php echo number_format(element('cmt_dislike', $result)); ?></span></a>
@@ -65,7 +65,7 @@ if (element('list', element('data', $view))) {
 		<div class="media-body">
 			<h4 class="media-heading">
 				<?php if (element('is_admin', $view)) { ?><input type="checkbox" name="chk_comment_id[]" value="<?php echo element('cmt_id', $result); ?>" /><?php } ?>
-				<?php echo element('display_name', $result); ?>
+				<b class="user_name"><?php echo element('display_name', $result); ?></b>
 				<span class="time"><i class="fa fa-clock-o"></i> <?php echo element('display_datetime', $result); ?></span>
 				<?php if (element('display_ip', $result)) { ?>
 					<span class="ip"><i class="fa fa-map-marker"></i> <?php echo element('display_ip', $result); ?></span>

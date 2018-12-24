@@ -1,8 +1,8 @@
-<div class="main_box1 pull-left" style="background-color:#e5e5e5;">
+<div class="main_box1 pull-left gallery_list02">
     
         
         
-    <?php echo html_escape(element('board_name', element('board', $view))); ?>
+    <h3 class="title01"><?php echo html_escape(element('board_name', element('board', $view))); ?></h3>
     <div class="swiper-container">
         <div class="swiper-wrapper">
     <?php
@@ -11,7 +11,7 @@
         foreach (element('latest_goods', $view) as $key => $value) {
     ?>
         <div class="swiper-slide" >
-            <a href="<?php echo element('url', $value); ?>" title="<?php echo html_escape(element('title', $value)); ?>"><?php echo html_escape(element('title', $value)); ?><img src="<?php echo element('thumb_url', $value); ?>" style="width:100%;">
+            <a href="<?php echo element('url', $value); ?>" title="<?php echo html_escape(element('title', $value)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $value); ?>" style="width:100%;"></div><h4 class="item_name"><?php echo html_escape(element('title', $value)); ?></h4>
             </a>
             
         </div>

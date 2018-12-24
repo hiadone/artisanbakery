@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>제품 1 - 아티산 베이커리</title>
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/_layout/mobile/css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/assets/css/page.css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/board/mobile/css/style.css">
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		// 자바스크립트에서 사용하는 전역변수 선언
+		var cb_url = "http://cmy.artisanbakery.vn";
+		var cb_cookie_domain = "";
+		var cb_charset = "UTF-8";
+		var cb_time_ymd = "2018-12-13";
+		var cb_time_ymdhis = "2018-12-13 09:53:30";
+		var layout_skin_path = "_layout/mobile";
+		var view_skin_path = "board/mobile";
+		var is_member = "";
+		var is_admin = "";
+		var cb_admin_url = "";
+		var cb_board = "b-a-1";
+		var cb_board_url = cb_url + "/board/b-a-1";
+		var cb_device_type = "mobile";
+		var cb_csrf_hash = "fcdc89c8ce337b80792e47118e95af97";
+		var cookie_prefix = "";
+	</script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/common.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.extension.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/sideview.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.ba-outside-events.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/iscroll.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/mobile.sidemenu.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/js.cookie.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header navbar">
+			<div class="container">
+				<h1 class="logo">
+					<a href="http://cmy.artisanbakery.vn/" title="아티산 베이커리"><img src="http://cmy.artisanbakery.vn/assets/images/h_logo.png" alt="Artisan bakery"></a>
+				</h1>
+				<div class="h_btn m_nav pull-right">
+					<a href="javascript:;" id="btn_side"><img src="http://cmy.artisanbakery.vn/assets/images/h_icon_ham.png" alt="menu" title="menu"></a>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="container wrap wrap01">
+				<!-- 원산지 정보 -->
+				<style>
+					.title08{
+						padding-top: 14px;
+						font-size: 20px;
+						font-weight: bold;
+						font-family: 'Noto Sans',Arial,sans-serif;
+					}
+					.black_back{
+						display: none;
+						position: fixed;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						z-index: 800;
+						background-color: rgba(0,0,0,0.8);
+					}
+					.info_ingredients{
+						display: none;
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 100vh;
+						left: 0;
+						box-sizing: border-box;
+						overflow: hidden;
+						border-radius: 16px;
+						border: 8px solid #ffc300;
+						background-color: #ffc300;
+					}
+					.info_ingredients .ingredients_box{
+						padding: 0 3%;
+						position: absolute;
+						top: 62px;
+						left: auto;
+						box-sizing: border-box;
+						width: 100%;
+						height: calc(100% - 62px);
+						border-radius: 0 0 14px 14px;
+						background-color: #fff;
+						overflow: auto;
+					}
+					.info_ingredients .ingredients_box::-webkit-scrollbar {
+						width: 0px;  /* remove scrollbar space */
+						background: transparent;  /* optional: just make scrollbar invisible */
+					}
+					/* gallery_list03 */
+					.gallery_list03{}
+					.gallery_list03 .gallery_list_li{
+						padding: 18px 0 14px;
+						overflow: hidden;
+						border-bottom: 1px solid #ddd;
+					}
+					.gallery_list03 .gallery_list_li:last-child{
+						border-bottom: none;
+					}
+					.gallery_list03 .list_img{
+						width: 100px;
+						float: left;
+						margin-right: 8px;
+						text-align: center;
+					}
+					.gallery_list03 .list_img img{
+						width: 70px;
+						height: 70px;
+					}
+					.gallery_list03 .list_img_tit{
+						font-size: 14px;
+						font-weight: bold;
+						
+					}
+					.gallery_list03 .list_txt {
+						display: table;
+						height: 99px;
+						font-size: 16px;
+					}
+					.gallery_list03 .list_txt div{
+						height: 100%;
+						display: table-cell;
+						vertical-align: middle;
+					}
+					.info_ingredients .btn_close{
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						padding: 0;
+						font-size: 28px;
+						line-height: 1;
+					}
+					.info_ingredients .table_nutrient{
+						margin-left: 0;
+						margin-right: 0;
+					}
+					.info_ingredients .info_ingredients_txt{
+						padding: 20px 0;
+						font-size: 15px;
+						border-bottom: 1px solid #ddd;
+					}
+					.select_cate_box{
+						padding: 20px 0;
+					}
+					.select_cate_box .select_cate{
+						width: 100%;
+						height: 36px;
+						border: 2px solid #bababb;
+						font-size: 16px;
+					}
+				
+				</style>
+				<button class="btn btn-black btn_infoshow" value="#infoOrigin">원재료</button>
+				<button class="btn btn-black btn_infoshow" value="#infoAllergy">알레르기 유발 성분</button>
+				
+				<div class="black_back">
+					<section class="info_ingredients" id="infoOrigin">
+						<h4 class="title08">원산지 정보</h4>
+						<div class="ingredients_box gallery_list03">
+							<ul class="gallery_list_ul">
+								<li class="gallery_list_li">
+									<div class="list_img"><img src="http://m.subway.co.kr/images/menu/icon_country_origin01.png" alt="ingredients" class="icon"><span class="list_img_tit">ingredients</span></div>
+									<div class="list_txt">
+										<div>
+											<p class=""><b>food</b>: origin</p>
+											<p class=""><b>food</b>: origin</p>
+										</div>
+									</div>
+								</li>
+								<li class="gallery_list_li">
+									<div class="list_img"><img src="http://placehold.it/80x80/" alt="ingredients" class="icon"><span class="list_img_tit">ingredients</span></div>
+									<div class="list_txt">
+										<div>
+											<p class=""><b>food</b>: origin</p>
+											<p class=""><b>food</b>: origin</p>
+										</div>
+									</div>
+								</li>
+								<li class="gallery_list_li">
+									<div class="list_img"><img src="http://placehold.it/80x80/" alt="ingredients" class="icon"><span class="list_img_tit">ingredients</span></div>
+									<div class="list_txt">
+										<div>
+											<p class=""><b>food</b>: origin</p>
+											<p class=""><b>food</b>: origin</p>
+										</div>
+									</div>
+								</li>
+								<li class="gallery_list_li">
+									<div class="list_img"><img src="http://placehold.it/80x80/" alt="ingredients" class="icon"><span class="list_img_tit">ingredients</span></div>
+									<div class="list_txt">
+										<div>
+											<p class=""><b>food</b>: origin</p>
+											<p class=""><b>food</b>: origin</p>
+										</div>
+									</div>
+								</li>
+								<li class="gallery_list_li">
+									<div class="list_img"><img src="http://placehold.it/80x80/" alt="ingredients" class="icon"><span class="list_img_tit">ingredients</span></div>
+									<div class="list_txt">
+										<div>
+											<p class=""><b>food</b>: origin</p>
+											<p class=""><b>food</b>: origin</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+
+
+						</div>
+						<button class="btn btn_close"><i class="fa fa-close"></i><span class="blind">close button</span></button>
+					</section>
+				
+				
+				<!-- 알레르기 유발성분 -->
+				
+					<section class="info_ingredients" id="infoAllergy">
+						<h4 class="title08">알레르기 유발성분</h4>
+						<div class="ingredients_box">
+							<div class="info_ingredients_txt">
+								Nullam mi odio, tincidunt in diam vitae, rutrum condimentum diam. Curabitur et neque quis lectus vulputate porttitor. Sed id varius odio. Proin vel leo purus. Nam imperdiet a nisi et venenatis. Integer at sem id metus dapibus ultrices in ut est. Phasellus id orci justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+							</div>
+						
+							<div class="select_cate_box">
+								<select class="input select_cate" onchange="">
+									<option value="">Bread</option>
+									<option value="">Cake</option>
+									<option value="">Cookies</option>
+									<option value="">Drink</option>
+								</select>
+								
+							</div>
+							<div class="table-box table_nutrient">
+								<table class="table-body">
+									<tbody>
+										<tr>
+											<th class="px150">food</th>
+											<td>stuff stuff stuff</td>
+										</tr>
+										<tr>
+											<th class="px150">food</th>
+											<td>stuff stuff stuff</td>
+										</tr>
+										<tr>
+											<th class="px150">food</th>
+											<td>stuff stuff stuff</td>
+										</tr>
+										<tr>
+											<th class="px150">food</th>
+											<td>stuff stuff stuff</td>
+										</tr>
+										<tr>
+											<th class="px150">food</th>
+											<td>stuff stuff stuff</td>
+										</tr>
+										<tr>
+											<th class="px150">food</th>
+											<td>stuff stuff stuff</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<button class="btn btn_close"><i class="fa fa-close"></i><span class="blind">close button</span></button>
+					</section>
+				</div>
+				<!-- 원산지 정보 -->
+				<script>
+					$(function(){						
+						$('.btn_infoshow').on('click',function(){
+							var openSect = $(this).attr('value');
+							$('.black_back').show();
+							$(openSect).show().animate({top:'0'},400);
+							
+						});
+						$('.btn_close').on('click',function(){
+							$(this).closest('.info_ingredients').animate({top:'100vh'},400,function(){
+								$(this).hide();
+								$('.black_back').hide();
+							});
+							
+						});
+						
+					});
+				//
+				
+				</script>
+				
+				
+				
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<ul class="company pull-left">
+					<li><a href="http://cmy.artisanbakery.vn/document/aboutus" title="회사소개">회사소개</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/provision" title="이용약관">이용약관</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/privacy" title="개인정보 취급방침">개인정보 취급방침</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	<aside class="menu" id="side_menu">
+		<div class="side_wr add_side_wr" style="right: -250px;">
+			<div id="isroll_wrap" class="side_inner_rel">
+				<div class="side_inner_abs">
+					<div class="side_menu_top">
+						<div class="m_search">
+							<form name="mobile_header_search" id="mobile_header_search" action="http://cmy.artisanbakery.vn/search" onsubmit="return headerSearch(this);">
+								<input type="text" placeholder="Search" class="input" name="skeyword" accesskey="s">
+							</form>
+						</div>
+						<div class="m_login">
+							<span><a href="http://cmy.artisanbakery.vn/login?url=http%3A%2F%2Fcmy.artisanbakery.vn%2Fboard%2Fb-a-1" class="btn btn-primary" title="로그인"><i class="fa fa-sign-in"></i> LOGIN</a></span>
+							<span><a href="http://cmy.artisanbakery.vn/register" class="btn btn-primary" title="회원가입"><i class="fa fa-user"></i> 회원가입</a></span>
+						</div>
+					</div>
+					<ul class="m_board">
+					</ul>
+					<ul class="m_menu">
+						<li class="dropdown">
+							<a href="/group/g-a" title="제품소개" class="menu_category"><span class="icon_back"></span>제품소개</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="1"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-1">
+								<li><a href="/board/b-a-1" title="제품 1">제품 1</a></li>
+								<li><a href="/board/b-a-2" title="제품 2">제품 2</a></li>
+								<li><a href="/board/b-a-3" title="제품 3">제품 3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/group/g-b" title="새소식" class="menu_category"><span class="icon_back"></span>새소식</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="5"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-5">
+								<li><a href="/board/b-b-1" title="이벤트">이벤트</a></li>
+								<li><a href="/board/b-b-2" title="공지사항">공지사항</a></li>
+								<li><a href="http://dev.artisanbakery.vn/board/b-b-3" title="게시판 B-3">게시판 B-3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:;" title="아티산 베이커리" class="menu_category"><span class="icon_back"></span>아티산 베이커리</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="9"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-9">
+								<li><a href="/document/artisanbakery_info" title="아티산 베이커리 역사">아티산 베이커리 역사</a></li>
+								<li><a href="/board/b-c-2" title="매장 찾기">매장 찾기</a></li>
+								<li><a href="http://dev.artisanbakery.vn/board/b-c-3" title="게시판 C-3">게시판 C-3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/faq/faq" title="고객센터" class="menu_category"><span class="icon_back"></span>고객센터</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="13"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-13">
+								<li><a href="/faq/faq" title="FAQ">FAQ</a></li>
+								<li><a href="/board/b-c-3" title="1:1 문의">1:1 문의</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</aside>
+
+</body>
+
+</html>

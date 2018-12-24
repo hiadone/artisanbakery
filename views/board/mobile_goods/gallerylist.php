@@ -3,7 +3,9 @@
 <?php echo element('headercontent', element('board', element('list', $view))); ?>
 
 <div class="board">
-	<h3><?php echo html_escape(element('board_name', element('board', element('list', $view)))); ?></h3>
+	<div class="page_top01">
+	<h3 class="title06"><?php echo html_escape(element('board_name', element('board', element('list', $view)))); ?></h3>
+	</div>
 	<div class="table-top">
 		<?php if ( ! element('access_list', element('board', element('list', $view))) && element('use_rss_feed', element('board', element('list', $view)))) { ?>
 			<a href="<?php echo rss_url(element('brd_key', element('board', element('list', $view)))); ?>" class="btn btn-default btn-sm" title="<?php echo html_escape(element('board_name', element('board', element('list', $view)))); ?> RSS 보기"><i class="fa fa-rss"></i></a>
@@ -46,26 +48,26 @@
 				?>
 			</select>
 		<?php } ?>
-		<div class="col-md-6">
+		<div class="col-md-6 search_area">
 			<div class=" searchbox">
-				<form class="navbar-form navbar-right pull-right" action="<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>" onSubmit="return postSearch(this);">
+				<form class="navbar-form navbar-right" action="<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>" onSubmit="return postSearch(this);">
 					<input type="hidden" name="findex" value="<?php echo html_escape($this->input->get('findex')); ?>" />
 					<input type="hidden" name="category_id" value="<?php echo html_escape($this->input->get('category_id')); ?>" />
 					<div class="form-group">
-						<select class="input" name="sfield">
+						<select class="input select_search" name="sfield">
 							<option value="post_both" <?php echo ($this->input->get('sfield') === 'post_both') ? ' selected="selected" ' : ''; ?>>제목+내용</option>
 							<option value="post_title" <?php echo ($this->input->get('sfield') === 'post_title') ? ' selected="selected" ' : ''; ?>>제목</option>
 							<option value="post_content" <?php echo ($this->input->get('sfield') === 'post_content') ? ' selected="selected" ' : ''; ?>>내용</option>
 							<option value="post_nickname" <?php echo ($this->input->get('sfield') === 'post_nickname') ? ' selected="selected" ' : ''; ?>>회원명</option>
 							<option value="post_userid" <?php echo ($this->input->get('sfield') === 'post_userid') ? ' selected="selected" ' : ''; ?>>회원아이디</option>
 						</select>
-						<input type="text" class="input px100" placeholder="Search" name="skeyword" value="<?php echo html_escape($this->input->get('skeyword')); ?>" />
-						<button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+						<input type="text" class="input inp_search" placeholder="Search" name="skeyword" value="<?php echo html_escape($this->input->get('skeyword')); ?>" />
+						<button class="btn btn-success btn-sm" type="submit"><i class="fa fa-search"></i></button>
 					</div>
 				</form>
 			</div>
 			<div class="searchbuttonbox">
-				<button class="btn btn-primary btn-sm pull-right" type="button" onClick="toggleSearchbox();"><i class="fa fa-search"></i></button>
+				<button class="btn btn-success btn-sm pull-right" type="button" onClick="toggleSearchbox();"><i class="fa fa-search"></i></button>
 			</div>
 			<?php if (element('point_info', element('list', $view))) { ?>
 				<div class="point-info pull-right mr10">
@@ -175,7 +177,7 @@
 	}
 	?>
 
-	<div class="table-image">
+	<div class="table-image gallery_list01">
 	<?php
 	$i = 0;
 	$open = false;
@@ -183,21 +185,21 @@
 	if (element('list', element('data', element('list', $view)))) {
 		foreach (element('list', element('data', element('list', $view))) as $result) {
 			if ($cols && $i % $cols === 0) {
-				echo '<ul class="mt20">';
+				echo '<ul class="gallery_list_ul">';
 				$open = true;
 			}
 			$marginright = (($i+1)% $cols === 0) ? 0 : 2;
 	?>
-		<li class="gallery-box" style="width:<?php echo element('gallery_percent', element('board', element('list', $view))); ?>%;margin-right:<?php echo $marginright;?>%;">
+		<li class="gallery-box gallery_list_li" style="width:<?php echo element('gallery_percent', element('board', element('list', $view))); ?>%;margin-right:<?php echo $marginright;?>%;">
 			<?php if (element('is_admin', $view)) { ?><input type="checkbox" name="chk_post_id[]" value="<?php echo element('post_id', $result); ?>" /><?php } ?>
 			<span class="label label-default"><?php echo element('num', $result); ?></span>
 			<?php if (element('is_mobile', $result)) { ?><span class="fa fa-wifi"></span><?php } ?>
 			<?php if (element('category', $result)) { ?><a href="<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>?category_id=<?php echo html_escape(element('bca_key', element('category', $result))); ?>"><span class="label label-default"><?php echo html_escape(element('bca_value', element('category', $result))); ?></span></a><?php } ?>
 			<?php if (element('ppo_id', $result)) { ?><i class="fa fa-bar-chart"></i><?php } ?>
 			<div>
-				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><img src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="thumbnail img-responsive" style="width:<?php echo element('gallery_image_width', element('board', element('list', $view))); ?>px;height:<?php echo element('gallery_image_height', element('board', element('list', $view))); ?>px;" /></a>
+				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="thumbnail img-responsive"  /></div></a>
 			</div>
-			<p>
+			<p class="list_txt item_name">
 				<?php if (element('post_reply', $result)) { ?><span class="label label-primary">Re</span><?php } ?>
 					<a href="<?php echo element('post_url', $result); ?>" style="
 						<?php
@@ -213,10 +215,9 @@
 						if (element('post_id', element('post', $view)) === element('post_id', $result)) {
 							echo 'font-weight:bold;';
 						}
-						?>
-					" title="<?php echo html_escape(element('title', $result)); ?>"><?php echo html_escape(element('title', $result)); ?></a>
+						?>" title="<?php echo html_escape(element('title', $result)); ?>" class="item_name"><?php echo html_escape(element('title', $result)); ?></a>
 				</p>
-				<p>
+				<p class="list_txt item_postinfo">
 					<?php echo element('display_name', $result); ?>
 					<?php //echo element('display_datetime', $result); ?>
 					<?php if (element('is_hot', $result)) { ?><span class="label label-danger">Hot</span><?php } ?>
@@ -225,6 +226,11 @@
 					<?php if (element('post_comment_count', $result)) { ?><span class="comment-count"><i class="fa fa-comments"></i><?php echo element('post_comment_count', $result); ?></span><?php } ?>
 					<span class="hit-count"><i class="fa fa-eye"></i> <?php echo number_format(element('post_hit', $result)); ?></span>
 				</p>
+				<!-- tag tag_new tag_hot tag_event -->
+				<div class="tag_box">
+					<span class="tag tag_new">NEW</span>
+				</div>
+				<!--  -->
 			</li>
 		<?php
 				$i++;
@@ -244,7 +250,7 @@
 
 	<div class="border_button">
 		<div class="pull-left mr10">
-			<a href="<?php echo element('list_url', element('list', $view)); ?>" class="btn btn-default btn-sm">목록</a>
+			<a href="<?php echo element('list_url', element('list', $view)); ?>" class="btn btn-primary btn-sm">목록</a>
 			<?php if (element('search_list_url', element('list', $view))) { ?>
 				<a href="<?php echo element('search_list_url', element('list', $view)); ?>" class="btn btn-default btn-sm">검색목록</a>
 			<?php } ?>

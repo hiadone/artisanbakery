@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>제품 1 - 아티산 베이커리</title>
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/_layout/mobile/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/assets/css/page.css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/board/mobile/css/style.css">
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		// 자바스크립트에서 사용하는 전역변수 선언
+		var cb_url = "http://cmy.artisanbakery.vn";
+		var cb_cookie_domain = "";
+		var cb_charset = "UTF-8";
+		var cb_time_ymd = "2018-12-13";
+		var cb_time_ymdhis = "2018-12-13 09:53:30";
+		var layout_skin_path = "_layout/mobile";
+		var view_skin_path = "board/mobile";
+		var is_member = "";
+		var is_admin = "";
+		var cb_admin_url = "";
+		var cb_board = "b-a-1";
+		var cb_board_url = cb_url + "/board/b-a-1";
+		var cb_device_type = "mobile";
+		var cb_csrf_hash = "fcdc89c8ce337b80792e47118e95af97";
+		var cookie_prefix = "";
+	</script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/common.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.extension.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/sideview.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.ba-outside-events.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/iscroll.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/mobile.sidemenu.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/js.cookie.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+</head>
+
+<body>
+	<style>
+		body{
+			background-color: #f7f0da;
+		}
+		.list_img img{
+			display: block;
+			width: 100%;
+		}
+		.title06{
+			text-align: center;
+			font-size: 24px;
+			font-family: 'Noto Sans',Arial,sans-serif;
+		}
+		.gallery_list02{
+			padding: 30px 3% 0;
+			background-color: #fff;
+		}
+		.gallery_list02 .gallery_list_ul{}
+		.gallery_list02 .gallery_list_li{
+			padding-bottom: 60px;
+		}
+		.gallery_list02 .list_img{
+			width: 75%;
+			margin: 0 auto 10px;
+		}
+		.gallery_list02 .list_txt{
+			text-align: center;
+			font-family: 'Noto Sans',Arial, sans-serif;
+		}
+		.gallery_list02 .item_name{
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.gallery_list02 .item_txt{
+			font-size: 15px;
+			color: #333;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2; /* 라인수 */
+			-webkit-box-orient: vertical;
+			word-wrap: break-word;
+			line-height: 1.5;
+			height: 3em;
+		}
+		.gallery_list02 .swiper-pagination{
+			bottom: 16px;
+		}
+		.gallery_list02 .swiper-pagination .swiper-pagination-bullet {
+			width: 12px;
+			height: 12px;
+			border-radius: 8px;
+			background-color: #ddd;
+			opacity: 1;
+			transition: width 0.3s;
+		}
+		.gallery_list02 .swiper-pagination .swiper-pagination-bullet-active{
+			width: 40px;
+			background-color: #009223;
+		}
+		.gallery_list02 .swiper-button-next,
+		.gallery_list02 .swiper-button-prev{
+			background: none;
+			margin-top: -8px;
+			padding: 16px 10px;
+			height: 36px;
+		}
+		.gallery_list02 .swiper-button-next:before,
+		.gallery_list02 .swiper-button-prev:before{
+			content:'';
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+		}
+		.gallery_list02 .swiper-button-next{
+			text-align: right;
+			right: 0;
+		}
+		.gallery_list02 .swiper-button-prev{
+			text-align: left;
+			left: 0;
+		}
+		.gallery_list02 .swiper-button-next:before{
+			border-top: 4px solid #ddd;
+			border-right: 4px solid #ddd;
+			transform: rotate(45deg);
+		}
+		.gallery_list02 .swiper-button-prev:before{
+			border-top: 4px solid #ddd;
+			border-left: 4px solid #ddd;
+			transform: rotate(-45deg);
+		}
+		.gallery_list02 .swiper-button-next:focus,
+		.gallery_list02 .swiper-button-prev:focus{
+			outline: none;
+		}
+	</style>
+	<section class="gallery_list02">
+		<h3 class="title06">Artisan Menu</h3>
+		<div class="gallery_list02_container swiper-container">
+			<ul class="gallery_list_ul swiper-wrapper">
+				<li class="gallery_list_li swiper-slide">
+					<a href="">
+						<div class="list_img"><img src="http://m.subway.co.kr/images/menu/sandwich_cl02.jpg" alt="item_name"></div>
+						<div class="list_txt">
+							<h4 class="item_name">Quisque tincidunt</h4>
+							<p class="item_txt">Duis et odio vel libero cursus pellentesque pretium porta orci.</p>
+						</div>
+					</a>
+				</li>
+				<li class="gallery_list_li swiper-slide">
+					<a href="">
+						<div class="list_img"><img src="http://m.subway.co.kr/images/menu/sandwich_cl04.jpg" alt="item_name"></div>
+						<div class="list_txt">
+							<h4 class="item_name">Quisque tincidunt</h4>
+							<p class="item_txt">Duis et odio vel libero cursus pellentesque pretium porta orci.</p>
+						</div>
+					</a>
+				</li>
+				<li class="gallery_list_li swiper-slide">
+					<a href="">
+						<div class="list_img"><img src="http://m.subway.co.kr/images/menu/sandwich_cl06.jpg" alt="item_name"></div>
+						<div class="list_txt">
+							<h4 class="item_name">Quisque tincidunt</h4>
+							<p class="item_txt">Duis et odio vel libero cursus pellentesque pretium porta orci.</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			 <!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+		
+	</section>
+	 <script>
+    var swiper = new Swiper('.gallery_list02_container', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+
+</html>

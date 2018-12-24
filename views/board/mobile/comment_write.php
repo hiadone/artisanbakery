@@ -29,7 +29,7 @@ if (element('can_comment_write', element('comment', $view)) OR element('show_tex
 				<?php
 				if (element('is_comment_name', element('comment', $view))) {
 				?>
-					<ol>
+					<ol class="write_user_info">
 						<li>
 							<span>이름</span>
 							<input type="text" class="input" id="cmt_nickname" name="cmt_nickname" value="<?php echo set_value('cmt_nickname'); ?>" />
@@ -56,10 +56,10 @@ if (element('can_comment_write', element('comment', $view)) OR element('show_tex
 					</div>
 				<?php } ?>
 				<div class="comment_write_button_area">
-					<div class="form-group pull-left">
-						<button type="button" class="btn btn-danger btn-sm" id="cmt_btn_submit" onClick="<?php if ( ! element('can_comment_write', element('comment', $view))) {echo 'alert(\'' . html_escape(element('can_comment_write_message', element('comment', $view))) . '\');return false;"';} else { ?>add_comment(this.form, '<?php echo element('post_id', element('post', $view)); ?>');<?php } ?> ">댓글등록</button>
+					<div class="form-group pull-right">
+						<button type="button" class="btn btn-success btn-sm" id="cmt_btn_submit" onClick="<?php if ( ! element('can_comment_write', element('comment', $view))) {echo 'alert(\'' . html_escape(element('can_comment_write_message', element('comment', $view))) . '\');return false;"';} else { ?>add_comment(this.form, '<?php echo element('post_id', element('post', $view)); ?>');<?php } ?> ">댓글등록</button>
 					</div>
-					<div class="btn-group pull-right" role="group" aria-label="...">
+					<div class="btn-group pull-left" role="group" aria-label="...">
 						<?php if (element('can_comment_secret', element('comment', $view))) { ?>
 							<div class="checkbox pull-left mr10">
 								<label for="cmt_secret">
@@ -73,9 +73,9 @@ if (element('can_comment_write', element('comment', $view)) OR element('show_tex
 						<?php if (element('use_specialchars', element('comment', $view))) { ?>
 							<button type="button" class="btn btn-default btn-sm" title="특수문자" onclick="window.open('<?php echo site_url('helptool/specialchars?id=cmt_content'); ?>', 'specialchars', 'width=490,height=245,scrollbars=yes')"><i class="fa fa-star-o fa-lg"></i></button>
 						<?php } ?>
-						<button type="button" class="btn btn-default btn-sm" title="새글등록" onClick="comment_box('', 'c');"><i class="fa fa-pencil fa-lg"></i></button>
-						<button type="button" class="btn btn-default btn-sm" title="창을크게" onClick="resize_textarea('cmt_content', 'down');"><i class="fa fa-plus fa-lg"></i></button>
-						<button type="button" class="btn btn-default btn-sm" title="창을작게" onClick="resize_textarea('cmt_content', 'up');"><i class="fa fa-minus fa-lg"></i></button>
+						<button type="button" class="btn btn-success btn-sm" title="새글등록" onClick="comment_box('', 'c');"><i class="fa fa-pencil fa-lg"></i></button>
+						<button type="button" class="btn btn-primary btn-sm" title="창을크게" onClick="resize_textarea('cmt_content', 'down');"><i class="fa fa-plus fa-lg"></i></button>
+						<button type="button" class="btn btn-primary btn-sm" title="창을작게" onClick="resize_textarea('cmt_content', 'up');"><i class="fa fa-minus fa-lg"></i></button>
 					</div>
 				</div>
 				<?php if ($this->member->is_member() === false) { ?>
@@ -89,7 +89,7 @@ if (element('can_comment_write', element('comment', $view)) OR element('show_tex
 							<div class="form-group">
 								<input type="text" class="input col-md-4" id="captcha_key" name="captcha_key" />
 							</div>
-							<div class="form-group">자동등록방지 숫자를 순서대로 입력하세요.</div>
+							<div class="form-group passcord_noti">자동등록방지 숫자를 순서대로 입력하세요.</div>
 						<?php } ?>
 					</div>
 				<?php } ?>

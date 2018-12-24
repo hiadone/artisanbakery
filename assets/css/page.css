@@ -15,14 +15,16 @@
 /* 로즈골드:  #b08e72 */
 /* 잉글리시그린 : #184f3b */
 /* 노랑 : #ffce32 */
-/* 연한그린 : #dadfcb #7d9c91 */
+/* 연노랑 : #fffcef */
 /* 그린 : #009223 */
+/* 연두 : #61ce06 */
 /* 오렌지 : #ff8300 */
 /* border : #bababb */
 /* 진한 붉은 갈색 : #32191a */
 /* 배경 : #f7f0da */
 
 /* blind 숨김 */
+.container .blind,
 .blind{
 	width:1px;
 	height:1px;
@@ -45,11 +47,12 @@
 	width: 100%;
 	padding: 0;
 	box-sizing: border-box;
-	min-height: calc(100vh - 104px); 
+	min-height: calc(100vh - 64px); 
 	background-color: #f4f4f4;
 }
 .main_box1{
-	padding: 0 3%;
+	padding-right: 3%;
+	padding-left: 3%;
 	box-sizing: border-box;
 }
 .table-box{
@@ -57,7 +60,17 @@
 	box-shadow: none;
 }
 /* btn */
-.btn_{}
+.btn-blueline{
+	background-color: #fff;
+	border: 2px solid #01a5e2;
+	padding: 2px 4px;
+}
+.pull-right .btn{
+	margin-left: 3px;
+}
+.pull-left .btn{
+	margin-right: 3px;
+}
 
 /* title */
 /* title01 */
@@ -108,16 +121,22 @@
 	background-color: #009223;
 	border-bottom: 6px solid #ffce32;
 }
-/* title 검색결과 */
+/* title04 검색결과 */
 .main .title04{
-	margin: 0 0 10px;
+	margin-bottom: 10px;
 	padding: 0 3%;
 	box-sizing: border-box;
 	border: none;
 	font-size: 15px;
 	color: #32191a;
+	font-family: 'Noto Sans',Arial,sans-serif;
 }
-/* post */
+.main .title04 .searchword{
+	color: #343536;
+	font-weight: bold;
+	font-size: 18px;
+}
+/* title05 post */
 .main .title05{
 	margin: 0 3% 8px;
 	width: auto;
@@ -125,8 +144,9 @@
 	font-size: 20px;
 	font-family: 'Noto Sans',Arial, sans-serif;
 	border-bottom: 1px solid #ddd;
+	background-color: transparent;
 }
-/* board,faq,gallery_list */
+/* title06 board,faq,gallery_list */
 .main .title06{
 	padding-top: 30px;
 	padding-bottom: 8px;
@@ -135,9 +155,14 @@
 	font-weight: bold;
 	border-bottom: 1px solid #ddd;
 	background-color: #fff;
+	font-family: 'Noto Sans',Arial,sans-serif;
 }
-/* gallery_list02 */
+/* title07 */
 .main .title07{
+	text-align: center;
+	padding: 10px 0;
+	border: none;
+	font-family: 'Noto Sans',Arial,sans-serif;
 	
 }
 /* header */
@@ -162,22 +187,24 @@
 	height: 50px;
 }
 .header .h_btn{
-	width: 34px;
+	width: 30px;
+	padding-top: 10px;
 }
 .header .h_btn img{
 	width: 100%;
 }
 /* footer */
-.footer{
-	background-color: #2e2f2e;
+footer{
+	background-color: #292929;
 	border: none;
+	padding: 15px 3% 30px;
 }
-.footer .company a{
+footer .company a{
 	color: #fff;
 }
 
 /* side menu */
-
+.menu{}
 #side_menu .side_wr{
 	background: #fff;
 }
@@ -296,14 +323,34 @@
 	font-size: 16px;
 	
 }
+.search_result .nav-tabs{
+	border:none;
+}
 .search_result .search_box{
 	border-radius: 0;
-	background-color: #dadfcb;
+	border-top: 1px solid #bababb;
+	border-bottom: 1px solid #bababb;
+	background-color: #ffce32;
+}
+.search_result .media-box{
+	margin-bottom: 30px;
+	background-color: #fff;
 	border-top: 1px solid #bababb;
 }
-/* .table_wrap FAQ */
+.search_result .media{
+	padding: 10px 3%;
+	margin-top: 0;
+	border-bottom: 1px solid #ddd;
+}
+.search_result .media-heading{
+	font-size: 16px;
+}
+.searchbuttonbox{
+	overflow: hidden;
+}
+/* .table_wrap FAQ Q&A*/
 .table_wrap{
-	margin-bottom: 5%;
+	margin-bottom: 30px;
 	border-top: 2px solid #009223;
 	font-family: 'Noto Sans',sans-serif;
 }
@@ -317,8 +364,9 @@
 	background-color: transparent;
 	border-bottom: 1px solid #ddd;
 	font-size: 16px;
+	overflow: hidden;
 }
-.table_wrap .table-heading:after{
+.table_wrap .table-heading:before{
 	content: '+';
 	display: inline-block;
 	float:right;
@@ -328,11 +376,39 @@
 	font-weight: bold;
 	transition: transform 0.3s;
 }
+.qna .table-heading:before{
+	content: none;
+}
+.table_wrap .question_tit{
+	clear: none;
+	max-width: 80%;
+	word-break: break-all;
+}
+.table_wrap .post_info{
+	clear: both;
+	font-size: 13px;
+	color: #333;
+	font-weight: normal;
+}
+.table_wrap .answer_txt{
+	margin-top: 14px;
+	padding-left: 3%;
+}
+.table_wrap .answer_txt:before{
+	content: '';
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin: 3px 8px 0 0;
+	float: left;
+	border-left: 2px solid #666;
+	border-bottom: 2px solid #666;
+}
 .table_wrap .table_open{
-	color: #009223;
+	color: #01a5e2;
 	font-weight: bold;
 }
-.table_wrap .table_open:after{
+.table_wrap .table_open:before{
 	-webkit-transform: rotate(135deg);
 	-moz-transform: rotate(135deg);
 	-ms-transform: rotate(135deg);
@@ -343,22 +419,60 @@
 	font-size: 15px;
 	background-color: #f8f8f8;
 	border-bottom: 1px solid #ddd;
+	display:none;
 }
 .table_wrap .nopost{
 	background-color: #fff;
 }
-/* board 1:1문의 제품리스트*/
+.table_wrap .answer_complete{
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+}
+.table_wrap .button .btn{
+	padding: 1px 3px;
+	font-size: 13px;
+}
+/* Q&A 문의 글쓰기 영역 */
+.qna .write_area{
+	padding: 0 3% 30px;
+}
+.qna .write_area .input{
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 8px;
+	font-size: 15px;
+	height: 30px;
+}
+.qna .write_area textarea{
+	width: 100%;
+	height: 100px;
+	padding: 5px;
+	margin-bottom: 20px;
+	border: 1px solid #bababb;
+	box-sizing: border-box;
+}
+.qna .write_area .btn{
+	width: 80%;
+	max-width: 280px;
+	padding: 8px 0;
+	font-size: 16px;
+	border-radius: 30px;
+}
+/* board */
 .board{
 	padding-bottom: 5%;
 }
-.board .table-top{
+.board .page_top01+.table-top{
 	margin: 0 3%;
+	padding-bottom: 0;
 }
 .board .search_area{
 	margin-bottom: 14px;
 	overflow: hidden;
 	text-align: right;
 }
+.board .table-top>.input,
 .board .searchbox .select_search,
 .board .searchbox .inp_search{
 	height: 32px;
@@ -368,14 +482,17 @@
 	width: calc(100% - 136px);
 	max-width: 260px;
 }
+.board .table-top>.input{
+	margin-bottom: 14px;
+}
 /* brand story 회사정보*/
 .brand_story{
-	padding-right: 3%;
-	padding-left: 3%;
 	counter-reset: section;
 	background-color: #fff;
 }
 .art_brand_story{
+	padding-right: 3%;
+	padding-left: 3%;
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 32px;
@@ -469,23 +586,30 @@
 	font-weight: bold;
 	font-size: 18px;
 	font-family: 'Noto sans',Arial,sans-serif;
-	letter-spacing: 2px
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 .tag_event{
+	background-color: #01a5e2;
+	color: #fff;
+}
+.tag_hot{
 	background-color: #f26925;
 	color: #fff;
 }
 .tag_new{
-	background-color: #009223;
+	background-color: #ffc300;
 	color: #fff;
 }
 /* gallery_list01 제품리스트 */
 .gallery_list01{
 	width: 100%;
-	padding: 0 3%;
+	padding: 20px 3% 0;
 	box-sizing: border-box;
 }
-.gallery_list01 .gallery_list_ul{}
+.gallery_list01 .gallery_list_ul{
+	margin-bottom:0;
+}
 .gallery_list01 .gallery_list_li{
 	position: relative;
 	padding-bottom: 20px;
@@ -494,28 +618,36 @@
 }
 .gallery_list01 .list_img{
 	margin-bottom: 10px;
+	background-color: #000;
 }
 .gallery_list01 .list_img img{
 	display: block;
 	width: 100%;
+	border: none;
+	padding: 0;
 }
 .gallery_list01 .list_txt{
 	padding: 0 3%;
+	margin-bottom: 10px;
 	text-align: center;
 }
 .gallery_list01 .item_name{
 	font-size: 20px;
 	font-family: 'Noto sans',Arial,sans-serif;
 	font-weight: bold;
+	margin-bottom: 10px;
 }
 .gallery_list01 .item_txt{
-	margin-bottom: 10px;
 	font-size: 15px;
 	color: #333;
 }
-
+.gallery_list01 .item_postinfo{
+	margin-bottom: 10px;
+	font-size: 13px;
+	color: #666;
+}
 .gallery_list01 .tag_box{
-	top: 16px;
+	top: 22px;
 	left: 0;
 }
 .gallery_list01 .item_price_box{
@@ -545,13 +677,68 @@
 .gallery_list01 .item_price_before .dong{
 	font-size: 13px;
 }
+.gallery_list01 .event_date{
+	font-size: 15px;
+	font-weight: bold;
+	font-family: serif;
+	color: #f26925;
+}
 .gallery_list01+.table-bottom{
 	margin-right:3%;
 	margin-left: 3%;
 }
+.gallery_list01 .close_event .list_img img{
+	opacity: 0.6;
+}
+.gallery_list01 .close_event .list_txt{
+	color: #666;
+}
+/* gallery_list02 상품상세페이지 하단 제품리스트 */
+.gallery_list02{
+	background-color: #fff;
+	padding: 0 3% 10px;
+}
+.gallery_list02 .swiper-wrapper{
+	padding-bottom: 50px;
+}
+.gallery_list02 .list_img{
+	position:relative;
+	text-align: center;
+	width:100%;
+	padding-bottom:100%;
+	margin-bottom: 8px;
+	background-color: #fff;
+}
+.gallery_list02 .list_img img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.gallery_list02 .item_name{
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: 'Noto Sans',Arial,sans-serif;
+}
+.gallery_list02 .swiper-pagination .swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	border-radius: 8px;
+	background-color: #ddd;
+	opacity: 1;
+	transition: width 0.3s;
+}
+.gallery_list02 .swiper-pagination .swiper-pagination-bullet-active{
+	width: 40px;
+	background-color: #009223;
+}
+
 /* post 영양성분표 */
 .table_nutrient{
-	margin: 0 3% ;
+	margin: 0 3% 30px;
 	border-top: 2px solid #009223;
 	border-right: none;
 	border-left: none;
@@ -564,6 +751,11 @@
 	padding: 14px 10px;
 	font-size: 16px;
 	font-family: 'Noto Sans',Arial,sans-serif;
+	border-top: 1px solid #ddd;
+}
+.table_nutrient .table-body tr:first-child td,
+.table_nutrient .table-body tr:first-child th{
+	border-top:none;
 }
 .table_nutrient .table-body th{
 	color: #009223;
@@ -573,6 +765,14 @@
 
 .information{
 	margin: 0 3% 20px;
+	font-family: 'Noto Sans',Arial,sans-serif;
+	font-size: 13px;
+}
+.information .user_name{
+	font-weight: bold;
+}
+.information .fa{
+	font-size: 15px;
 }
 .contents-view .content_txt{
 	font-size: 16px;
@@ -586,13 +786,26 @@
 	padding-right: 0;
 	padding-left: 12px;
 }
+/* post good bad */
+.board .recommand .good{
+	background-color: #009223;
+	color: #ffce32;
+}
+.board .recommand .bad {
+	background-color: #aaa;
+	color: #000;
+}
+.board .recommand .fa{
+	font-size: 24px;
+	line-height:1;
+}
+
 /* comment-write */
 .main .board .comment_write_box_inner{
-	padding: 20px 3%;
+	padding: 0 3% 20px;
 }
 #comment_write_box .write_user_info li{
-	margin-bottom: 10px;
-	text-align: center;
+	margin-bottom: 8px;
 }
 #comment_write_box .write_user_info span{
 	display: inline-block;
@@ -627,15 +840,161 @@
 .passcord .passcord_noti{
 	font-size: 14px;
 }
+/* comment_list */
+#viewcomment{
+	margin: 0;
+	padding: 15px 3%;
+}
+#viewcomment .media{
+	padding: 10px 0;
+	margin: 4px 0 0;
+	border: 1px solid #bababb;
+	background-color: #fff;
+	overflow: hidden;
+}
+#viewcomment .media:nth-of-type(2){
+    margin-top: 0;
+}
+#viewcomment .media-body{
+	padding: 0 3%;
+	position: relative;
+}
+#viewcomment .media-body:before{
+	content:'';
+	width: 8px;
+	height: 8px;
+	position: absolute;
+	top: 6px;
+	left: -10px;
+	border-left: 2px solid #666;
+	border-bottom: 2px solid #666;
+}
+#viewcomment .media .time{
+	padding: 0 2px 0 10px;
+}
+#viewcomment .user_name{
+	font-weight: bold;
+	font-size: 15px;
+}
+#viewcomment .good{
+	color: #009223;
+}
+#viewcomment .bad{
+	color: #ff8300;
+}
 /* board btn */
 .board .border_button{
 	margin: 20px 3%;
+}
+.board .sns_button img{
+	width: 30px;
+	height: 30px;
 }
 /* list */
 .board .post_list{
 	background-color: #fff;
 	border-top: 2px solid #009223;
+	table-layout: fixed;
 }
 .board .post_list thead{
 	border-top: 2px solid #009223;
 }
+.board .post_list td{
+	text-align: center;
+}
+.board .post_list td,
+.board .post_list th{
+	padding: 8px 3px;
+	font-size: 14px;
+}
+.board .post_list .table_num{
+	width: 34px;
+} 
+.board .post_list .table_tit{
+	width: 70%;
+} 
+.board .post_list .table_tit a{
+	display: inline-block;
+	max-width: calc(100% - 20px);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: middle;
+} 
+.board .post_list .table_user{
+	width: 28%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+} 
+.board .post_list .table_date{
+	width: 54px;
+} 
+.board .post_list .table_views{
+	width: 50px;
+} 
+/* latest */
+.latest:last-child{
+	margin-bottom:30px;
+}
+.latest .table-box{
+	border: none;
+	border-top: 2px solid #009223;
+	border-bottom: 1px solid #bababb;
+}
+.latest .table-heading{
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 1px solid #bababb;
+	background-color: #fff;
+}
+.latest .table-heading .view-all{
+	font-size: 14px;
+	font-weight: normal;
+	margin-right: 3%;
+	text-align: right;
+	line-height: 27px;
+}
+.latest .table-body{
+	table-layout: fixed;
+}
+.latest .table-body td{
+	padding: 10px 8px 10px 15px;
+	line-height: 20px;
+}
+.latest .table-body td:first-child{
+	font-size: 15px;
+}
+.latest .table-body tr:first-child td{
+	border-top: none;
+}
+.latest .table-body .txt_date{
+	text-align: center;
+	padding: 10px 4px;
+	width: 70px;
+}
+
+.latest .table-body .txt_tit{
+	display: inline-block;
+	max-width: 90%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: middle;
+} 
+/* login */
+.access{
+	background-color: #fff;
+	padding-bottom: 20px;
+}
+.access .table-box,
+.access .table-footer,
+.access .table-box form{
+	border: none;
+	background-color: transparent;
+}
+.access .loginform li>span{
+	font-size: 14px;
+	font-family: 'Noto Sans',Arial,sans-serif;
+}
+

@@ -22,7 +22,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 
 <div class="board">
 	<?php echo show_alert_message($this->session->flashdata('message'), '<div class="alert alert-auto-close alert-dismissible alert-info"><button type="button" class="close alertclose" >&times;</button>', '</div>'); ?>
-	<h3>
+	<h3 class="title05">
 		<?php if (element('category', element('post', $view))) { ?>[<?php echo html_escape(element('bca_value', element('category', element('post', $view)))); ?>] <?php } ?>
 		<?php echo html_escape(element('post_title', element('post', $view))); ?>
 	</h3>
@@ -95,7 +95,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	</script>
 
 	<?php if (element('extra_content', $view)) { ?>
-		<div class="table-box">
+		<div class="table-box table_nutrient">
 			<table class="table-body">
 				<tbody>
 				<?php foreach (element('extra_content', $view) as $key => $value) { ?>
@@ -123,7 +123,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 		</div>
 
 		<!-- 본문 내용 시작 -->
-		<div id="post-content"><?php echo element('content', element('post', $view)); ?></div>
+		<div id="post-content" class="content_txt"><?php echo element('content', element('post', $view)); ?></div>
 		<!-- 본문 내용 끝 -->
 	</div>
 
@@ -257,12 +257,12 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 		</div>
 	<?php } ?>
 
-	<div class="pull-right mt20 mb20">
+	<div class="pull-right mt20 mb20 post_btn_box">
 		<?php if ( ! element('post_del', element('post', $view)) && element('use_scrap', element('board', $view))) { ?>
-			<button type="button" class="btn btn-black" id="btn-scrap" onClick="post_scrap('<?php echo element('post_id', element('post', $view)); ?>', 'post-scrap');">스크랩 <span class="post-scrap"><?php echo element('scrap_count', element('post', $view)) ? '+' . number_format(element('scrap_count', element('post', $view))) : ''; ?></span></button>
+			<button type="button" class="btn btn-primary" id="btn-scrap" onClick="post_scrap('<?php echo element('post_id', element('post', $view)); ?>', 'post-scrap');">스크랩 <span class="post-scrap"><?php echo element('scrap_count', element('post', $view)) ? '+' . number_format(element('scrap_count', element('post', $view))) : ''; ?></span></button>
 		<?php } ?>
 		<?php if ( ! element('post_del', element('post', $view)) && element('use_blame', element('board', $view)) && ( ! element('blame_blind_count', element('board', $view)) OR element('post_blame', element('post', $view)) < element('blame_blind_count', element('board', $view)))) { ?>
-			<button type="button" class="btn btn-black" id="btn-blame" onClick="post_blame('<?php echo element('post_id', element('post', $view)); ?>', 'post-blame');">신고 <span class="post-blame"><?php echo element('post_blame', element('post', $view)) ? '+' . number_format(element('post_blame', element('post', $view))) : ''; ?></span></button>
+			<button type="button" class="btn btn-danger" id="btn-blame" onClick="post_blame('<?php echo element('post_id', element('post', $view)); ?>', 'post-blame');">신고 <span class="post-blame"><?php echo element('post_blame', element('post', $view)) ? '+' . number_format(element('post_blame', element('post', $view))) : ''; ?></span></button>
 		<?php } ?>
 
 		<?php if ( ! element('post_del', element('post', $view)) && element('is_admin', $view)) { ?>
@@ -356,23 +356,23 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	<div class="border_button mt20 mb20">
 		<div class="btn-group pull-left" role="group" aria-label="...">
 			<?php if (element('modify_url', $view)) { ?>
-				<a href="<?php echo element('modify_url', $view); ?>" class="btn btn-default btn-sm">수정</a>
+				<a href="<?php echo element('modify_url', $view); ?>" class="btn btn-danger btn-sm">수정</a>
 			<?php } ?>
 			<?php	if (element('delete_url', $view)) { ?>
-				<button type="button" class="btn btn-default btn-sm btn-one-delete" data-one-delete-url="<?php echo element('delete_url', $view); ?>">삭제</button>
+				<button type="button" class="btn btn-silver btn-sm btn-one-delete" data-one-delete-url="<?php echo element('delete_url', $view); ?>">삭제</button>
 			<?php } ?>
-				<a href="<?php echo element('list_url', $view); ?>" class="btn btn-default btn-sm">목록</a>
+				<a href="<?php echo element('list_url', $view); ?>" class="btn btn-primary btn-sm">목록</a>
 			<?php if (element('search_list_url', $view)) { ?>
-					<a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-default btn-sm">검색목록</a>
+					<a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-primary btn-sm">검색목록</a>
 			<?php } ?>
 			<?php if (element('reply_url', $view)) { ?>
-				<a href="<?php echo element('reply_url', $view); ?>" class="btn btn-default btn-sm">답변</a>
+				<a href="<?php echo element('reply_url', $view); ?>" class="btn btn-success btn-sm">답변</a>
 			<?php } ?>
 			<?php if (element('prev_post', $view)) { ?>
-				<a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-default btn-sm">이전글</a>
+				<a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-blueline btn-sm">이전글</a>
 			<?php } ?>
 			<?php if (element('next_post', $view)) { ?>
-				<a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-default btn-sm">다음글</a>
+				<a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-blueline btn-sm">다음글</a>
 			<?php } ?>
 		</div>
 		<?php if (element('write_url', $view)) { ?>

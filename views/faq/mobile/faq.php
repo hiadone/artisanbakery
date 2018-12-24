@@ -1,9 +1,11 @@
 <?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/style.css'); ?>
-
-<h3><?php echo element('fgr_title', element('faqgroup', $view)); ?></h3>
+<section class="sect_faq">
+<div class="page_top01">
+<h3 class="title06"><?php echo element('fgr_title', element('faqgroup', $view)); ?></h3>
+</div>
 <form class="search_box text-center mb20" action="<?php echo current_url(); ?>" onSubmit="return faqSearch(this)">
 	<input type="text" name="skeyword" value="<?php echo html_escape($this->input->get('skeyword')); ?>" class="input" placeholder="Search" />
-	<button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+	<button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>
 </form>
 
 <script type="text/javascript">
@@ -19,7 +21,7 @@ function faqSearch(f) {
 }
 //]]>
 </script>
-
+<div class="table_wrap">
 <?php
 $i = 0;
 if (element('list', element('data', $view))) {
@@ -47,12 +49,14 @@ if ( ! element('list', element('data', $view))) {
 <?php
 if ($this->member->is_admin() === 'super') {
 ?>
-	<div class="text-center mb20">
+	<div class="text-center mt20">
 		<a href="<?php echo admin_url('page/faq'); ?>?fgr_id=<?php echo element('fgr_id', element('faqgroup', $view)); ?>" class="btn btn-black btn-sm" target="_blank" title="FAQ 수정">FAQ 수정</a>
 	</div>
 <?php
 }
 ?>
+</div>
+</section>
 <script type="text/javascript">
 //<![CDATA[
 function faq_open(el)
@@ -61,9 +65,13 @@ function faq_open(el)
 
 	if ($con.is(':visible')) {
 		$con.slideUp();
+		$(el).removeClass('table_open');
 	} else {
-		$('.answer:visible').css('display', 'none');
+		//$('.answer:visible').css('display', 'none');
+		$('.answer:visible').slideUp();
+		$('.table-heading').removeClass('table_open');
 		$con.slideDown();
+		$(el).addClass('table_open');
 	}
 	return false;
 }

@@ -2,7 +2,7 @@
 
 <div class="access">
 	<div class="table-box">
-		<div class="table-heading">로그인</div>
+		<div class="table-heading title05">로그인</div>
 		<div class="table-body">
 			<?php
 			echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>');
@@ -63,7 +63,7 @@
 		</div>
 		<div class="table-footer">
 			<a href="<?php echo site_url('register'); ?>" class="btn btn-success btn-sm" title="회원가입">회원가입</a>
-			<a href="<?php echo site_url('findaccount'); ?>" class="btn btn-default btn-sm" title="아이디 패스워드 찾기">아이디 패스워드 찾기</a>
+			<a href="<?php echo site_url('findaccount'); ?>" class="btn btn-silver btn-sm" title="아이디 패스워드 찾기">아이디 패스워드 찾기</a>
 		</div>
 	</div>
 </div>

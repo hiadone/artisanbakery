@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>공지사항</title>
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/_layout/mobile/css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/assets/css/page.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/board/mobile/css/style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		// 자바스크립트에서 사용하는 전역변수 선언
+		var cb_url = "http://cmy.artisanbakery.vn";
+		var cb_cookie_domain = "";
+		var cb_charset = "UTF-8";
+		var cb_time_ymd = "2018-12-13";
+		var cb_time_ymdhis = "2018-12-13 09:53:30";
+		var layout_skin_path = "_layout/mobile";
+		var view_skin_path = "board/mobile";
+		var is_member = "";
+		var is_admin = "";
+		var cb_admin_url = "";
+		var cb_board = "b-a-1";
+		var cb_board_url = cb_url + "/board/b-a-1";
+		var cb_device_type = "mobile";
+		var cb_csrf_hash = "fcdc89c8ce337b80792e47118e95af97";
+		var cookie_prefix = "";
+	</script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/common.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.extension.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/sideview.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.ba-outside-events.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/iscroll.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/mobile.sidemenu.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/js.cookie.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header navbar">
+			<div class="container">
+				<h1 class="logo">
+					<a href="http://cmy.artisanbakery.vn/" title="아티산 베이커리"><img src="http://cmy.artisanbakery.vn/assets/images/h_logo.png" alt="Artisan bakery"></a>
+				</h1>
+				<div class="h_btn m_nav pull-right">
+					<a href="javascript:;" id="btn_side"><img src="http://cmy.artisanbakery.vn/assets/images/h_icon_ham.png" alt="menu" title="menu"></a>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="container wrap wrap01">
+				<div class="board">
+					<div class="page_top01">
+						<h3 class="title06">공지사항</h3>
+						<div class="page_top_menu">
+							<ul class="page_top_ul">
+								<li class="page_top_li"><a href="">이벤트</a></li>
+								<li class="page_top_li active"><a href="">공지사항</a></li>
+								<li class="page_top_li"><a href="">자유게시판</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="table-top">
+
+
+						<div class="col-md-6 search_area">
+							<div class=" searchbox">
+								<form class="navbar-form navbar-right" action="http://cmy.artisanbakery.vn/board/b-c-1" onsubmit="return postSearch(this);">
+									<input type="hidden" name="findex" value="">
+									<input type="hidden" name="category_id" value="">
+									<div class="form-group">
+										<select class="input select_search" name="sfield">
+											<option value="post_both">제목+내용</option>
+											<option value="post_title">제목</option>
+											<option value="post_content">내용</option>
+											<option value="post_nickname">회원명</option>
+											<option value="post_userid">회원아이디</option>
+										</select>
+										<input type="text" class="input inp_search" placeholder="Search" name="skeyword" value="">
+										<button class="btn btn-success btn-sm" type="submit"><i class="fa fa-search"></i></button>
+									</div>
+								</form>
+							</div>
+							<div class="searchbuttonbox">
+								<button class="btn btn-success btn-sm pull-right" type="button" onclick="toggleSearchbox();"><i class="fa fa-search"></i></button>
+							</div>
+						</div>
+						<select class="input" onchange="location.href='http://cmy.artisanbakery.vn/board/b-c-1?category_id=&amp;findex=' + this.value;">
+							<option value="">정렬하기</option>
+							<option value="post_datetime desc">날짜순</option>
+							<option value="post_hit desc">조회수</option>
+							<option value="post_comment_count desc">댓글수</option>
+						</select>
+						<script type="text/javascript">
+							//<![CDATA[
+							function postSearch(f) {
+								var skeyword = f.skeyword.value.replace(/(^\s*)|(\s*$)/g, '');
+								if (skeyword.length < 2) {
+									alert('2글자 이상으로 검색해 주세요');
+									f.skeyword.focus();
+									return false;
+								}
+								return true;
+							}
+
+							function toggleSearchbox() {
+								$('.searchbox').show();
+								$('.searchbuttonbox').hide();
+							}
+							$(document).on('click', '.btn-point-info', function() {
+								$('.point-info-content').toggle();
+							});
+							//]]>
+						</script>
+					</div>
+					<!-- 공지사항 -->
+					<style>
+						.txt_list01{
+							border-top: 2px solid #009223;
+							background-color: #fff;
+							margin-bottom: 30px;
+						}
+						.txt_list01 .txt_list_ul{}
+						.txt_list01 .txt_list_li{
+							border-bottom: 1px solid #ddd;
+						}
+						.txt_list01 .txt_list_li a{}
+						.txt_list01 .list_num,
+						.txt_list01 .list_noti,
+						.txt_list01 .list_tit{
+							display: table-cell;
+							padding: 16px 0;
+							vertical-align: middle;
+							font-family: 'Noto Sans',sans-serif;
+						}
+						.txt_list01 .list_noti,
+						.txt_list01 .list_num{
+							width: 64px;
+							text-align: center;
+						}
+						.txt_list01 .list_num{
+							font-size: 18px;
+							font-weight: bold;
+							color: #ffce32;
+						}
+						.txt_list01 .li_noti{
+							background-color: #fffcef;
+						}
+						.txt_list01 .list_noti{
+							font-size: 20px;
+							color: #61ce06;
+						}
+						.txt_list01 .list_tit{
+							text-align: left;
+							font-size: 16px;
+						}
+					</style>
+					<section class="txt_list01">
+						<h4 class="blind">게시물목록</h4>
+						<ul class="txt_list_ul">
+							<!--
+							<li class="txt_list_li li_noti">
+								<a href="">
+									<div class="list_noti"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
+									<div class="list_tit">title title title</div>
+								</a>
+							</li>
+-->
+							<!--
+							<li class="txt_list_li">
+								<a href="">
+									<div class="list_num">1</div>
+									<div class="list_tit">title title title</div>
+								</a>
+							</li>
+-->
+						</ul>
+						
+					</section>
+					<nav>
+						<ul class="pagination">
+							<li class="active"><a>1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li><a href="" rel="next">&gt;</a></li>
+						</ul>
+					</nav>
+					
+				</div>
+
+
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<ul class="company pull-left">
+					<li><a href="http://cmy.artisanbakery.vn/document/aboutus" title="회사소개">회사소개</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/provision" title="이용약관">이용약관</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/privacy" title="개인정보 취급방침">개인정보 취급방침</a></li>
+
+				</ul>
+
+			</div>
+		</footer>
+	</div>
+	<aside class="menu" id="side_menu">
+		<div class="side_wr add_side_wr" style="right: -250px;">
+			<div id="isroll_wrap" class="side_inner_rel">
+				<div class="side_inner_abs">
+					<div class="side_menu_top">
+						<div class="m_search">
+							<form name="mobile_header_search" id="mobile_header_search" action="http://cmy.artisanbakery.vn/search" onsubmit="return headerSearch(this);">
+								<input type="text" placeholder="Search" class="input" name="skeyword" accesskey="s">
+							</form>
+						</div>
+						<div class="m_login">
+							<span><a href="http://cmy.artisanbakery.vn/login?url=http%3A%2F%2Fcmy.artisanbakery.vn%2Fboard%2Fb-a-1" class="btn btn-primary" title="로그인"><i class="fa fa-sign-in"></i> LOGIN</a></span>
+							<span><a href="http://cmy.artisanbakery.vn/register" class="btn btn-primary" title="회원가입"><i class="fa fa-user"></i> 회원가입</a></span>
+						</div>
+					</div>
+					<ul class="m_board">
+					</ul>
+					<ul class="m_menu">
+						<li class="dropdown">
+							<a href="/group/g-a" title="제품소개" class="menu_category"><span class="icon_back"></span>제품소개</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="1"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-1">
+								<li><a href="/board/b-a-1" title="제품 1">제품 1</a></li>
+								<li><a href="/board/b-a-2" title="제품 2">제품 2</a></li>
+								<li><a href="/board/b-a-3" title="제품 3">제품 3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/group/g-b" title="새소식" class="menu_category"><span class="icon_back"></span>새소식</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="5"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-5">
+								<li><a href="/board/b-b-1" title="이벤트">이벤트</a></li>
+								<li><a href="/board/b-b-2" title="공지사항">공지사항</a></li>
+								<li><a href="http://dev.artisanbakery.vn/board/b-b-3" title="게시판 B-3">게시판 B-3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:;" title="아티산 베이커리" class="menu_category"><span class="icon_back"></span>아티산 베이커리</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="9"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-9">
+								<li><a href="/document/artisanbakery_info" title="아티산 베이커리 역사">아티산 베이커리 역사</a></li>
+								<li><a href="/board/b-c-2" title="매장 찾기">매장 찾기</a></li>
+								<li><a href="http://dev.artisanbakery.vn/board/b-c-3" title="게시판 C-3">게시판 C-3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/faq/faq" title="고객센터" class="menu_category"><span class="icon_back"></span>고객센터</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="13"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-13">
+								<li><a href="/faq/faq" title="FAQ">FAQ</a></li>
+								<li><a href="/board/b-c-3" title="1:1 문의">1:1 문의</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</aside>
+	<script>
+		$(function() {
+			//page_top_menu 위치
+			var titHeight = $('.page_top_menu').siblings('.title06').outerHeight();
+			$('.page_top_menu').css('top', titHeight);
+
+			//open list_menu
+			$('.page_top01 .title06').on('click', function() {
+				var $listmenu = $(this).siblings('.page_top_menu')
+				$listmenu.slideToggle(400, function() {
+					$listmenu.stop(true, true);
+				});
+
+			});
+
+
+			//list li 
+			for (var i = 0; i < 10; i++) {
+				var txtlisttem = `
+					<li class="txt_list_li">
+						<a href="">
+							<div class="list_num">${i+1}</div>
+							<div class="list_tit">title title title</div>
+						</a>
+					</li>
+`
+
+				$('.txt_list01 .txt_list_ul').prepend(txtlisttem);
+
+			}
+			//noti_li
+			for (var i = 0; i < 3; i++) {
+				var txtnotitem = `
+					<li class="txt_list_li li_noti">
+						<a href="">
+							<div class="list_noti"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
+							<div class="list_tit">notice title notice title</div>
+						</a>
+					</li>
+`
+
+				$('.txt_list01 .txt_list_ul').prepend(txtnotitem);
+
+			}
+
+			//end
+		});
+	</script>
+</body>
+
+</html>

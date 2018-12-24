@@ -24,12 +24,12 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 
 <div class="board">
 	<?php echo show_alert_message($this->session->flashdata('message'), '<div class="alert alert-auto-close alert-dismissible alert-info"><button type="button" class="close alertclose" >&times;</button>', '</div>'); ?>
-	<h3>
+	<h3 class="title05">
 		<?php if (element('category', element('post', $view))) { ?>[<?php echo html_escape(element('bca_value', element('category', element('post', $view)))); ?>] <?php } ?>
 		<?php echo html_escape(element('post_title', element('post', $view))); ?>
 	</h3>
 	<ul class="information mb20">
-		<li><?php echo element('display_name', element('post', $view)); ?></li>
+		<li class="user_name"><?php echo element('display_name', element('post', $view)); ?></li>
 		<li><i class="fa fa-comments"></i> <?php echo number_format(element('post_comment_count', element('post', $view))); ?></li>
 		<li><i class="fa fa-eye"></i> <?php echo number_format(element('post_hit', element('post', $view))); ?></li>
 		<?php if (element('use_post_like', element('board', $view))) { ?>
@@ -97,7 +97,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	</script>
 
 	<?php if (element('extra_content', $view)) { ?>
-		<div class="table-box">
+		<div class="table-box table_nutrient">
 			<table class="table-body">
 				<tbody>
 				<?php foreach (element('extra_content', $view) as $key => $value) { ?>
@@ -259,12 +259,12 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 		</div>
 	<?php } ?>
 
-	<div class="pull-right mt20 mb20">
+	<div class="pull-right mt20 mb20 post_btn_box">
 		<?php if ( ! element('post_del', element('post', $view)) && element('use_scrap', element('board', $view))) { ?>
-			<button type="button" class="btn btn-black" id="btn-scrap" onClick="post_scrap('<?php echo element('post_id', element('post', $view)); ?>', 'post-scrap');">스크랩 <span class="post-scrap"><?php echo element('scrap_count', element('post', $view)) ? '+' . number_format(element('scrap_count', element('post', $view))) : ''; ?></span></button>
+			<button type="button" class="btn btn-primary" id="btn-scrap" onClick="post_scrap('<?php echo element('post_id', element('post', $view)); ?>', 'post-scrap');">스크랩 <span class="post-scrap"><?php echo element('scrap_count', element('post', $view)) ? '+' . number_format(element('scrap_count', element('post', $view))) : ''; ?></span></button>
 		<?php } ?>
 		<?php if ( ! element('post_del', element('post', $view)) && element('use_blame', element('board', $view)) && ( ! element('blame_blind_count', element('board', $view)) OR element('post_blame', element('post', $view)) < element('blame_blind_count', element('board', $view)))) { ?>
-			<button type="button" class="btn btn-black" id="btn-blame" onClick="post_blame('<?php echo element('post_id', element('post', $view)); ?>', 'post-blame');">신고 <span class="post-blame"><?php echo element('post_blame', element('post', $view)) ? '+' . number_format(element('post_blame', element('post', $view))) : ''; ?></span></button>
+			<button type="button" class="btn btn-danger" id="btn-blame" onClick="post_blame('<?php echo element('post_id', element('post', $view)); ?>', 'post-blame');">신고 <span class="post-blame"><?php echo element('post_blame', element('post', $view)) ? '+' . number_format(element('post_blame', element('post', $view))) : ''; ?></span></button>
 		<?php } ?>
 
 		<?php if ( ! element('post_del', element('post', $view)) && element('is_admin', $view)) { ?>
@@ -325,7 +325,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	?>
 		<script type="text/javascript">Kakao.init('<?php echo $this->cbconfig->item('kakao_apikey'); ?>');</script>
 	<?php } ?>
-		<div class="sns_button">
+		<div class="sns_button post_btn_box pull-left mt20">
 			<a href="javascript:;" onClick="sendSns('facebook', '<?php echo element('short_url', $view); ?>', '<?php echo html_escape(element('post_title', element('post', $view)));?>');" title="이 글을 페이스북으로 퍼가기"><img src="<?php echo element('view_skin_url', $layout); ?>/images/social_facebook.png" width="22" height="22" alt="이 글을 페이스북으로 퍼가기" title="이 글을 페이스북으로 퍼가기" /></a>
 			<a href="javascript:;" onClick="sendSns('twitter', '<?php echo element('short_url', $view); ?>', '<?php echo html_escape(element('post_title', element('post', $view)));?>');" title="이 글을 트위터로 퍼가기"><img src="<?php echo element('view_skin_url', $layout); ?>/images/social_twitter.png" width="22" height="22" alt="이 글을 트위터로 퍼가기" title="이 글을 트위터로 퍼가기" /></a>
 			<?php if ($this->cbconfig->item('kakao_apikey')) { ?>
@@ -358,23 +358,23 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	<div class="border_button mt20 mb20">
 		<div class="btn-group pull-left" role="group" aria-label="...">
 			<?php if (element('modify_url', $view)) { ?>
-				<a href="<?php echo element('modify_url', $view); ?>" class="btn btn-default btn-sm">수정</a>
+				<a href="<?php echo element('modify_url', $view); ?>" class="btn btn-danger btn-sm">수정</a>
 			<?php } ?>
 			<?php	if (element('delete_url', $view)) { ?>
-				<button type="button" class="btn btn-default btn-sm btn-one-delete" data-one-delete-url="<?php echo element('delete_url', $view); ?>">삭제</button>
+				<button type="button" class="btn btn-silver btn-sm btn-one-delete" data-one-delete-url="<?php echo element('delete_url', $view); ?>">삭제</button>
 			<?php } ?>
-				<a href="<?php echo element('list_url', $view); ?>" class="btn btn-default btn-sm">목록</a>
+				<a href="<?php echo element('list_url', $view); ?>" class="btn btn-primary btn-sm">목록</a>
 			<?php if (element('search_list_url', $view)) { ?>
 					<a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-default btn-sm">검색목록</a>
 			<?php } ?>
 			<?php if (element('reply_url', $view)) { ?>
-				<a href="<?php echo element('reply_url', $view); ?>" class="btn btn-default btn-sm">답변</a>
+				<a href="<?php echo element('reply_url', $view); ?>" class="btn btn-success btn-sm">답변</a>
 			<?php } ?>
 			<?php if (element('prev_post', $view)) { ?>
-				<a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-default btn-sm">이전글</a>
+				<a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-blueline btn-sm">이전글</a>
 			<?php } ?>
 			<?php if (element('next_post', $view)) { ?>
-				<a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-default btn-sm">다음글</a>
+				<a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-blueline btn-sm">다음글</a>
 			<?php } ?>
 		</div>
 		<?php if (element('write_url', $view)) { ?>

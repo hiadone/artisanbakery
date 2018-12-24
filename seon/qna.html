@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1:1문의</title>
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/_layout/mobile/css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/assets/css/page.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/board/mobile/css/style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		// 자바스크립트에서 사용하는 전역변수 선언
+		var cb_url = "http://cmy.artisanbakery.vn";
+		var cb_cookie_domain = "";
+		var cb_charset = "UTF-8";
+		var cb_time_ymd = "2018-12-13";
+		var cb_time_ymdhis = "2018-12-13 09:53:30";
+		var layout_skin_path = "_layout/mobile";
+		var view_skin_path = "board/mobile";
+		var is_member = "";
+		var is_admin = "";
+		var cb_admin_url = "";
+		var cb_board = "b-a-1";
+		var cb_board_url = cb_url + "/board/b-a-1";
+		var cb_device_type = "mobile";
+		var cb_csrf_hash = "fcdc89c8ce337b80792e47118e95af97";
+		var cookie_prefix = "";
+
+	</script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/common.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.extension.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/sideview.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.ba-outside-events.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/iscroll.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/mobile.sidemenu.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/js.cookie.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header navbar">
+			<div class="container">
+				<h1 class="logo">
+					<a href="http://cmy.artisanbakery.vn/" title="아티산 베이커리"><img src="http://cmy.artisanbakery.vn/assets/images/h_logo.png" alt="Artisan bakery"></a>
+				</h1>
+				<div class="h_btn m_nav pull-right">
+					<a href="javascript:;" id="btn_side"><img src="http://cmy.artisanbakery.vn/assets/images/h_icon_ham.png" alt="menu" title="menu"></a>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="container wrap wrap01">
+				<section class="qna">
+					<div class="page_top01">
+						<h3 class="title06">1:1문의</h3>
+						<div class="page_top_menu">
+							<ul class="page_top_ul">
+								<li class="page_top_li"><a href="">FAQ</a></li>
+								<li class="page_top_li active"><a href="">1:1문의</a></li>
+							</ul>
+						</div>
+
+					</div>
+					<script>
+						$(function(){
+						//page_top_menu 위치
+						var titHeight = $('.page_top_menu').siblings('.title06').outerHeight();
+						$('.page_top_menu').css('top',titHeight);
+						//open list_menu
+							$('.page_top01 .title06').on('click',function(){
+								var $listmenu = $(this).siblings('.page_top_menu')
+								$listmenu.slideToggle(400,function(){
+									$listmenu.stop(true,true);
+								});
+							
+							});
+						
+						
+						//end
+						});
+					
+					</script>
+					<section class="write_area">
+						<h3 class="blind">question write area</h3>
+						<form action="" class="form-horizontal" method="post">
+							<div>
+								<input type="text" value="" placeholder="title" class="input">
+								<input type="password" placeholder="password" class="input">
+
+								<div class="form-group ">
+									<textarea class="" placeholder=" "></textarea>
+								</div>
+
+								<div class="table-bottom text-center ">
+
+									<button type="submit" class="btn btn-success">S U B M I T</button>
+								</div>
+							</div>
+						</form>
+					</section>
+					<section class="qna_list">
+
+						<form action="" method="post">
+							<ul class="table_wrap">
+							<!-- 1번시안 -->
+								<!-- <li class="">
+
+									<div class="table-box">
+										<div class="table-heading" onclick="return faq_open(this);">
+											<h4 class="question_tit pull-left">Lorem ipsum dolor</h4>
+											<div class="pull-right">
+												<span class="text-primary answer_complete">답변완료</span>
+											</div>
+											<div class="post_info">
+												<div class="pull-left">
+													<p>니트 | 작성일 : 08-25 </p>
+
+												</div>
+												<div class="button pull-right">
+													<button type="button" class="btn btn-danger">수정</button>
+													<button type="button" class="btn btn-silver">삭제</button>
+												</div>
+											</div>
+										</div>
+										<div class="table-answer answer">
+											<div class="question_txt">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+												Etiam hendrerit orci et lectus finibus,<br>
+												et rhoncus nulla tincidunt.
+											</div>
+											<div class="answer_txt">
+												Nunc facilisis elit et justo molestie,<br>
+												lobortis accumsan ante congue. <br>
+												Donec vel purus vitae tellus interdum volutpat.<br>
+												Maecenas non felis facilisis turpis <br>
+												<br>
+												accumsan tempor quis vitae risus.
+											</div>
+											<div class="button"></div>
+
+										</div>
+
+
+									</div>
+
+								</li>
+								<li class="">
+
+									<div class="table-box">
+										<div class="table-heading" onclick="return faq_open(this);">
+											<h4 class="question_tit pull-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+											<div class="pull-right">
+												<span class="answer_complete">답변대기</span>
+											</div>
+											<div class="post_info">
+												<div class="pull-left">
+													<p>니트 | 작성일 : 08-25 </p>
+
+												</div>
+												<div class="button pull-right">
+													<button type="button" class="btn btn-danger">수정</button>
+													<button type="button" class="btn btn-silver">삭제</button>
+												</div>
+											</div>
+										</div>
+										<div class="table-answer answer">
+											<div class="question_txt">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+												Etiam hendrerit orci et lectus finibus,<br>
+												et rhoncus nulla tincidunt.
+											</div>
+
+											<div class="button"></div>
+
+										</div>
+
+
+									</div>
+
+								</li>
+								<li class="">
+
+									<div class="table-box">
+										<div class="table-heading" onclick="return faq_open(this);">
+											<h4 class="question_tit pull-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+											<div class="pull-right">
+												<span class="answer_complete">답변대기</span>
+											</div>
+											<div class="post_info">
+												<div class="pull-left">
+													<p>니트 | 작성일 : 08-25 </p>
+
+												</div>
+												<div class="button pull-right">
+													
+												</div>
+											</div>
+										</div>
+										<div class="table-answer answer">
+											<div class="question_txt">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+												Etiam hendrerit orci et lectus finibus,<br>
+												et rhoncus nulla tincidunt.
+											</div>
+
+											<div class="button"></div>
+
+										</div>
+
+
+									</div>
+
+								</li> -->
+								<!-- 2번시안 -->
+								<li class="">
+									<div class="table-box">
+										<div class="table-heading" onclick="return faq_open(this);">
+											<h4 class="question_tit pull-left">testset</h4>
+											<span class="pull-right answer_complete">답변대기</span>
+											<div class="clear post_info">
+												<div class="button pull-left">
+													<button type="button" class="btn btn-primary" onclick="event.stopPropagation();location.href='';">답 변</button>
+													<button type="button" class="btn btn-silver" onclick="event.stopPropagation();btn_one_delete_click(this);" data-one-delete-url="">삭 제</button>
+												</div>     
+												<p class="pull-right">관리자 | 작성일 : 12-18</p>
+											</div>
+										</div>
+										<div class="table-answer answer">
+											<div class="question_txt">testest</div>
+										</div>
+										
+									</div>
+
+								</li>
+								<li class="">
+									<div class="table-box">
+										<div class="table-heading" onclick="return faq_open(this);">
+											<h4 class="question_tit pull-left">testset</h4>
+											<span class="pull-right answer_complete text-primary">답변완료</span>
+											<div class="clear post_info">
+												<div class="button pull-left">
+													<button type="button" class="btn btn-primary" onclick="event.stopPropagation();location.href='';">답 변</button>
+													<button type="button" class="btn btn-silver" onclick="event.stopPropagation();btn_one_delete_click(this);" data-one-delete-url="">삭 제</button>
+												</div>     
+												<p class="pull-right">관리자 | 작성일 : 12-18</p>
+											</div>
+										</div>
+										<div class="table-answer answer">
+											<div class="question_txt">testest</div>
+											<div class="answer_txt">
+												Nunc facilisis elit et justo molestie,<br>
+												lobortis accumsan ante congue. <br>
+												Donec vel purus vitae tellus interdum volutpat.<br>
+												Maecenas non felis facilisis turpis <br>
+												<br>
+												accumsan tempor quis vitae risus.
+											</div>
+										</div>
+										
+									</div>
+
+								</li>
+								<li class="">
+									<div class="table-box">
+										<div class="table-heading" onclick="return faq_open(this);">
+											<h4 class="question_tit pull-left">testset</h4>
+											<span class="pull-right answer_complete text-primary">답변완료</span>
+											<div class="clear post_info">
+												<div class="button pull-left">
+													
+												</div>     
+												<p class="pull-right">관리자 | 작성일 : 12-18</p>
+											</div>
+										</div>
+										<div class="table-answer answer">
+											<div class="question_txt">testest</div>
+											<div class="answer_txt">
+												Nunc facilisis elit et justo molestie,<br>
+												lobortis accumsan ante congue. <br>
+												Donec vel purus vitae tellus interdum volutpat.<br>
+												Maecenas non felis facilisis turpis <br>
+												<br>
+												accumsan tempor quis vitae risus.
+											</div>
+										</div>
+										
+									</div>
+
+								</li>
+							</ul>
+						</form>
+						<nav>
+							<ul class="pagination">
+								<li class="active"><a>1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="" rel="next">&gt;</a></li>
+							</ul>
+						</nav>
+					</section>
+					<script type="text/javascript">
+						//<![CDATA[
+						function faq_open(el) {
+							var $con = $(el).closest('.table-box').find('.answer');
+
+							if ($con.is(':visible')) {
+								$con.slideUp();
+								$(el).removeClass('table_open');
+							} else {
+								//$('.answer:visible').css('display', 'none');
+								$('.answer:visible').slideUp();
+								$('.table-heading').removeClass('table_open');
+								$con.slideDown();
+								$(el).addClass('table_open');
+							}
+							return false;
+						}
+						//]]>
+
+					</script>
+
+				</section>
+
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<ul class="company pull-left">
+					<li><a href="http://cmy.artisanbakery.vn/document/aboutus" title="회사소개">회사소개</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/provision" title="이용약관">이용약관</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/privacy" title="개인정보 취급방침">개인정보 취급방침</a></li>
+
+				</ul>
+
+			</div>
+		</footer>
+	</div>
+	<aside class="menu" id="side_menu">
+		<div class="side_wr add_side_wr" style="right: -250px;">
+			<div id="isroll_wrap" class="side_inner_rel">
+				<div class="side_inner_abs">
+					<div class="side_menu_top">
+						<div class="m_search">
+							<form name="mobile_header_search" id="mobile_header_search" action="http://cmy.artisanbakery.vn/search" onsubmit="return headerSearch(this);">
+								<input type="text" placeholder="Search" class="input" name="skeyword" accesskey="s">
+							</form>
+						</div>
+						<div class="m_login">
+							<span><a href="http://cmy.artisanbakery.vn/login?url=http%3A%2F%2Fcmy.artisanbakery.vn%2Fboard%2Fb-a-1" class="btn btn-primary" title="로그인"><i class="fa fa-sign-in"></i> LOGIN</a></span>
+							<span><a href="http://cmy.artisanbakery.vn/register" class="btn btn-primary" title="회원가입"><i class="fa fa-user"></i> 회원가입</a></span>
+						</div>
+					</div>
+					<ul class="m_board">
+					</ul>
+					<ul class="m_menu">
+						<li class="dropdown">
+							<a href="/group/g-a" title="제품소개" class="menu_category"><span class="icon_back"></span>제품소개</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="1"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-1">
+								<li><a href="/board/b-a-1" title="제품 1">제품 1</a></li>
+								<li><a href="/board/b-a-2" title="제품 2">제품 2</a></li>
+								<li><a href="/board/b-a-3" title="제품 3">제품 3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/group/g-b" title="새소식" class="menu_category"><span class="icon_back"></span>새소식</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="5"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-5">
+								<li><a href="/board/b-b-1" title="이벤트">이벤트</a></li>
+								<li><a href="/board/b-b-2" title="공지사항">공지사항</a></li>
+								<li><a href="http://dev.artisanbakery.vn/board/b-b-3" title="게시판 B-3">게시판 B-3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:;" title="아티산 베이커리" class="menu_category"><span class="icon_back"></span>아티산 베이커리</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="9"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-9">
+								<li><a href="/document/artisanbakery_info" title="아티산 베이커리 역사">아티산 베이커리 역사</a></li>
+								<li><a href="/board/b-c-2" title="매장 찾기">매장 찾기</a></li>
+								<li><a href="http://dev.artisanbakery.vn/board/b-c-3" title="게시판 C-3">게시판 C-3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/faq/faq" title="고객센터" class="menu_category"><span class="icon_back"></span>고객센터</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="13"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-13">
+								<li><a href="/faq/faq" title="FAQ">FAQ</a></li>
+								<li><a href="/board/b-c-3" title="1:1 문의">1:1 문의</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</aside>
+
+</body>
+
+</html>

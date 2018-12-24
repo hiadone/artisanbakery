@@ -1,6 +1,6 @@
 <?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/style.css'); ?>
-
-<h3><?php echo ($this->input->get('skeyword')) ? '검색결과 : ' . html_escape($this->input->get('skeyword')) : '검색페이지' ?></h3>
+<section class="search_result wrap02">
+<h3 class="title04"><?php echo ($this->input->get('skeyword')) ? '검색결과 : ' . html_escape($this->input->get('skeyword')) : '검색페이지' ?></h3>
 <div class="row">
 	<form action="<?php echo current_url(); ?>" onSubmit="return checkSearch(this);" class=" search_box text-center">
 		<div class="group">
@@ -30,7 +30,7 @@
 			<input type="text" class="input per100" name="skeyword" placeholder="검색어" value="<?php echo html_escape($this->input->get('skeyword')); ?>" />
 		</div>
 		<div class="group">
-			<button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-search"></i> 검색</button>
+			<button type="submit" class="btn btn-success btn-sm"><i class="fa fa-search"></i> 검색</button>
 		</div>
 		<div class="group">
 			<select class="input" name="sop">
@@ -54,7 +54,7 @@ if (element('board_rows', $view)) {
 }
 ?>
 </ul>
-<div class="media-box mt20" id="searchresult">
+<div class="media-box" id="searchresult">
 <?php
 if (element('list', element('data', $view))) {
 	foreach (element('list', element('data', $view)) as $result) {
@@ -100,7 +100,7 @@ if ( ! element('list', element('data', $view))) {
 ?>
 </div>
 <nav><?php echo element('paging', $view); ?></nav>
-
+</section>
 <script type="text/javascript">
 //<![CDATA[
 function checkSearch(f) {

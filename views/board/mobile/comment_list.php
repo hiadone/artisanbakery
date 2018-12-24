@@ -14,7 +14,7 @@ if (element('best_list', $view)) {
 			<h4 class="media-heading">
 				<?php if (element('is_admin', $view)) { ?><input type="checkbox" name="chk_comment_id[]" value="<?php echo element('cmt_id', $result); ?>" /><?php } ?>
 				<span class="label label-warning">베플</span>
-				<?php echo element('display_name', $result); ?>
+				<b class="user_name"><?php echo element('display_name', $result); ?></b>
 				<span class="time"><i class="fa fa-clock-o"></i> <?php echo element('display_datetime', $result); ?></span>
 				<?php if (element('display_ip', $result)) { ?>
 					<span class="ip"><i class="fa fa-map-marker"></i> <?php echo element('display_ip', $result); ?></span>
@@ -65,7 +65,7 @@ if (element('list', element('data', $view))) {
 		<div class="media-body">
 			<h4 class="media-heading">
 				<?php if (element('is_admin', $view)) { ?><input type="checkbox" name="chk_comment_id[]" value="<?php echo element('cmt_id', $result); ?>" /><?php } ?>
-				<?php echo element('display_name', $result); ?>
+				<b class="user_name"><?php echo element('display_name', $result); ?></b>
 				<span class="time"><i class="fa fa-clock-o"></i> <?php echo element('display_datetime', $result); ?></span>
 				<?php if (element('display_ip', $result)) { ?>
 					<span class="ip"><i class="fa fa-map-marker"></i> <?php echo element('display_ip', $result); ?></span>

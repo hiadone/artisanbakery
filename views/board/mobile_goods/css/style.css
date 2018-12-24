@@ -23,8 +23,8 @@
 .board .recommand{text-align:center;margin-bottom:20px;}
 .board .recommand img{padding-top: 7px;}
 .board .recommand a:hover{background:#348fe2; color:#fff; text-decoration:none;}
-.board .recommand .good{background:#e9e9e9; width:50px; height:50px; display:inline-block; border-radius:50px; padding:8px; margin:0 10px;}
-.board .recommand .bad{background:#e9e9e9; width:50px; height:50px; display:inline-block; border-radius:50px;padding:6px; margin:0 10px;}
+.board .recommand .good{background:#009223; width:50px; height:50px; display:inline-block; border-radius:50px; padding:8px; margin:0 10px;}
+.board .recommand .bad{background:#aaa; width:50px; height:50px; display:inline-block; border-radius:50px;padding:6px; margin:0 10px;}
 .board .passcord{text-align:center;}
 .board .passcord{clear: both;padding-top: 20px; text-align:center;}
 .board .passcord img{vertical-align:middle;}
