@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>아티산 베이커리</title>
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/_layout/mobile/css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/assets/css/page.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Sans">
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/board/mobile/css/style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		// 자바스크립트에서 사용하는 전역변수 선언
+		var cb_url = "http://cmy.artisanbakery.vn";
+		var cb_cookie_domain = "";
+		var cb_charset = "UTF-8";
+		var cb_time_ymd = "2018-12-17";
+		var cb_time_ymdhis = "2018-12-17 10:14:10";
+		var layout_skin_path = "_layout/mobile";
+		var view_skin_path = "board/mobile";
+		var is_member = "";
+		var is_admin = "";
+		var cb_admin_url = "";
+		var cb_board = "b-b-1";
+		var cb_board_url = cb_url + "/board/b-b-1";
+		var cb_device_type = "mobile";
+		var cb_csrf_hash = "a9fe44045f7af1c4f0b9e9aad997aaf7";
+		var cookie_prefix = "";
+	</script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/common.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.extension.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/sideview.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.ba-outside-events.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/iscroll.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/mobile.sidemenu.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/js.cookie.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header start -->
+		<!-- nav start -->
+		<header class="header navbar">
+			<div class="container">
+				<h1 class="logo">
+					<a href="http://cmy.artisanbakery.vn/" title="아티산 베이커리"><img src="http://cmy.artisanbakery.vn/assets/images/h_logo.png" alt="Artisan bakery"></a>
+				</h1>
+				<div class="h_btn m_nav pull-right">
+					<a href="javascript:;" id="btn_side"><img src="http://cmy.artisanbakery.vn/assets/images/h_icon_ham.svg" alt="menu" title="menu"></a>
+				</div>
+				<div class="h_btn m_mypg pull-left">
+					<a href="javascript:;" id="btn_side"><img src="http://cmy.artisanbakery.vn/assets/images/h_icon_user.svg" alt="menu" title="menu"></a>
+				</div>
+			</div>
+		</header>
+		<!-- nav end -->
+		<!-- header end -->
+
+		<!-- main start -->
+		<div class="main">
+			<div class="container wrap wrap01">
+
+				<!-- 본문 시작 -->
+
+				<!-- 슬라이드 배너 -->
+				
+				<section class="slide_bnr01 swiper-container">
+					<h2 class="blind">slide banner</h2>
+					<ul class="slide_bnr_ul swiper-wrapper">
+						<li class="slide_bnr_li swiper-slide"><a href=""><img src="http://cmy.artisanbakery.vn/assets/images/bnr01.jpg" alt="banner title" class="bnr_img"></a></li>
+						<li class="slide_bnr_li swiper-slide"><a href=""><img src="http://cmy.artisanbakery.vn/assets/images/bnr02.jpg" alt="banner title" class="bnr_img"></a></li>
+						<li class="slide_bnr_li swiper-slide"><a href=""><img src="http://cmy.artisanbakery.vn/assets/images/bnr03.jpg" alt="banner title" class="bnr_img"></a></li>
+					</ul>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination pagination_yellow"></div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</section>
+				<script>
+					var swiper = new Swiper('.slide_bnr01', {
+						slidesPerView: 1,
+						spaceBetween: 0,
+						loop: true,
+						autoplay: {
+							delay: 4000,
+							disableOnInteraction: false,
+						},
+						pagination: {
+							el: '.slide_bnr01 .swiper-pagination',
+							clickable: true,
+						},
+						navigation: {
+							nextEl: '.slide_bnr01 .swiper-button-next',
+							prevEl: '.slide_bnr01 .swiper-button-prev',
+						},
+					});
+				</script>
+				<!-- 슬라이드 배너 끝 -->
+			
+				<section class="gallery_list06">
+					<h2 class="title01">Artisan Menu</h2>
+					<div class="gallery_list06_container swiper-container">
+						<ul class="gallery_list_ul swiper-wrapper">
+							<li class="gallery_list_li swiper-slide">
+								<a href="">
+									<div class="list_img"><img src="http://m.subway.co.kr/images/menu/sandwich_cl02.jpg" alt="item_name"></div>
+									<div class="list_txt">
+										<h4 class="item_name">Quisque tincidunt</h4>
+										<p class="item_txt">Duis et odio vel libero cursus pellentesque pretium porta orci.</p>
+									</div>
+								</a>
+							</li>
+							<li class="gallery_list_li swiper-slide">
+								<a href="">
+									<div class="list_img"><img src="http://m.subway.co.kr/images/menu/sandwich_cl04.jpg" alt="item_name"></div>
+									<div class="list_txt">
+										<h4 class="item_name">Quisque tincidunt</h4>
+										<p class="item_txt">Duis et odio vel libero cursus pellentesque pretium porta orci.</p>
+									</div>
+								</a>
+							</li>
+							<li class="gallery_list_li swiper-slide">
+								<a href="">
+									<div class="list_img"><img src="http://m.subway.co.kr/images/menu/sandwich_cl06.jpg" alt="item_name"></div>
+									<div class="list_txt">
+										<h4 class="item_name">Quisque tincidunt</h4>
+										<p class="item_txt">Duis et odio vel libero cursus pellentesque pretium porta orci.</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination pagination_yellow"></div>
+						<!-- Add Arrows -->
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+
+				</section>
+				<script>
+					var swiper = new Swiper('.gallery_list06_container', {
+					  slidesPerView: 1,
+					  spaceBetween: 0,
+					  loop: true,
+					  pagination: {
+						el: '.gallery_list06 .swiper-pagination',
+						clickable: true,
+					  },
+					  navigation: {
+						nextEl: '.gallery_list06 .swiper-button-next',
+						prevEl: '.gallery_list06 .swiper-button-prev',
+					  },
+					});
+				</script>
+				
+				<!-- quick_link02 -->
+				<style>
+					.mainpg_link01{
+						padding: 30px 0;
+					}
+					.mainpg_link01 .link_art{
+						margin-bottom: 30px;
+					}
+					.mainpg_link01 .link_box{
+						width: 90%;
+						padding: 40px 16px;
+						box-sizing: border-box;
+						display: flex;
+						flex-direction: column;
+						text-align: center;
+						color: #fff;
+						font-family: 'Noto Sans',Arial,sans-serif;
+					}
+					.mainpg_link01 .link_tit{
+						order: 1;
+						margin-bottom: 0;
+						font-size: 18px;
+						border: none;
+					}
+					.mainpg_link01 .link_tit a{
+						padding: 3px 16px;
+						border: 3px solid #fff;
+						border-radius: 30px;
+						color: #fff;
+					}
+					.mainpg_link01 .link_txt{
+						margin-bottom: 30px;
+						order: 0;
+						font-size: 18px;
+						letter-spacing: 0.1em;
+					}
+					.mainpg_link01 .link_art01{
+						position: relative;
+					}
+					.mainpg_link01 .link_art01 .link_box{
+						margin-left: auto;
+						margin-bottom: 140px;
+						border-radius: 40px 0 0 40px;
+						background-color: #ff8300;
+						position: relative;
+						z-index: 1;
+					}
+					.mainpg_link01 .link_art01 .link_img_back{
+						width: 100vw;
+						height: 250px;
+						position: absolute;
+						z-index: 0;
+						top: 80px;
+						right: 0;
+						background-repeat: no-repeat;
+						-webkit-background-size: cover;
+						background-size: cover;
+						background-position: center;
+					}
+				</style>
+				<section class="mainpg_link01">
+					<h2 class="blind">quick link01</h2>
+					
+					<article class="link_art link_art01">
+						<div class="link_box">
+							<h3 class="link_tit btn"><a href="">ARTISAN STORY<span class="blind">shorcut</span></a></h3>
+							<p class="link_txt">Fusce facilisis lorem sed aliquam feugiat.</p>
+						</div>
+						<div class="link_img_back" style="background-image: url(https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/20294344_2274795039459627_6411433453739904055_n.jpg?_nc_cat=103&_nc_ht=scontent-icn1-1.xx&oh=4988e0b25ca81e68ab0699ca5ac93e97&oe=5C8F3D8A)"></div>
+					</article>
+					
+				</section>
+<!-- 2 -->
+				<style>
+					.mainpg_link02{
+						position: relative;
+						height: 360px;
+						background-position: center;
+						-webkit-background-size: cover;
+						background-size: cover;
+						background-repeat: no-repeat;
+					}
+					.mainpg_link02 .link_box{
+						display: flex;
+						flex-direction: column;
+						width: 85%;
+						max-width: 400px;
+						padding: 30px 5%;
+						box-sizing: border-box;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%,-50%);
+						text-align: center;
+						background-color: rgba(1, 165, 226, 0.9);
+						border-radius: 30px;
+					}
+					.mainpg_link02 .link_tit{
+						order: 1;
+						margin: 0 auto;
+						width: 60%;
+						min-width: 160px;
+						max-width: 230px;
+						padding: 6px 10px;
+						font-size: 20px;
+						border: 2px solid #fff;
+						border-radius: 30px;
+						color: #fff;
+					}
+					.mainpg_link02 .link_txt{
+						order: 0;
+						color: #fff;
+						font-size: 18px;
+						line-height: 1.8;
+						margin-bottom: 30px;
+					}
+					
+					
+				</style>
+				
+				<section class="mainpg_link02" style="background-image: url(https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/20294344_2274795039459627_6411433453739904055_n.jpg?_nc_cat=103&_nc_ht=scontent-icn1-1.xx&oh=4988e0b25ca81e68ab0699ca5ac93e97&oe=5C8F3D8A)">
+					<h2 class="blind">quick link01</h2>
+					<div class="link_box">
+						<h3 class="link_tit btn"><a href="">ARTISAN STORY <span class="blind">shorcut</span></a></h3>
+						<p class="link_txt">Fusce facilisis lorem sed aliquam feugiat sed facilisis.</p>
+					</div>
+					
+				</section>
+				<!-- txt_list01 뉴스-->
+				<style>
+					
+				</style>
+				<section class="mainpg_news mainpg_txt_list">
+					<h2 class="title01">NEWS</h2>
+					<div class="txt_list01">
+						<ul class="txt_list_ul">
+							<li class="txt_list_li">
+								<a href="">
+									<h4 class="txt_tit"><strong class="post_title">title title title title title title title title title title title</strong><span class="post_views"><span class="blind">views</span>[2]</span></h4>
+									<div class="txt_txt">
+										txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt 
+									</div>
+								</a>
+
+							</li>
+						</ul>
+						<ul class="txt_list_ul">
+							<li class="txt_list_li">
+								<a href="">
+									<div class="txt_thum"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/41688352_2498732390399223_4866963588713021440_n.jpg?_nc_cat=110&amp;_nc_ht=scontent-icn1-1.xx&amp;oh=1ae5254a09920bd29526afc959e784b8&amp;oe=5CD09C8B" alt=""></div>
+									<h4 class="txt_tit"><strong class="post_title">title title title title title titletitle title title</strong><span class="post_views">[2]</span></h4>
+									<div class="txt_txt">
+										txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt 
+
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="txt_list_ul">
+							<li class="txt_list_li">
+								<a href="">
+									<div class="txt_thum"><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/41636683_2498732373732558_4032263984957620224_n.jpg?_nc_cat=104&amp;_nc_ht=scontent-icn1-1.xx&amp;oh=a1d25e214b08d04f26796bf0e6cec4ad&amp;oe=5C924E67" alt=""></div>
+									<h4 class="txt_tit"><strong class="post_title">title title title</strong></h4>
+									<div class="txt_txt">
+										txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt 
+
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="txt_list_ul">
+							<li class="txt_list_li">
+								<a href="">
+									<h4 class="txt_tit"><strong class="post_title">title title title</strong><span class="post_views">[2]</span></h4>
+									<div class="txt_txt">
+										txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt 
+
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="txt_list_ul">
+							<li class="txt_list_li">
+								<a href="">
+									<h4 class="txt_tit"><strong class="post_title">title title title</strong><span class="post_views">[2]</span></h4>
+									<div class="txt_txt">
+										txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt txttxt 
+
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_box"><a href="" class="btn_more btn-success">View More <span class="plus">+</span></a></div>
+				</section>
+				
+				
+				<!-- 본문 끝 -->
+
+			</div>
+		</div>
+		
+		
+		<!-- main end -->
+
+		<!-- footer start -->
+		<footer class="footer">
+			<div class="container">
+				<ul class="company">
+					<li><a href="http://cmy.artisanbakery.vn/document/aboutus" title="회사소개">회사소개</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/provision" title="이용약관">이용약관</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/privacy" title="개인정보 취급방침">개인정보 취급방침</a></li>
+				</ul>
+			</div>
+		</footer>
+		<!-- footer end -->
+	</div>
+	<aside class="menu" id="side_menu">
+		<div class="side_wr">
+			<div id="isroll_wrap" class="side_inner_rel">
+				<div class="side_inner_abs" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0.001s; transform: translate(0px, 0px) translateZ(0px);">
+					<div class="side_menu_top">
+						<div class="m_search">
+							<form name="mobile_header_search" id="mobile_header_search" action="http://cmy.artisanbakery.vn/search" onsubmit="return headerSearch(this);">
+								<input type="text" placeholder="Search" class="input" name="skeyword" accesskey="s">
+							</form>
+						</div>
+						<div class="m_login">
+							<span><a href="http://cmy.artisanbakery.vn/login?url=http%3A%2F%2Fcmy.artisanbakery.vn%2Fboard%2Fb-b-1" class="btn btn-primary" title="로그인"><i class="fa fa-sign-in"></i> LOGIN</a></span>
+							<span><a href="http://cmy.artisanbakery.vn/register" class="btn btn-primary" title="회원가입"><i class="fa fa-user"></i> 회원가입</a></span>
+						</div>
+					</div>
+					<ul class="m_board">
+					</ul>
+					<ul class="m_menu">
+						<li class="dropdown">
+							<a href="/group/g-a" title="제품소개" class="menu_category"><span class="icon_back"></span>제품소개</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="1"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-1">
+								<li><a href="/board/b-a-1" title="제품 1">제품 1</a></li>
+								<li><a href="/board/b-a-2" title="제품 2">제품 2</a></li>
+								<li><a href="/board/b-a-3" title="제품 3">제품 3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/group/g-b" title="새소식" class="menu_category"><span class="icon_back"></span>새소식</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="5"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-5">
+								<li><a href="/board/b-b-1" title="이벤트">이벤트</a></li>
+								<li><a href="/board/b-b-2" title="공지사항">공지사항</a></li>
+								<li><a href="http://dev.artisanbakery.vn/board/b-b-3" title="게시판 B-3">게시판 B-3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:;" title="아티산 베이커리" class="menu_category"><span class="icon_back"></span>아티산 베이커리</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="9"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-9">
+								<li><a href="/document/artisanbakery_info" title="아티산 베이커리 역사">아티산 베이커리 역사</a></li>
+								<li><a href="/board/b-c-2" title="매장 찾기">매장 찾기</a></li>
+								<li><a href="http://dev.artisanbakery.vn/board/b-c-3" title="게시판 C-3">게시판 C-3</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/faq/faq" title="고객센터" class="menu_category"><span class="icon_back"></span>고객센터</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="13"><i class="fa fa-chevron-down"></i></a>
+							<ul class="dropdown-menu drop-downorder-13">
+								<li><a href="/faq/faq" title="FAQ">FAQ</a></li>
+								<li><a href="/board/b-c-3" title="1:1 문의">1:1 문의</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</aside>
+
+
+</body>
+</html>
