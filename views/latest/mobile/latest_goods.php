@@ -1,5 +1,5 @@
+
 <div class="main_box1 pull-left gallery_list02">
-    
         
         
     <h3 class="title01"><?php echo html_escape(element('board_name', element('board', $view))); ?></h3>

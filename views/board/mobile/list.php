@@ -8,102 +8,51 @@
 
 </div>
 	<div class="table-top">
-		<?php if ( ! element('access_list', element('board', element('list', $view))) && element('use_rss_feed', element('board', element('list', $view)))) { ?>
-			<a href="<?php echo rss_url(element('brd_key', element('board', element('list', $view)))); ?>" class="btn btn-default btn-sm" title="<?php echo html_escape(element('board_name', element('board', element('list', $view)))); ?> RSS 보기"><i class="fa fa-rss"></i></a>
-		<?php } ?>
 
-		
-		<?php if (element('use_category', element('board', element('list', $view))) && ! element('cat_display_style', element('board', element('list', $view)))) { ?>
-			<select class="input" onchange="location.href='<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>?findex=<?php echo html_escape($this->input->get('findex')); ?>&category_id=' + this.value;">
-				<option value="">카테고리선택</option>
-				<?php
-				$category = element('category', element('board', element('list', $view)));
-				function ca_select($p = '', $category = '', $category_id = '') {
-					$return = '';
-					if ($p && is_array($p)) {
-						foreach ($p as $result) {
-							$exp = explode('.', element('bca_key', $result));
-							$len = (element(1, $exp)) ? strlen(element(1, $exp)) : 0;
-							$space = str_repeat('-', $len);
-							$return .= '<option value="' . html_escape(element('bca_key', $result)) . '"';
-							if (element('bca_key', $result) === $category_id) {
-								$return .= 'selected="selected"';
-							}
-							$return .= '>' . $space . html_escape(element('bca_value', $result)) . '</option>';
-							$parent = element('bca_key', $result);
-							$return .= ca_select(element($parent, $category), $category, $category_id);
-						}
-					}
-					return $return;
-				}
+        
+        <div >
+            <form class="navbar-form navbar-right pull-right" action="<?php echo current_full_url() ?>" onSubmit="return postSearch(this);">
+                <input type="hidden" name="findex" value="<?php echo html_escape($this->input->get('findex')); ?>" />
+                <input type="hidden" name="category_id" value="<?php echo html_escape($this->input->get('category_id')); ?>" />
+                <input type="hidden" name="sfield" value="post_title" />
+                <div class="form-group">
+                    
+                    <input type="text" class="input px200 mr10" placeholder="Search" name="skeyword" value="<?php echo html_escape($this->input->get('skeyword')); ?>" />
+                    <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+           
+            
+        
+        <script type="text/javascript">
+        //<![CDATA[
+        function postSearch(f) {
+            var skeyword = f.skeyword.value.replace(/(^\s*)|(\s*$)/g,'');
+            if (skeyword.length < 2) {
+                alert('2글자 이상으로 검색해 주세요');
+                f.skeyword.focus();
+                return false;
+            }
+            return true;
+        }
+        // function toggleSearchbox() {
+        //     $('.searchbox').show();
+        //     $('.searchbuttonbox').hide();
+        // }
+        <?php
 
-				echo ca_select(element(0, $category), $category, $this->input->get('category_id'));
-				?>
-			</select>
-		<?php } ?>
-		<div class="col-md-6 search_area">
-			<div class=" searchbox">
-				<form class="navbar-form navbar-right" action="<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>" onSubmit="return postSearch(this);">
-					<input type="hidden" name="findex" value="<?php echo html_escape($this->input->get('findex')); ?>" />
-					<input type="hidden" name="category_id" value="<?php echo html_escape($this->input->get('category_id')); ?>" />
-					<div class="form-group">
-						<select class="input select_search" name="sfield">
-							<option value="post_both" <?php echo ($this->input->get('sfield') === 'post_both') ? ' selected="selected" ' : ''; ?>>제목+내용</option>
-							<option value="post_title" <?php echo ($this->input->get('sfield') === 'post_title') ? ' selected="selected" ' : ''; ?>>제목</option>
-							<option value="post_content" <?php echo ($this->input->get('sfield') === 'post_content') ? ' selected="selected" ' : ''; ?>>내용</option>
-							<option value="post_nickname" <?php echo ($this->input->get('sfield') === 'post_nickname') ? ' selected="selected" ' : ''; ?>>회원명</option>
-							<option value="post_userid" <?php echo ($this->input->get('sfield') === 'post_userid') ? ' selected="selected" ' : ''; ?>>회원아이디</option>
-						</select>
-						<input type="text" class="input inp_search" placeholder="Search" name="skeyword" value="<?php echo html_escape($this->input->get('skeyword')); ?>" />
-						<button class="btn btn-success btn-sm" type="submit"><i class="fa fa-search"></i></button>
-					</div>
-				</form>
-			</div>
-			<div class="searchbuttonbox">
-				<button class="btn btn-success btn-sm pull-right" type="button" onClick="toggleSearchbox();"><i class="fa fa-search"></i></button>
-			</div>
-			<?php if (element('point_info', element('list', $view))) { ?>
-				<div class="point-info pull-right mr10">
-					<button type="button" class="btn-point-info" ><i class="fa fa-info-circle"></i></button>
-					<div class="point-info-content alert alert-warning"><strong>포인트안내</strong><br /><?php echo element('point_info', element('list', $view)); ?></div>
-				</div>
-			<?php } ?>
-		</div>
-		<select class="input" onchange="location.href='<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>?category_id=<?php echo html_escape($this->input->get('categroy_id')); ?>&amp;findex=' + this.value;">
-			<option value="">정렬하기</option>
-			<option value="post_datetime desc" <?php echo $this->input->get('findex') === 'post_datetime desc' ? 'selected="selected"' : '';?>>날짜순</option>
-			<option value="post_hit desc" <?php echo $this->input->get('findex') === 'post_hit desc' ? 'selected="selected"' : '';?>>조회수</option>
-			<option value="post_comment_count desc" <?php echo $this->input->get('findex') === 'post_comment_count desc' ? 'selected="selected"' : '';?>>댓글수</option>
-			<?php if (element('use_post_like', element('board', element('list', $view)))) { ?>
-				<option value="post_like desc" <?php echo $this->input->get('findex') === 'post_like desc' ? 'selected="selected"' : '';?>>추천순</option>
-			<?php } ?>
-		</select>
-		<script type="text/javascript">
-		//<![CDATA[
-		function postSearch(f) {
-			var skeyword = f.skeyword.value.replace(/(^\s*)|(\s*$)/g,'');
-			if (skeyword.length < 2) {
-				alert('2글자 이상으로 검색해 주세요');
-				f.skeyword.focus();
-				return false;
-			}
-			return true;
-		}
-		function toggleSearchbox() {
-			$('.searchbox').show();
-			$('.searchbuttonbox').hide();
-		}
-		<?php
-			if ($this->input->get('skeyword')) {
-				echo 'toggleSearchbox();';
-			}
-		?>
-		$(document).on('click', '.btn-point-info', function() {
-			$('.point-info-content').toggle();
-		});
-		//]]>
-		</script>
-	</div>
+            // if ($this->input->get('skeyword')) {
+            //     echo 'toggleSearchbox();';
+            // }
+        ?>
+        $(document).on('click', '.btn-point-info', function() {
+            $('.point-info-content').toggle();
+        });
+        //]]>
+        </script>
+    </div>
+
 
 	<?php
 	if (element('use_category', element('board', element('list', $view))) && element('cat_display_style', element('board', element('list', $view))) === 'tab') {
@@ -227,9 +176,9 @@
 
 	<div class="table-bottom mt20 post_btn_box">
 		<div class="pull-left mr20">
-			<a href="<?php echo element('list_url', element('list', $view)); ?>" class="btn btn-primary btn-sm">목록</a>
+
 			<?php if (element('search_list_url', element('list', $view))) { ?>
-				<a href="<?php echo element('search_list_url', element('list', $view)); ?>" class="btn btn-default btn-sm">검색목록</a>
+				<a href="<?php echo element('list_url', element('list', $view)); ?>" class="btn btn-default btn-sm">전체목록</a>
 			<?php } ?>
 		</div>
 		<?php if (element('is_admin', $view)) { ?>

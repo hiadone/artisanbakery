@@ -10,6 +10,7 @@
 <?php if (element('meta_author', $layout)) { ?><meta name="author" content="<?php echo html_escape(element('meta_author', $layout)); ?>"><?php } ?>
 <?php if (element('favicon', $layout)) { ?><link rel="shortcut icon" type="image/x-icon" href="<?php echo element('favicon', $layout); ?>" /><?php } ?>
 <?php if (element('canonical', $view)) { ?><link rel="canonical" href="<?php echo element('canonical', $view); ?>" /><?php } ?>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/boyoon.css'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo element('layout_skin_url', $layout); ?>/css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/page.css'); ?>" />
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" />
@@ -61,16 +62,59 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 				<a href="javascript:;" id="btn_side"><img src="<?php echo base_url('assets/images/h_icon_ham.png'); ?>" alt="menu" title="menu" /></a>
 			</div>
 		</div>
+		
 	</header>
+	
 	<!-- nav end -->
 	<!-- header end -->
-
+	
 	<!-- main start -->
 	<div class="main">
-		<div class="container wrap wrap01">
 
+		<div class="container  wrap01">
+		<?php
+
+	    if (element('menu', $layout)) {
+	        $select='';
+	        $menu = element('menu', $layout);
+
+	        if (element(element(0,element('active',$menu)), $menu)) {
+	        	
+	            $select = '<div class="page_top01">
+	            				<h2 class="title06">'.element('men_name',element(element(1,element('active',$menu)),element(element(0,element('active',$menu)), $menu))).'</h2>
+									<div class="page_top_menu">
+									 	<ul class="page_top_ul">
+							';
+	            foreach (element(element(0,element('active',$menu)), $menu) as $mkey => $mval) {
+	                
+	                    $mlink = element('men_link', $mval) ? element('men_link', $mval) : 'javascript:;';
+	                    $active='';
+	                    
+	                    if(element('men_id',$mval) === element(1,element('active',$menu))) {
+	                        
+	                        $active=' active' ; 
+	                    }
+	                    $select .= '<li class="page_top_li'.$active.'"><a href="' . $mlink . '" ' . element('men_custom', $mval);
+	                    if (element('men_target', $mval)) {
+	                        $select .= ' target="' . element('men_target', $mval) . '"';
+	                    }
+	                    $select .= ' >' . html_escape(element('men_name', $mval)) . '</a></li>';
+
+	                    $select .= "\n";
+	                
+	            }
+	            $select .= '</ul>
+						</div>
+					</div>';
+				echo $select;
+	        }
+	        
+	    }
+	    
+
+	 	?>
 				<!-- 본문 시작 -->
-				<?php if (isset($yield))echo $yield; ?>
+				 <?php if (isset($yield))echo $yield; ?>
 				<!-- 본문 끝 -->
 
 		</div>
@@ -168,6 +212,23 @@ $(document).on('click', '.viewpcversion', function(){
 $(document).on('click', '.viewmobileversion', function(){
 	Cookies.set('device_view_type', 'mobile', { expires: 1 });
 });
+
+	$(function(){
+		//page_top_menu 위치
+		var titHeight = $('.page_top_menu').siblings('.title06').outerHeight();
+		$('.page_top_menu').css('top',titHeight);
+		//open list_menu
+			$('.page_top01 .title06').on('click',function(){
+				var $listmenu = $(this).siblings('.page_top_menu')
+				$listmenu.slideToggle(400,function(){
+					$listmenu.stop(true,true);
+				});
+			
+			});
+		
+		
+		//end
+		});
 </script>
 <?php echo element('popup', $layout); ?>
 <?php echo $this->cbconfig->item('footer_script'); ?>
