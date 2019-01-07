@@ -15,49 +15,39 @@
 	<div class="swiper-button-prev"></div>
 </section>
 
+<section class="gallery_list06">
+    <h2 class="title12">Artisan Menu</h2>
+	<ul class="tab_cate01">
+		<?php  
 
-	
-
+		foreach(element('product_list', $view) as $key => $value){
+			if($key ===0)
+				echo '<li class="active '.element('brd_key', $value).'"><a onClick="product_tab_change(\''.element('brd_key', $value).'\')">'.element('brd_name', $value).'</a></li>';
+			else 
+				echo '<li class="  '.element('brd_key', $value).'"><a onClick="product_tab_change(\''.element('brd_key', $value).'\')">'.element('brd_name', $value).'</a></li>';
+		}
+		?>
+		
+	</ul>
 	<?php 
-	$config = array(
+	foreach(element('product_list', $view) as $key => $value){
+
+		if($key===0)  $active ="active";
+        else $active ="";
+		$config = array(
 			'skin' => 'mobile',
-			'brd_key' => 'b-a-1',
+			'brd_key' => element('brd_key', $value),
 			'is_gallery' => 1,
 			'cache_minute' => 1,
+			'active' => $active,
 		);
-	echo $this->board->latest_main($config);
+		echo $this->board->latest_main($config);
+	}
 
-	?>
+	 ?>
 
-
-
+</section>
 	
-
-	<?php 
-	$config = array(
-			'skin' => 'mobile',
-			'brd_key' => 'b-a-2',
-			'is_gallery' => 1,
-			'cache_minute' => 1,
-		);
-	echo $this->board->latest_main($config);
-
-	?>
-
-
-
-	
-
-	<?php 
-	$config = array(
-			'skin' => 'mobile',
-			'brd_key' => 'b-a-3',
-			'is_gallery' => 1,
-			'cache_minute' => 1,
-		);
-	echo $this->board->latest_main($config);
-
-	?>
 
 
 <script>
@@ -79,157 +69,25 @@
 		},
 	});
 
-	var swiper = new Swiper('.gallery_list06.b-a-1 .gallery_list06_container', {
+	var swiper = new Swiper('div.gallery_list06_container', {
 	  slidesPerView: 1,
 	  spaceBetween: 0,
 	  loop: true,
 	  pagination: {
-		el: '.gallery_list06.b-a-1 .swiper-pagination',
+		el: 'div.gallery_list06_container .swiper-pagination',
 		clickable: true,
 	  },
 	  navigation: {
-		nextEl: '.gallery_list06.b-a-1 .swiper-button-next',
-		prevEl: '.gallery_list06.b-a-1 .swiper-button-prev',
+		nextEl: 'div.gallery_list06_container .swiper-button-next',
+		prevEl: 'div.gallery_list06_container.swiper-button-prev',
 	  },
 	});
 
 
-	var swiper = new Swiper('.gallery_list06.b-a-2 .gallery_list06_container', {
-	  slidesPerView: 1,
-	  spaceBetween: 0,
-	  loop: true,
-	  pagination: {
-		el: '.gallery_list06.b-a-2 .swiper-pagination',
-		clickable: true,
-	  },
-	  navigation: {
-		nextEl: '.gallery_list06.b-a-2 .swiper-button-next',
-		prevEl: '.gallery_list06.b-a-2 .swiper-button-prev',
-	  },
-	});
-
-
-	var swiper = new Swiper('.gallery_list06.b-a-3 .gallery_list06_container', {
-	  slidesPerView: 1,
-	  spaceBetween: 0,
-	  loop: true,
-	  pagination: {
-		el: '.gallery_list06.b-a-3 .swiper-pagination',
-		clickable: true,
-	  },
-	  navigation: {
-		nextEl: '.gallery_list06.b-a-3 .swiper-button-next',
-		prevEl: '.gallery_list06.b-a-3 .swiper-button-prev',
-	  },
-	});
+	
 </script>
 <?php  ?>
-<style>
-					.mainpg_link02{
-						position: relative;
-						height: 360px;
-						background-position: center;
-						-webkit-background-size: cover;
-						background-size: cover;
-						background-repeat: no-repeat;
-					}
-					.mainpg_link02 .link_box{
-						display: flex;
-						flex-direction: column;
-						width: 85%;
-						max-width: 400px;
-						padding: 30px 5%;
-						box-sizing: border-box;
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%,-50%);
-						text-align: center;
-						background-color: rgba(1, 165, 226, 0.9);
-						border-radius: 30px;
-					}
-					.mainpg_link02 .link_tit{
-						order: 1;
-						margin: 0 auto;
-						width: 60%;
-						min-width: 160px;
-						max-width: 230px;
-						padding: 6px 10px;
-						font-size: 20px;
-						border: 2px solid #fff;
-						border-radius: 30px;
-						color: #fff;
-					}
-					.mainpg_link02 .link_txt{
-						order: 0;
-						color: #fff;
-						font-size: 18px;
-						line-height: 1.8;
-						margin-bottom: 30px;
-					}
-					
-					
-				</style>
 
-				<style>
-					.mainpg_link01{
-						padding: 30px 0;
-					}
-					.mainpg_link01 .link_art{
-						margin-bottom: 30px;
-					}
-					.mainpg_link01 .link_box{
-						width: 90%;
-						padding: 40px 16px;
-						box-sizing: border-box;
-						display: flex;
-						flex-direction: column;
-						text-align: center;
-						color: #fff;
-						font-family: 'Noto Sans',Arial,sans-serif;
-					}
-					.mainpg_link01 .link_tit{
-						order: 1;
-						margin-bottom: 0;
-						font-size: 18px;
-						border: none;
-					}
-					.mainpg_link01 .link_tit a{
-						padding: 3px 16px;
-						border: 3px solid #fff;
-						border-radius: 30px;
-						color: #fff;
-					}
-					.mainpg_link01 .link_txt{
-						margin-bottom: 30px;
-						order: 0;
-						font-size: 18px;
-						letter-spacing: 0.1em;
-					}
-					.mainpg_link01 .link_art01{
-						position: relative;
-					}
-					.mainpg_link01 .link_art01 .link_box{
-						margin-left: auto;
-						margin-bottom: 140px;
-						border-radius: 40px 0 0 40px;
-						background-color: #ff8300;
-						position: relative;
-						z-index: 1;
-					}
-					.mainpg_link01 .link_art01 .link_img_back{
-						width: 100vw;
-						height: 250px;
-						position: absolute;
-						z-index: 0;
-						top: 80px;
-						right: 0;
-						background-repeat: no-repeat;
-						-webkit-background-size: cover;
-						background-size: cover;
-						background-position: center;
-					}
-				</style>
 <section class="mainpg_link01">
 	<h2 class="blind">quick link01</h2>
 	
@@ -265,4 +123,17 @@
 	echo $this->board->latest_main_free($config);
 
 	?>
-<?php
+
+<script>
+	function product_tab_change(product_tab){
+
+		$('ul.tab_cate01 li').removeClass('active');
+		$('ul.tab_cate01 li.'+product_tab).addClass('active');
+
+		$("div.gallery_list06_container").hide();
+	    $("div.gallery_list06_container."+product_tab).fadeIn();
+		
+	}
+
+	product_tab_change('b-a-1');
+</script>

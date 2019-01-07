@@ -1,6 +1,5 @@
-<section class="gallery_list06 <?php echo element('brd_key', element('board', $view)); ?>">
-    <h2 class="title01"><?php echo html_escape(element('board_name', element('board', $view))); ?> Menu</h2>
-    <div class="gallery_list06_container swiper-container">
+
+    <div class="gallery_list06_container swiper-container <?php echo element('brd_key', element('board', $view)); ?> <?php echo element('active', element('config', $view)); ?>" >
         <ul class="gallery_list_ul swiper-wrapper">
         <?php
         $i = 0;
@@ -33,5 +32,5 @@
         <div class="swiper-button-prev"></div>
     </div>
     <!-- Initialize Swiper -->
-</section>  
+
 
