@@ -2,7 +2,7 @@
 
 <div class="findarea">
 	<div class="table-box">
-		<div class="table-heading">계정 찾기</div>
+		<div class="table-heading title10">계정 찾기</div>
 		<div class="table-body">
 			<div class=" findaccount">
 				<?php
@@ -12,11 +12,11 @@
 				echo form_open(current_full_url(), $attributes);
 				?>
 					<input type="hidden" name="findtype" value="findidpw" />
-					<h3>이메일 주소로 계정 찾기</h3>
+					<h3 class="title10">이메일 주소로 계정 찾기</h3>
 					<p class="text">아이디/비밀번호는 가입시 등록한 메일 주소로 알려드립니다. 가입할 때 등록한 메일 주소를 입력하고 "ID/PW 찾기" 버튼을 클릭해주세요.</p>
 					<div class="group">
 						<input type="email" name="idpw_email" id="idpw_email" class="input" placeholder="Email Address" />
-						<button class="btn btn-black btn-sm" type="submit">ID/PW 찾기</button>
+						<button class="btn btn-primary btn-sm" type="submit">ID/PW 찾기</button>
 					</div>
 				<?php
 				echo form_close();

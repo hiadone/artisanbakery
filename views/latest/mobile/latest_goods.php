@@ -22,7 +22,7 @@
     ?>
         </div>
             <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination pagination_green"></div>
     </div>
     
     

@@ -406,7 +406,7 @@ class Managelayout extends CI_Controller
             $return = '
             <footer>
         		<div class="container">
-        			<ul class="company pull-left">
+        			<ul class="company">
         			<li><a href="'.document_url('aboutus').'" title="회사소개">회사소개</a></li>
         			<li><a href="'.document_url('provision').'" title="이용약관">이용약관</a></li>
         			<li><a href="'.document_url('privacy').'" title="개인정보 취급방침">개인정보 취급방침</a></li>
@@ -420,7 +420,7 @@ class Managelayout extends CI_Controller
             $return = '
             <footer>
         		<div class="container">
-        			<ul class="company pull-left">
+        			<ul class="company">
         			<li><a href="'.document_url('aboutus').'" title="회사소개">회사소개</a></li>
         			<li><a href="'.document_url('provision').'" title="이용약관">이용약관</a></li>
         			<li><a href="'.document_url('privacy').'" title="개인정보 취급방침">개인정보 취급방침</a></li>

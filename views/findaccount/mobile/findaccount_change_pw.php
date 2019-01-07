@@ -2,7 +2,7 @@
 
 <div class="findarea">
 	<div class="table-box">
-		<div class="table-heading">패스워드 변경하기</div>
+		<div class="table-heading title10">패스워드 변경하기</div>
 		<div class="table-body change_pw">
 			<?php
 			echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>');
@@ -13,23 +13,24 @@
 				$attributes = array('class' => 'form-horizontal', 'name' => 'fresetpw', 'id' => 'fresetpw');
 				echo form_open(current_full_url(), $attributes);
 			?>
-				<h3>패스워드 변경</h3>
+				<h3 class="title10">패스워드 변경</h3>
 				<ol class="change_password">
-					<li>
-						<span>아이디</span>
-						<?php echo element('mem_userid', $view); ?>
+					<li class="user_id">
+						<!-- <span>아이디</span> -->
+						회원님의 아이디는 <strong>
+						<?php echo element('mem_userid', $view); ?></strong> 입니다.
 					</li>
-					<li>
+					<li class="inp_password">
 						<span>새로운 패스워드</span>
 						<input type="password" name="new_password" id="new_password" class="input" placeholder="Password" />
 					</li>
-					<li>
+					<li class="inp_password">
 						<span>새로운 패스워드(재입력)</span>
 						<input type="password" name="new_password_re" id="new_password_re" class="input" placeholder="Password" />
 					</li>
-					<li>
+					<li class="btn_box">
 						<span></span>
-						<button type="submit" class="btn btn-black btn-sm">패스워드 변경하기</button>
+						<button type="submit" class="btn btn-primary btn-sm">패스워드 변경하기</button>
 					</li>
 				</ol>
 			<?php

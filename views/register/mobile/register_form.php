@@ -2,7 +2,7 @@
 
 <div class="register">
 	<div class="table-box">
-		<div class="table-heading">회원 가입</div>
+		<div class="table-heading title10">회원 가입</div>
 		<div class="table-body">
 			<?php
 			echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>');
@@ -124,8 +124,8 @@
 					<li>
 						<span></span>
 						<div class="group">
-							<button type="submit" class="btn btn-success">회원가입</button>
-							<a href="<?php echo site_url(); ?>" class="btn btn-default">취소</a>
+							<button type="submit" class="btn btn-success pull-right">회원가입</button>
+							<a href="<?php echo site_url(); ?>" class="btn btn-silver pull-right">취소</a>
 						</div>
 					</li>
 				</ol>

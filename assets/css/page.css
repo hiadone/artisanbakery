@@ -92,7 +92,6 @@ figure{
 	font-size: 24px;
 	font-family: 'Noto Sans',Arial,sans-serif;
 	border-bottom: none;
-	color: #0d4633;
 }
 .main .title01:after {
     content: '';
@@ -195,6 +194,58 @@ figure{
 	background-color: #fff;
 	border-bottom: 2px solid #009223;
 }
+/* title11 빵 배경*/
+.main .title11{
+	padding: 20px 0;
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Noto Sans',Arial,sans-serif;
+	border-bottom: none;
+	position: relative;
+	z-index: 100;
+}
+.main .title11:after {
+	content: '';
+	display: inline-block;
+	width: 50px;
+	height: 40px;
+	vertical-align: bottom;
+	background: url(http://cmy.artisanbakery.vn/assets/images/back_tit11.svg) no-repeat center;
+	background-size: 100%;
+	margin: 0 0 0 -20px;
+	position: relative;
+	z-index: -1;
+}
+/* title12 쉼표 */
+.main .title12{
+	padding: 20px 0;
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Noto Sans',Arial,sans-serif;
+	border-bottom: none;
+	position: relative;
+	z-index: 100;
+}
+.main .title12:before,
+.main .title12:after {
+	content: '';
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	vertical-align: bottom;
+	background-size: 100%;
+	position: relative;
+	top: -10px;
+	z-index: -1;
+	margin: 0 8px;
+}
+.main .title12:before{
+	background: url(http://cmy.artisanbakery.vn/assets/images/quotes_before.svg) no-repeat center;
+	
+}
+.main .title12:after{
+	background: url(http://cmy.artisanbakery.vn/assets/images/quotes_after.svg) no-repeat center;
+}
 
 /* header */
 .header{
@@ -261,6 +312,13 @@ footer .company li:last-child a{
 }
 #side_menu .side_menu_top{
 	background-color: #009223;
+}
+#side_menu .m_logo{ 
+	text-align: center;
+	padding: 20px 0;
+}
+#side_menu .m_logo img{
+	width: 120px;
 }
 #side_menu .m_search .input{
 	width: 94%;
@@ -342,8 +400,9 @@ footer .company li:last-child a{
 	height: 30px;
 	margin-right: 10px;
 	background-image:url(http://placehold.it/30x30);
+	background-repeat:no-repeat;
 	background-position:center;
-	background-size: cover;
+	background-size: contain;
 }
 #side_menu .dropdown-menu{
 	
@@ -1053,24 +1112,37 @@ footer .company li:last-child a{
 	width:100%;
 	min-height: 100%;
 }
-/* 메인페이지 슬라이드 배너 */
-.slide_bnr01 {
-	margin-bottom: ;
+/* tab_cate01 ul.tab_cate01>li */
+.tab_cate01{
+	text-align: center;
+	margin: 0 0 16px;
 }
-
-.slide_bnr01 .slide_bnr_ul {}
-
+.tab_cate01 li{
+	display: inline-block;
+	padding: 0 5px;
+}
+.tab_cate01 li a{
+	display: inline-block;
+	padding: 3px 0;
+	font-size: 15px;
+}
+.tab_cate01 .active a{
+	color: #009223;
+	border-bottom: 2px solid #009223;
+}
+/* 메인페이지 슬라이드 배너 */
+.slide_bnr01 {}
 .slide_bnr01 .slide_bnr_li {
 	width: 100%;
-	/*height: 100vw;*/
+	/* height: 100vw;
+	max-height: 420px; */
 	overflow: hidden;
 }
-
 .slide_bnr01 .bnr_img {
 	width: 100%;
 	height: 100%;
+	display: block;
 }
-
 .slide_bnr01 .swiper-pagination {
 	bottom: 16px;
 }
@@ -1081,7 +1153,6 @@ footer .company li:last-child a{
 	height: 36px;
 	opacity: 0.8;
 }
-
 .slide_bnr01 .swiper-button-next:before,
 .slide_bnr01 .swiper-button-prev:before {
 	content: '';
@@ -1089,17 +1160,14 @@ footer .company li:last-child a{
 	width: 20px;
 	height: 20px;
 }
-
 .slide_bnr01 .swiper-button-next {
 	text-align: right;
 	right: 0;
 }
-
 .slide_bnr01 .swiper-button-prev {
 	text-align: left;
 	left: 0;
 }
-
 .slide_bnr01 .swiper-button-next:before {
 	border-top: 4px solid #fff;
 	border-right: 4px solid #fff;
@@ -1111,11 +1179,113 @@ footer .company li:last-child a{
 	border-left: 4px solid #fff;
 	transform: rotate(-45deg);
 }
-
 .slide_bnr01 .swiper-button-next:focus,
 .slide_bnr01 .swiper-button-prev:focus {
 	outline: none;
 }
+/* 메인페이지 링크 */
+/* 링크 시안1 */
+.mainpg_link01{
+	padding: 30px 0;
+}
+.mainpg_link01 .link_art{
+	margin-bottom: 30px;
+}
+.mainpg_link01 .link_box{
+	width: 90%;
+	padding: 40px 16px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: #fff;
+	font-family: 'Noto Sans',Arial,sans-serif;
+}
+.mainpg_link01 .link_tit{
+	order: 1;
+	margin-bottom: 0;
+	font-size: 18px;
+	border: none;
+}
+.mainpg_link01 .link_tit a{
+	padding: 3px 16px;
+	border: 3px solid #fff;
+	border-radius: 30px;
+	color: #fff;
+}
+.mainpg_link01 .link_txt{
+	margin-bottom: 30px;
+	order: 0;
+	font-size: 18px;
+	letter-spacing: 0.1em;
+}
+.mainpg_link01 .link_art01{
+	position: relative;
+}
+.mainpg_link01 .link_art01 .link_box{
+	margin-left: auto;
+	margin-bottom: 140px;
+	border-radius: 40px 0 0 40px;
+	background-color: #ff8300;
+	position: relative;
+	z-index: 1;
+}
+.mainpg_link01 .link_art01 .link_img_back{
+	width: 100vw;
+	height: 250px;
+	position: absolute;
+	z-index: 0;
+	top: 80px;
+	right: 0;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+/* 링크 시안2 */
+.mainpg_link02{
+	position: relative;
+	height: 360px;
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.mainpg_link02 .link_box{
+	display: flex;
+	flex-direction: column;
+	width: 85%;
+	max-width: 400px;
+	padding: 30px 5%;
+	box-sizing: border-box;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	background-color: rgba(1, 165, 226, 0.9);
+	border-radius: 30px;
+}
+.mainpg_link02 .link_tit{
+	order: 1;
+	margin: 0 auto;
+	width: 60%;
+	min-width: 160px;
+	max-width: 230px;
+	padding: 6px 10px;
+	font-size: 20px;
+	border: 2px solid #fff;
+	border-radius: 30px;
+	color: #fff;
+}
+.mainpg_link02 .link_txt{
+	order: 0;
+	color: #fff;
+	font-size: 18px;
+	line-height: 1.8;
+	margin-bottom: 30px;
+}
+
 /* 메인페이지 뉴스 */
 .mainpg_news{
 	padding: 30px 0;
@@ -1138,15 +1308,12 @@ footer .company li:last-child a{
 .btn_more{
 	display: block;
 	width: 50%;
-	margin: 20px auto 0;
+	margin: 20px auto;
 	padding: 8px 0;
 	text-align: center;
 	font-size: 18px;
 	border-radius: 30px;
-/*
-	background-color: #ffce32;
-	color: #fff;
-*/
+	clear: both;
 }
 .btn_more .plus{
 	font-weight: bold;
@@ -1232,7 +1399,7 @@ footer .company li:last-child a{
 	padding: 0 3%;
 	position: absolute;
 	top: 62px;
-	left: auto;
+	left: 0;
 	box-sizing: border-box;
 	width: 100%;
 	height: calc(100% - 62px);
@@ -1648,6 +1815,7 @@ footer .company li:last-child a{
 	position: relative;
 	text-align: center;
 	font-family: 'Noto Sans',Arial,sans-serif;
+	margin-top: 20px;
 }
 .goods_tit .goods_cate{
 	margin-bottom: 10px;

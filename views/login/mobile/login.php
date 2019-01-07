@@ -2,7 +2,7 @@
 
 <div class="access">
 	<div class="table-box">
-		<div class="table-heading title05">로그인</div>
+		<div class="table-heading title10">로그인</div>
 		<div class="table-body">
 			<?php
 			echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>');
@@ -13,15 +13,15 @@
 			?>
 				<input type="hidden" name="url" value="<?php echo html_escape($this->input->get_post('url')); ?>" />
 				<ol class="loginform">
-					<li>
+					<li class="inp_user_id">
 						<span><?php echo element('userid_label_text', $view);?></span>
 						<input type="text" name="mem_userid" class="input" value="<?php echo set_value('mem_userid'); ?>" accesskey="L" />
 					</li>
-					<li>
+					<li class="inp_password">
 						<span>비밀번호</span>
 						<input type="password" class="input" name="mem_password" />
 					</li>
-					<li>
+					<li class="btn_box">
 						<span></span>
 						<button type="submit" class="btn btn-primary btn-sm">로그인</button>
 						<label for="autologin">

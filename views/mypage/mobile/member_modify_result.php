@@ -22,8 +22,9 @@
 			<div class="table-heading">회원 정보 수정</div>
 			<div class="table-body">
 				<div class="msg_content">
+					<div class="img"><img src="<?php echo base_url('assets/images/info_check.png'); ?>" alt="check"></div>
 					<?php echo element('result_message', $view); ?>
-					<p class="btn_final">
+					<p class="btn_final mt10">
 						<a href="<?php echo site_url(); ?>" class="btn btn-danger" title="<?php echo html_escape($this->cbconfig->item('site_title'));?>">홈페이지로 이동</a>
 					</p>
 				</div>

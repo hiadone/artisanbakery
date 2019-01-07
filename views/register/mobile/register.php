@@ -9,7 +9,7 @@
 	?>
 		<input type="hidden" name="register" value="1" />
 		<div class="table-box">
-			<div class="table-heading">회원가입 약관</div>
+			<div class="table-heading title10">회원가입 약관</div>
 			<div class="table-body">
 				<ol class="registeragree">
 					<li>
