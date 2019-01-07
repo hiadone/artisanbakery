@@ -1,8 +1,6 @@
 <?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/style.css'); ?>
 <section class="sect_faq">
-<div class="page_top01">
-<h3 class="title06"><?php echo element('fgr_title', element('faqgroup', $view)); ?></h3>
-</div>
+
 <form class="search_box text-center mb20" action="<?php echo current_url(); ?>" onSubmit="return faqSearch(this)">
 	<input type="text" name="skeyword" value="<?php echo html_escape($this->input->get('skeyword')); ?>" class="input" placeholder="Search" />
 	<button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>

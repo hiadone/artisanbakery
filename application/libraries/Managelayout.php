@@ -237,6 +237,26 @@ class Managelayout extends CI_Controller
 			$CI->load->model('Menu_model');
 			$data['menu'] = $CI->Menu_model->get_all_menu($device_view_type);
 
+			if ($data['menu'] && element('page_url', $config)) {
+                $menu = $data['menu'];
+
+                $menu_keys=array_keys(element(0, $menu));
+
+                if (element(0, $menu)) {
+                    foreach (element(0, $menu) as $mkey => $mval) {
+                        if (element(element('men_id', $mval), $menu)) {
+                            foreach (element(element('men_id', $mval), $menu) as $skey => $sval) {
+
+                                if(str_replace("/","",element('men_link', $sval)) === str_replace("/","",element('page_url', $config))) 
+                                    $data['menu']['active']= array(element('men_id', $mval),element('men_id', $sval));
+                            }
+                            
+
+                        } 
+                    }
+                }
+                
+            }
 			//팝업관리
 			$CI->load->library('popuplib');
 			$data['popup'] = $CI->popuplib->display_popup();

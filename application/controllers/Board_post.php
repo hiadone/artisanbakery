@@ -115,6 +115,8 @@ class Board_post extends CB_Controller
 			'meta_keywords' => $meta_keywords,
 			'meta_author' => $meta_author,
 			'page_name' => $page_name,
+			'page_url' => $this->uri->uri_string(),
+			
 		);
 		$view['layout'] = $this->managelayout->front($layoutconfig, $this->cbconfig->get_device_view_type());
 		$this->data = $view;
@@ -933,6 +935,7 @@ class Board_post extends CB_Controller
 				'meta_keywords' => $meta_keywords,
 				'meta_author' => $meta_author,
 				'page_name' => $page_name,
+				'page_url' => '/board/'.element('brd_key', $board),
 			);
 			$view['layout'] = $this->managelayout->front($layoutconfig, $this->cbconfig->get_device_view_type());
 			$this->data = $view;
@@ -1215,6 +1218,8 @@ class Board_post extends CB_Controller
 					= $this->Post_meta_model
 					->get_all_meta(element('post_id', $val));
 
+				$result['list'][$key]['extravars'] = $this->Post_extra_vars_model->get_all_meta(element('post_id', $val));
+
 				if ($this->cbconfig->get_device_view_type() === 'mobile') {
 					$result['list'][$key]['title'] = element('mobile_subject_length', $board)
 						? cut_str(element('post_title', $val), element('mobile_subject_length', $board))
@@ -1309,7 +1314,8 @@ class Board_post extends CB_Controller
 						$thumb_url = get_post_image_url(element('post_content', $val), $gallery_image_width, $gallery_image_height);
 						$result['list'][$key]['thumb_url'] = $thumb_url
 							? $thumb_url
-							: thumb_url('', '', $gallery_image_width, $gallery_image_height);
+							: '';
+							// : thumb_url('', '', $gallery_image_width, $gallery_image_height);
 
 						$result['list'][$key]['origin_image_url'] = $thumb_url;
 					}
