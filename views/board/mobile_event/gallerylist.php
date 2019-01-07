@@ -5,9 +5,8 @@
 
 
 <div class="board">
-	
-	
 
+	
 	
 
 	<?php
@@ -19,9 +18,7 @@
 		<div><label for="all_boardlist_check"><input id="all_boardlist_check" onclick="if (this.checked) all_boardlist_checked(true); else all_boardlist_checked(false);" type="checkbox" /> 전체선택</label></div>
 	<?php } ?>
 
-	
-
-	<div class="gallery_list01">
+	<div class=" gallery_list01">
 	<?php
 	$i = 0;
 	$open = false;
@@ -29,52 +26,43 @@
 	if (element('list', element('data', element('list', $view)))) {
 		foreach (element('list', element('data', element('list', $view))) as $result) {
 			if ($cols && $i % $cols === 0) {
-				echo '<ul class="gallery_list_ul">';
+				echo '<ul class="mt20 gallery_list_ul">';
 				$open = true;
 			}
 			$marginright = (($i+1)% $cols === 0) ? 0 : 2;
 	?>
 		<li class="gallery-box gallery_list_li" style="width:<?php echo element('gallery_percent', element('board', element('list', $view))); ?>%;margin-right:<?php echo $marginright;?>%;">
 			<?php if (element('is_admin', $view)) { ?><input type="checkbox" name="chk_post_id[]" value="<?php echo element('post_id', $result); ?>" /><?php } ?>
-			<div>
-				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="thumbnail img-responsive"  /></div></a>
+			<div class="list_img">
+				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><img src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="thumbnail img-responsive"/></a>
 			</div>
-			<p class="list_txt item_name ">
-				<a href="<?php echo element('post_url', $result); ?>" style="
-					<?php
-					if (element('title_color', $result)) {
-						echo 'color:' . element('title_color', $result) . ';';
-					}
-					if (element('title_font', $result)) {
-						echo 'font-family:' . element('title_font', $result) . ';';
-					}
-					if (element('title_bold', $result)) {
-						echo 'font-weight:bold;';
-					}
-					if (element('post_id', element('post', $view)) === element('post_id', $result)) {
-						echo 'font-weight:bold;';
-					}
-					?>" title="<?php echo html_escape(element('title', $result)); ?>" class="item_name"><?php echo html_escape(element('title', $result)); ?>
-				</a>
-			</p>
-				<p class="list_txt item_postinfo">
-					<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('post_sub_title', $result)); ?>" >
-					<?php echo element('post_sub_title', $result); ?>
-					<strong class="item_price mt10">
-						<span class="price_num">00,000</span>&#32;<span class="dong">₫</span>
-					</strong>
+			<div class="list_txt">
+				<?php if (element('post_reply', $result)) { ?><span class="label label-primary">Re</span><?php } ?>
+					<a href="<?php echo element('post_url', $result); ?>" style="
+						<?php
+						if (element('title_color', $result)) {
+							echo 'color:' . element('title_color', $result) . ';';
+						}
+						if (element('title_font', $result)) {
+							echo 'font-family:' . element('title_font', $result) . ';';
+						}
+						if (element('title_bold', $result)) {
+							echo 'font-weight:bold;';
+						}
+						if (element('post_id', element('post', $view)) === element('post_id', $result)) {
+							echo 'font-weight:bold;';
+						}
+						?>
+					" title="<?php echo html_escape(element('title', $result)); ?>" class="">
+
+
+					<h4 class="item_name mb0"><?php echo html_escape(element('title', $result)); ?></h4>
+					<p class="item_txt mb10"><?php echo html_escape(element('post_sub_title', $result)); ?></p>
+					<p class="event_date"><?php if(element('value_1',element('extravars', $result))) echo element('value_1',element('extravars', $result)); ?> ~ <?php if(element('value_2',element('extravars', $result))) echo element('value_2',element('extravars', $result)); ?></p>
+
 					</a>
-				</p>
-
-				<!-- tag tag_new tag_hot tag_event -->
-
-				<?php if (element('is_new', $result)) { ?>
-				<div class="tag_box">
-					<span class="tag tag_new">New</span>
 				</div>
-				<?php } ?>
 				
-				<!--  -->
 			</li>
 		<?php
 				$i++;
@@ -100,7 +88,6 @@
             <?php } ?>
         </div>
         <?php if (element('is_admin', $view)) { ?>
-            
             <div class="pull-left ml10">
                 <a onClick="post_multi_action('multi_delete', '0', '선택하신 글들을 완전삭제하시겠습니까?');" class="btn btn-danger btn-sm">선택삭제</a>
 
@@ -124,6 +111,7 @@
             </div>
         <?php } ?>
         <?php if (element('write_url', element('list', $view))) { ?>
+            
             <div class="pull-right mr10">
                 <a href="<?php echo element('write_url', element('list', $view)); ?>" class="btn btn-success btn-sm">글쓰기</a>
             </div>

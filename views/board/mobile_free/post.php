@@ -123,53 +123,44 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
             <!-- 본문 내용 끝 -->
         </div>
 
-         <section class="cont_tab">
-            <div class="btn-group pull-left" role="group" aria-label="...">
-                
-                    <a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn-sm">목 록</a>
-                <?php if (element('search_list_url', $view)) { ?>
-                        <a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-info btn-sm">검색목록</a>
-                <?php } ?>
-                <?php if (element('prev_post', $view)) { ?>
-                    <a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-success btn-sm">◀이전 글</a>
-                <?php } ?>
-                <?php if (element('next_post', $view)) { ?>
-                    <a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-success btn-sm">다음 글▶</a>
-                <?php } ?>
-            </div>
-            <?php if (element('write_url', $view)) { ?>
-                <div class="pull-right">
-                <?php    if (element('delete_url', $view)) { ?>
-                    <a href="<?php echo element('delete_url', $view); ?>" class="btn btn-silver btn-sm btn-one-delete">삭제</a>
-                <?php } ?>
-                    <?php if (element('modify_url', $view)) { ?>
-                    <a href="<?php echo element('modify_url', $view); ?>" class="btn btn-info btn-sm">수정</a>
-                <?php } ?>
-                    <a href="<?php echo element('write_url', $view); ?>" class="btn btn-success btn-sm">글쓰기</a>
-                </div>
-            <?php } ?>
-        </section>
+         
     </section>
 
       
     
 
-    <?php if ( ! element('post_del', element('post', $view)) && (element('use_post_like', element('board', $view)) OR element('use_post_dislike', element('board', $view)))) { ?>
-        <div class="recommand">
-            <?php if (element('use_post_like', element('board', $view))) { ?>
-                <a class="good" href="javascript:;" id="btn-post-like" onClick="post_like('<?php echo element('post_id', element('post', $view)); ?>', '1', 'post-like');" title="추천하기"><span class="post-like"><?php echo number_format(element('post_like', element('post', $view))); ?></span><br /><i class="fa fa-thumbs-o-up fa-lg"></i></a>
-            <?php } ?>
-            <?php if (element('use_post_dislike', element('board', $view))) { ?>
-                <a class="bad" href="javascript:;" id="btn-post-dislike" onClick="post_like('<?php echo element('post_id', element('post', $view)); ?>', '2', 'post-dislike');" title="비추하기"><span class="post-dislike"><?php echo number_format(element('post_dislike', element('post', $view))); ?></span><br /><i class="fa fa-thumbs-o-down fa-lg"></i></a>
-            <?php } ?>
-        </div>
-    <?php } ?>
-
 
     
 
     <div class="clearfix"></div>
-
+    
+    <div class="border_button cont_tab mg10">
+        <div class="pull-left">
+            
+                <a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn-sm">목 록</a>
+            <?php if (element('search_list_url', $view)) { ?>
+                    <a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-info btn-sm">검색목록</a>
+            <?php } ?>
+            <?php if (element('prev_post', $view)) { ?>
+                <a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-success btn-sm">◀이전 글</a>
+            <?php } ?>
+            <?php if (element('next_post', $view)) { ?>
+                <a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-success btn-sm">다음 글▶</a>
+            <?php } ?>
+        </div>
+        <?php if (element('write_url', $view)) { ?>
+            <div class="pull-right">
+            <?php    if (element('delete_url', $view)) { ?>
+                <a href="<?php echo element('delete_url', $view); ?>" class="btn btn-silver btn-sm btn-one-delete">삭제</a>
+            <?php } ?>
+                <?php if (element('modify_url', $view)) { ?>
+                <a href="<?php echo element('modify_url', $view); ?>" class="btn btn-info btn-sm">수정</a>
+            <?php } ?>
+                <a href="<?php echo element('write_url', $view); ?>" class="btn btn-success btn-sm">글쓰기</a>
+            </div>
+        <?php } ?>
+    </div>
+    
     <?php
     
 

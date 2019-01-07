@@ -13,6 +13,7 @@ if ( ! function_exists('display_dhtml_editor')) {
 	// Dhtml Editor 띄우기
 	function display_dhtml_editor($name = '', $content = '', $classname = '', $is_dhtml_editor = true, $editor_type = 'smarteditor')
 	{
+		
 		$editorclassname = '';
 		$style = '';
 		if ($editor_type === 'smarteditor' && $is_dhtml_editor) {

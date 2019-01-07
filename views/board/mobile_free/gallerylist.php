@@ -159,7 +159,7 @@
             <?php } ?>
         </div>
         <?php if (element('is_admin', $view)) { ?>
-            <div class="pull-right mr10">
+            <div class="pull-left ml10">
                 <a onClick="post_multi_action('multi_delete', '0', '선택하신 글들을 완전삭제하시겠습니까?');" class="btn btn-danger btn-sm">선택삭제</a>
 
                 <!-- <button type="button" class="btn btn-default btn-sm admin-manage-list"><i class="fa fa-cog big-fa"></i>관리</button>
@@ -182,7 +182,7 @@
             </div>
         <?php } ?>
         <?php if (element('write_url', element('list', $view))) { ?>
-            <div class="pull-left ml10">
+            <div class="pull-right mr10">
                 <a href="<?php echo element('write_url', element('list', $view)); ?>" class="btn btn-success btn-sm">글쓰기</a>
             </div>
         <?php } ?>

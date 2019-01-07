@@ -51,17 +51,17 @@ class Main extends CB_Controller
 		// 이벤트가 존재하면 실행합니다
 		$view['view']['event']['before'] = Events::trigger('before', $eventname);
 
-		$where = array(
-			'brd_search' => 1,
-		);
-		$board_id = $this->Board_model->get_board_list($where);
-		$board_list = array();
-		if ($board_id && is_array($board_id)) {
-			foreach ($board_id as $key => $val) {
-				$board_list[] = $this->board->item_all(element('brd_id', $val));
-			}
-		}
-		$view['view']['board_list'] = $board_list;
+		// $where = array(
+		// 	'brd_search' => 1,
+		// );
+		// $board_id = $this->Board_model->get_board_list($where);
+		// $board_list = array();
+		// if ($board_id && is_array($board_id)) {
+		// 	foreach ($board_id as $key => $val) {
+		// 		$board_list[] = $this->board->item_all(element('brd_id', $val));
+		// 	}
+		// }
+		// $view['view']['board_list'] = $board_list;
 		$view['view']['canonical'] = site_url();
 
 		// 이벤트가 존재하면 실행합니다
