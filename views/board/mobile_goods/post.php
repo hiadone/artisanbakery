@@ -26,8 +26,8 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
     <div class="goods_tit">
         
         <?php if (element('category', element('post', $view))) { ?><p class="goods_cate"><?php echo html_escape(element('bca_value', element('category', element('post', $view)))); ?></p> <?php } ?>
-        <h4 class="item_name"><?php echo html_escape(element('post_title', element('post', $view))); ?></h4>
-        <h4 class="item_subtit"><?php echo html_escape(element('post_sub_title', element('post', $view))); ?></h4>
+        <h3 class="item_name"><?php echo html_escape(element('post_title', element('post', $view))); ?></h3>
+        <p class="item_subtit"><?php echo html_escape(element('post_sub_title', element('post', $view))); ?></p>
 
         <p class="item_kcal"><span class="price_num">00,000</span>&#32;<span class="dong">₫</span></p>
 
@@ -332,7 +332,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	
 
 
-<div>
+<div class="group">
 <?php 
 $config = array(
 		'skin' => 'mobile',
@@ -346,7 +346,7 @@ echo $this->board->latest_goods($config);
 ?>
 </div>
 
-<a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn_more">전 체 목 록</a>
+<a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn-sm btn_more">전 체 목 록 <i class="fa fa-list"></i></a>
 
 
 

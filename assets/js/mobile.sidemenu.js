@@ -95,5 +95,14 @@ jQuery(function($) {
 			side_obj.my.refresh();
 		});
 	});
-
+	
+	//seon 추가 sidemenu 드롭다운 slideToggle 
+	$('.subopen').on('click',function(){
+		$(this).next('.dropdown-menu').slideToggle(400,function(){
+			$(this).prev('.subopen').toggleClass('subclose');
+			$('.dropdown-menu').stop(true,true);
+		});
+		
+	});
+	//
 });

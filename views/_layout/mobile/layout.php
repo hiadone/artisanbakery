@@ -15,6 +15,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/page.css'); ?>" />
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" />
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans" >
+<link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" />
 <?php echo $this->managelayout->display_css(); ?>
@@ -141,8 +143,8 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 		<div id="isroll_wrap" class="side_inner_rel">
 			<div class="side_inner_abs">
 				<div class="side_menu_top">
-					<div class="m_search">
-						
+					<div class="m_logo">
+						<img src="<?php echo base_url('assets/images/logo_r_yellow.png'); ?>" alt="Artisan bakery logo">
 					</div>
 					<div class="m_login">
 						<?php if ($this->member->is_member()) { ?>

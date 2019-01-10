@@ -26,8 +26,8 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
     <div class="goods_tit">
         
         <?php if (element('category', element('post', $view))) { ?><p class="goods_cate"><?php echo html_escape(element('bca_value', element('category', element('post', $view)))); ?></p> <?php } ?>
-        <h4 class="item_name"><?php echo html_escape(element('post_title', element('post', $view))); ?></h4>
-        <h4 class="item_subtit"><?php echo html_escape(element('post_sub_title', element('post', $view))); ?></h4>
+        <h3 class="item_name"><?php echo html_escape(element('post_title', element('post', $view))); ?></h3>
+        <p class="item_subtit"><?php echo html_escape(element('post_sub_title', element('post', $view))); ?></p>
 		<p class="event_date"><?php if(element('value_1',element('extravars', element('post', $view)))) echo element('value_1',element('extravars', element('post', $view))); ?> ~ <?php if(element('value_2',element('extravars', element('post', $view)))) echo element('value_2',element('extravars', element('post', $view))); ?></p>
         
 
@@ -70,10 +70,10 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
                     <a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-info btn-sm">검색목록</a>
             <?php } ?>
             <?php if (element('prev_post', $view)) { ?>
-                <a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-success btn-sm">◀이전 글</a>
+                <a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-success btn-sm"><i class="fa fa-caret-left"></i>이전 글</a>
             <?php } ?>
             <?php if (element('next_post', $view)) { ?>
-                <a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-success btn-sm">다음 글▶</a>
+                <a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-success btn-sm">다음글 <i class="fa fa-caret-right"></i></a>
             <?php } ?>
         </div>
         <?php if (element('write_url', $view)) { ?>

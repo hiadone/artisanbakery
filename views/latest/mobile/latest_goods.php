@@ -2,7 +2,7 @@
 <div class="main_box1  gallery_list02">
         
         
-    <h3 class="title01"><?php echo html_escape(element('board_name', element('board', $view))); ?>'의 다른 메뉴</h3>
+    <h3 class="title01"><?php echo html_escape(element('board_name', element('board', $view))); ?>의 다른 메뉴</h3>
     <div class="swiper-container">
         <div class="swiper-wrapper">
     <?php

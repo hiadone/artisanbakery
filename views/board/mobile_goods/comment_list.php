@@ -53,7 +53,7 @@ if (element('best_list', $view)) {
 if (element('list', element('data', $view))) {
     foreach (element('list', element('data', $view)) as $result) {
 ?>
-    <div class="media" id="comment_<?php echo element('cmt_id', $result); ?>" style="padding-left:<?php echo element('cmt_depth', $result); ?>px;background-color: #fff;<?php if(element('cmt_reply', $result)) echo 'margin-top: 0px;border-top:0px;'; ?>">
+    <div class="media" id="comment_<?php echo element('cmt_id', $result); ?>" style="padding-left:<?php echo element('cmt_depth', $result); ?>px;<?php if(element('cmt_reply', $result)) echo 'margin-top: 0px;border-top:0px;'; ?>">
         <?php if (element('use_comment_profile', element('board', $view))) { ?>
             <div class="media-left">
                 <img class="media-object member-photo" src="<?php echo element('member_photo_url', $result); ?>" width="64" height="64" alt="<?php echo html_escape(element('cmt_nickname', $result)); ?>" title="<?php echo html_escape(element('cmt_nickname', $result)); ?>" />
@@ -64,7 +64,7 @@ if (element('list', element('data', $view))) {
             
             <div class="comment-content">
             <?php if(element('cmt_reply', $result)) {?>
-                <i class="fa fa-reply fa-rotate-180" aria-hidden="true" style="font-size: 1.5em;"></i>
+                <i class="fa fa-reply fa-rotate-180" aria-hidden="true" style="font-size: 1.3em;"></i>
             <?php } ?>
             <?php echo element('cmt_secret', $result) ? '<i class="fa fa-lock"></i>':''; echo element('content', $result); ?>
             <?php if (element('lucky', $result)) { ?><div class="lucky"><i class="fa fa-star"></i> <?php echo element('lucky', $result); ?></div><?php } ?>

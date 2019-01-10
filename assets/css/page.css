@@ -13,15 +13,18 @@
 }
 /* main and point color */
 /* 로즈골드:  #b08e72 */
-/* 잉글리시그린 : #184f3b */
 /* 노랑 : #ffce32 */
 /* 연노랑 : #fffcef */
+/* 잉글리시그린 : #184f3b */
 /* 그린 : #009223 */
 /* 연두 : #61ce06 */
 /* 오렌지 : #ff8300 */
 /* border : #bababb */
-/* 진한 붉은 갈색 : #32191a */
 /* 배경 : #f7f0da */
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 /* blind 숨김 */
 .container .blind,
@@ -50,7 +53,8 @@ figure{
 	width: 100%;
 	padding: 0;
 	box-sizing: border-box;
-	min-height: calc(100vh - 64px); 
+	min-height: calc(100vh - 60px); /* 화면높이 - 푸터높이 */
+	overflow: hidden;
 	background-color: #f4f4f4;
 }
 .main_box1{
@@ -85,12 +89,12 @@ figure{
 	font-size: 16px;
 }
 /* title */
-/* title01 */
+/* title01 노란색 밑줄 */
 .main .title01{
 	padding: 30px 0 0;
 	text-align: center;
 	font-size: 24px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	border-bottom: none;
 }
 .main .title01:after {
@@ -104,7 +108,7 @@ figure{
 	-o-animation: anititle01 0.4s ease-in 1;
 	animation: anititle01 0.4s ease-in 1;
 }
-/* title 회사소개 */
+/* title 회사소개(초안) 초록색 밑줄 */
 .main .title02{
 	width: 120px;
 	padding-top: 30px;
@@ -115,12 +119,6 @@ figure{
 	font-family: 'Times New Roman',Times, serif;
 	border-bottom: 2px solid #009223;
 }
-/* title 회사소개 소제목 */
-.main .title03{
-	font-size: 22px;
-	font-family: 'Times New Roman', serif;
-	font-weight: bold;
-}
 
 /* title04 검색결과 */
 .main .title04{
@@ -129,25 +127,24 @@ figure{
 	box-sizing: border-box;
 	border: none;
 	font-size: 15px;
-	color: #32191a;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .main .title04 .searchword{
 	color: #343536;
 	font-weight: bold;
 	font-size: 18px;
 }
-/* title05 post */
+/* title05 ((post)) 회색 밑줄 */
 .main .title05{
 	margin: 0 3% 8px;
 	width: auto;
 	padding-top: 30px;
 	font-size: 20px;
-	font-family: 'Noto Sans',Arial, sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	border-bottom: 1px solid #ddd;
 	background-color: transparent;
 }
-/* title06 board,faq,gallery_list */
+/* title06 페이지 명  */
 .main .title06{
 	padding-top: 30px;
 	padding-bottom: 8px;
@@ -156,16 +153,16 @@ figure{
 	font-weight: bold;
 	border-bottom: 1px solid #ddd;
 	background-color: #fff;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 /* title07 영양성분표 */
 .main .title07{
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
-	padding: 10px 0;
+	padding: 6px 0;
 	border: none;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	
 }
 /* title08 */
@@ -173,14 +170,14 @@ figure{
 	padding-top: 14px;
 	font-size: 20px;
 	font-weight: bold;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 /* title09  */
 .main .title09{
 	font-size: 26px;
 	text-align: center;
 	margin-bottom: 20px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .main .title09 .sub_tit{
 	display: block;
@@ -189,8 +186,10 @@ figure{
 }
 /* title10 회원가입 */
 .main .title10{
+	padding: 10px 15px;
 	font-size: 18px;
 	font-weight: bold;
+	color: #000;
 	background-color: #fff;
 	border-bottom: 2px solid #009223;
 }
@@ -198,8 +197,8 @@ figure{
 .main .title11{
 	padding: 20px 0;
 	text-align: center;
-	font-size: 24px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-size: 28px;
+	font-family: 'Comfortaa',Arial,sans-serif;
 	border-bottom: none;
 	position: relative;
 	z-index: 100;
@@ -220,33 +219,46 @@ figure{
 .main .title12{
 	padding: 20px 0;
 	text-align: center;
-	font-size: 24px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-size: 26px;
+	font-family: 'Comfortaa',Arial,sans-serif;
+	font-weight: bold;
 	border-bottom: none;
 	position: relative;
 	z-index: 100;
+}
+
+.main .title12:before{
+	background-image: url(http://cmy.artisanbakery.vn/assets/images/quotes_before.svg);
+}
+.main .title12:after{
+	background-image: url(http://cmy.artisanbakery.vn/assets/images/quotes_after.svg);
 }
 .main .title12:before,
 .main .title12:after {
 	content: '';
 	display: inline-block;
-	width: 30px;
-	height: 30px;
-	vertical-align: bottom;
-	background-size: 100%;
+	width: 26px;
+	height: 26px;
 	position: relative;
-	top: -10px;
+	top: -15px;
 	z-index: -1;
-	margin: 0 8px;
+	margin: 0 6px;
+	vertical-align: bottom;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
 }
-.main .title12:before{
-	background: url(http://cmy.artisanbakery.vn/assets/images/quotes_before.svg) no-repeat center;
-	
-}
-.main .title12:after{
-	background: url(http://cmy.artisanbakery.vn/assets/images/quotes_after.svg) no-repeat center;
+/* title 회사소개 페이지 소제목 */
+.main .title13{
+	font-size: 22px;
+	font-family: 'Times New Roman', serif;
+	font-weight: bold;
 }
 
+/* background-color */
+.bg_wh{
+	background-color: #fff;
+}
 /* header */
 .header{
 	position: fixed;
@@ -256,7 +268,6 @@ figure{
 	border-top: 3px solid #009223;
 	border-bottom: 1px solid #ababad;
 	box-shadow: none;
-	
 }
 .header .logo{
 	position:absolute;
@@ -297,9 +308,8 @@ footer .company a{
 	padding: 0 8px 0 4px;
 	color: #fff;
 	border-right: 1px solid rgba(255,255,255,0.5);
-	padding: 0 8px 0 4px;
 	line-height: 10px;
-	display: inline-block;
+	font-size: 13px;
 }
 footer .company li:last-child a{
 	border-right: none;
@@ -315,10 +325,10 @@ footer .company li:last-child a{
 }
 #side_menu .m_logo{ 
 	text-align: center;
-	padding: 20px 0;
+	padding: 16px 0;
 }
 #side_menu .m_logo img{
-	width: 120px;
+	width: 90px;
 }
 #side_menu .m_search .input{
 	width: 94%;
@@ -346,7 +356,7 @@ footer .company li:last-child a{
 #side_menu .m_login .btn{
 	font-size: 15px;
 	background-color: transparent;
-	font-family: Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	font-weight: bold;
 	color: #000;
 }
@@ -367,17 +377,17 @@ footer .company li:last-child a{
 	text-indent: 10px;
 	font-size: 15px;
 	color: #000;
-	font-family: Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 #side_menu .dropdown .subopen{
 	text-indent: 0;
 }
 #side_menu .dropdown .subopen .fa{
 	color: #009223;
-	transition: transform 0.2s;
+	/* transition: transform 0.2s; */
 }
 #side_menu .dropdown .subclose .fa{
-	color: #ffce32;
+	color: #ff8300;
 	transform: rotate(-180deg);
 }
 #side_menu .m_menu{
@@ -404,12 +414,8 @@ footer .company li:last-child a{
 	background-position:center;
 	background-size: contain;
 }
-#side_menu .dropdown-menu{
-	
-}
 #side_menu .dropdown-menu li a{
 	padding-left: 60px;
-	color: #32191a;
 }
 /* searchbox */
 .main .search_box{
@@ -462,7 +468,7 @@ footer .company li:last-child a{
 .table_wrap{
 	margin-bottom: 30px;
 	border-top: 2px solid #009223;
-	font-family: 'Noto Sans',sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .table_wrap .table-box{
 	margin-bottom: 0;
@@ -571,7 +577,7 @@ footer .company li:last-child a{
 }
 /* board */
 .board{
-	padding-bottom: 5%;
+	padding: 5% 3%;
 }
 .board .page_top01+.table-top{
 	margin: 0 3%;
@@ -599,22 +605,33 @@ footer .company li:last-child a{
 .brand_story{
 	counter-reset: section;
 	background-color: #fff;
+	counter-reset: section;
 }
 .art_brand_story{
-	padding-right: 3%;
-	padding-left: 3%;
+	padding: 30px 3% 10px;
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 32px;
+	background-color: #fff;
 }
 .art_brand_story .title03,
 .art_brand_story .brand_story_txt,
 .art_brand_story .brand_story_img{
 	margin-bottom: 20px;
 }
-
-.art_brand_story .title03{
+.art_brand_story .title13{
 	order: 1;
+}
+.art_brand_story .title13:before{
+	counter-increment: section;
+	content: counter(section,decimal-leading-zero);
+	display: inline-block;
+	padding: 6px 8px;
+	margin-right: 8px;
+	font-family: Gothic,sans-serif;
+	font-weight: bold;
+	color: #fff;
+	background-color: #009223;
+	border-bottom: 8px solid #ffce32;
 }
 .art_brand_story .brand_story_txt{
 	order: 2;
@@ -670,7 +687,7 @@ footer .company li:last-child a{
 	padding: 12px 0;
 	text-align: center;
 	font-size: 16px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	border-bottom: 1px solid #ddd;
 }
 .page_top01 .page_top_li:last-child{
@@ -695,7 +712,7 @@ footer .company li:last-child a{
 	padding: 5px 8px;
 	font-weight: bold;
 	font-size: 18px;
-	font-family: 'Noto sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	letter-spacing: 2px;
 	
 }
@@ -712,6 +729,9 @@ footer .company li:last-child a{
 	color: #fff;
 }
 /* swipe style */
+.swiper-pagination-bullet:focus{
+	outline: none;
+}
 .swiper-pagination .swiper-pagination-bullet {
 	width: 12px;
 	height: 12px;
@@ -733,7 +753,7 @@ footer .company li:last-child a{
 /* gallery_list01 제품리스트 */
 .gallery_list01{
 	width: 100%;
-	padding: 20px 3% 0;
+	padding: 20px 0;
 	box-sizing: border-box;
 }
 .gallery_list01 .gallery_list_ul{
@@ -762,7 +782,7 @@ footer .company li:last-child a{
 }
 .gallery_list01 .item_name{
 	font-size: 20px;
-	font-family: 'Noto sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	font-weight: bold;
 	/*margin-bottom: 10px;*/
 }
@@ -781,7 +801,7 @@ footer .company li:last-child a{
 }
 .gallery_list01 .item_price_box{
 	margin-bottom: 10px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .gallery_list01 .item_price,
 .gallery_list01 .item_price_before{
@@ -806,10 +826,11 @@ footer .company li:last-child a{
 .gallery_list01 .item_price_before .dong{
 	font-size: 13px;
 }
+.goods_detail .event_date,
 .gallery_list01 .event_date{
 	font-size: 15px;
 	font-weight: bold;
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	color: #f26925;
 }
 .gallery_list01+.table-bottom{
@@ -824,6 +845,10 @@ footer .company li:last-child a{
 .gallery_list01 .close_event .item_txt,
 .gallery_list01 .close_event .list_txt{
 	color: #666;
+}
+.gallery_list01 input[type="checkbox"]{
+	position: relative;
+	z-index: 100;
 }
 /* gallery_list02 상품상세페이지 하단 제품리스트 */
 .gallery_list02{
@@ -855,7 +880,7 @@ footer .company li:last-child a{
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 /* gallery_list03 영양성분표pop*/
 .gallery_list03{}
@@ -986,7 +1011,7 @@ footer .company li:last-child a{
 }
 .gallery_list06 .list_txt{
 	text-align: center;
-	font-family: 'Noto Sans',Arial, sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .gallery_list06 .item_name{
 	font-size: 20px;
@@ -1059,7 +1084,7 @@ footer .company li:last-child a{
 	max-width: 100%;
 	margin-bottom: 8px;
 	font-size: 16px;
-	font-family: 'Noto Sans',Arial, sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	line-height: 1.5;
 	clear: none;
 }
@@ -1088,7 +1113,7 @@ footer .company li:last-child a{
 .txt_list01 .txt_postinfo{
 	float: right;
 	font-size: 12px;
-	font-family: 'Noto Sans',Arial, sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	padding-top: 2px;
 	color: #333;
 }
@@ -1127,6 +1152,7 @@ footer .company li:last-child a{
 	font-size: 15px;
 }
 .tab_cate01 .active a{
+	font-weight: bold;
 	color: #009223;
 	border-bottom: 2px solid #009223;
 }
@@ -1134,8 +1160,9 @@ footer .company li:last-child a{
 .slide_bnr01 {}
 .slide_bnr01 .slide_bnr_li {
 	width: 100%;
-	/* height: 100vw;
-	max-height: 420px; */
+	height: 100vw;
+	min-height: 320px;
+	max-height: 420px;
 	overflow: hidden;
 }
 .slide_bnr01 .bnr_img {
@@ -1199,7 +1226,7 @@ footer .company li:last-child a{
 	flex-direction: column;
 	text-align: center;
 	color: #fff;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .mainpg_link01 .link_tit{
 	order: 1;
@@ -1231,7 +1258,7 @@ footer .company li:last-child a{
 	z-index: 1;
 }
 .mainpg_link01 .link_art01 .link_img_back{
-	width: 100vw;
+	width: 100%;
 	height: 250px;
 	position: absolute;
 	z-index: 0;
@@ -1307,7 +1334,7 @@ footer .company li:last-child a{
 }
 .btn_more{
 	display: block;
-	width: 50%;
+	width: 60%;
 	margin: 20px auto;
 	padding: 8px 0;
 	text-align: center;
@@ -1319,6 +1346,11 @@ footer .company li:last-child a{
 	font-weight: bold;
 	font-size: 24px;
 	color: #ffce32;
+}
+.btn_more .fa{
+	font-size: 22px;
+	margin-left: 3px;
+	vertical-align: middle;
 }
 /* post 영양성분표 */
 .table_nutrient{
@@ -1334,7 +1366,7 @@ footer .company li:last-child a{
 	text-align: left;
 	padding: 14px 10px;
 	font-size: 16px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	border-top: 1px solid #ddd;
 }
 .table_nutrient .table-body tr:first-child td,
@@ -1415,7 +1447,7 @@ footer .company li:last-child a{
 
 .information{
 	margin: 0 3% 20px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	font-size: 13px;
 }
 .information .user_name{
@@ -1426,7 +1458,7 @@ footer .company li:last-child a{
 }
 .contents-view .content_txt{
 	font-size: 16px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	line-height: 1.6;
 }
 .board .information li{
@@ -1497,8 +1529,6 @@ footer .company li:last-child a{
 }
 #viewcomment .media{
 	padding: 10px 0;
-	margin: 4px 0 0;
-	border: 1px solid #bababb;
 	background-color: #fff;
 	overflow: hidden;
 }
@@ -1641,7 +1671,7 @@ footer .company li:last-child a{
 }
 .access .loginform li>span{
 	font-size: 15px;
-	font-family: 'Noto Sans',Arial,sans-serif;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .access .loginform .btn_box{
 	text-align: center;
@@ -1811,11 +1841,10 @@ footer .company li:last-child a{
 	background-color: #fff;
 }
 .goods_tit{
-	padding: 20px 0;
+	padding: 40px 3% 20px;
 	position: relative;
 	text-align: center;
-	font-family: 'Noto Sans',Arial,sans-serif;
-	margin-top: 20px;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .goods_tit .goods_cate{
 	margin-bottom: 10px;
@@ -1824,7 +1853,7 @@ footer .company li:last-child a{
 	color: #009223;
 }
 .goods_tit .item_name{
-	margin-bottom: 0;
+	margin-bottom: 10px;
 	font-size: 24px;
 	font-weight: bold;
 }
@@ -1839,7 +1868,7 @@ footer .company li:last-child a{
 }
 .goods_tit .btn_box{
 	position: absolute;
-	top: 0;
+	top: 20px;
 	right: 5%;
 }
 .goods_tit .btn_share{
@@ -1888,9 +1917,17 @@ footer .company li:last-child a{
 	text-align: center;
 }
 /*  */
-
-
-
-
-
+.write_area{
+	padding: 0 3%;
+}
+/* 공지사항 글쓰기 */
+.write_title{
+	margin-bottom: 2%;
+}
+.write_upload{
+	overflow: hidden;
+}
+.write_clear{
+	margin-bottom: 30px;
+}
 

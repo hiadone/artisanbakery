@@ -14,7 +14,7 @@
 
 
 
-<div class="wrap07">
+<div class="">
 
     <!-- <h3><?php echo html_escape(element('board_name', element('board', $view))); ?> 글쓰기</h3> -->
     <?php
@@ -239,7 +239,7 @@
 <?php echo element('footercontent', element('board', $view)); ?>
 
 <section class="ad" style="margin-bottom:0;">
-    <h4>ad</h4>
+    <h4 class="blind">ad</h4>
     <?php echo banner("review_write_banner_1") ?>
 </section>
 </div>

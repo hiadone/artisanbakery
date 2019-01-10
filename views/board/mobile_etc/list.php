@@ -10,7 +10,7 @@
   </style>
 <?php echo element('headercontent', element('board', element('list', $view))); ?>
 
-<div class="wrap05" style="padding-top:0px;" >
+<div class="">
     <section class="inquire">
     
         <div class="board">
@@ -23,7 +23,7 @@
                     <div class="form-group">
                         
                         <input type="text" class="input px200 mr10" placeholder="Search" name="skeyword" value="<?php echo html_escape($this->input->get('skeyword')); ?>" />
-                        <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                        <button class="btn btn-success btn-sm" type="submit"><i class="fa fa-search"></i></button>
                     </div>
                 </form>
             </div>
@@ -81,7 +81,7 @@
                 <?php } ?>
                 
                 <div class="table-box">
-                    <h3><?php echo html_escape(element('post_title', $result)); ?></h3>
+                    <h3 class="q_tit"><?php echo html_escape(element('post_title', $result)); ?></h3>
                         <div class="question " style = "width:100%;" id="answer_<?php echo $key; ?>">
                             <?php if (element('is_admin', $view) || element('modify_url', $result)) { ?>
                                 <div class="question-content"><?php echo display_html_content(
@@ -168,9 +168,9 @@
         <nav><?php echo element('paging', element('list', $view)); ?></nav>
     
     <section class="caution">
-            <h2>
+            <h3 class="tit">
                 필독! 주의사항
-            </h2>
+            </h3>
             <p> <strong>01.</strong> 욕설이나 미풍양속에 어긋나는 메시지는 삭제되며, 
                 그러한 경우 법적으로 불이익을 받을 수 있습니다.<br>
                 <br>

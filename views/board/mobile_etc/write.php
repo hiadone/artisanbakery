@@ -98,7 +98,7 @@ if ($this->member->is_member() === false) {
                 <button type="submit" class="" style="width:45%">답변하기</button>
                 <button type="button" class="btn-history-back" style="width:45%">취소하기</button>
                 <?php } else { ?>
-                <button type="submit" class="">작 성 하 기</button>
+                <button type="submit" class="btn-success">작 성 하 기</button>
                 <?php } ?>
             </div>
         </div>
