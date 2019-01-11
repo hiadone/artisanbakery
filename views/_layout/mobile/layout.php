@@ -40,6 +40,7 @@ var cb_device_type = "<?php echo $this->cbconfig->get_device_type() === 'mobile'
 var cb_csrf_hash = "<?php echo $this->security->get_csrf_hash(); ?>";
 var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 </script>
+
 <script type="text/javascript" src="<?php echo base_url('assets/js/common.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.validate.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.validate.extension.js'); ?>"></script>
@@ -61,14 +62,14 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 				<a href="<?php echo site_url(); ?>" title="<?php echo html_escape($this->cbconfig->item('site_title'));?>"><img src="<?php echo base_url('assets/images/h_logo.png'); ?>" alt="Artisan bakery"></a>
 			</h1>
 			<div class="h_btn m_nav pull-right" >
-				<a href="javascript:;" id="btn_side"><img src="<?php echo base_url('assets/images/h_icon_ham.svg'); ?>" alt="menu" title="menu" /></a>
+				<a href="javascript:;" id="btn_side"><i class="fa fa-bars " style="font-size: 2.4em"></i></a>
 			</div>
 			<div class="h_btn m_mypg pull-left">
 			<?php if ($this->member->is_member()) { ?>
 			    
-			    <a href="<?php echo site_url('mypage'); ?>" ><img src="<?php echo base_url('assets/images/h_icon_user.svg'); ?>" alt="My Page"  ></a>
+			    <a href="<?php echo site_url('mypage'); ?>" ><i class="fa fa-user-secret " style="font-size: 2.4em"></i></a>
 			<?php } else { ?>
-			    <a href="<?php echo site_url('login?url=' . urlencode(current_full_url())); ?>" ><img src="<?php echo base_url('assets/images/h_icon_user.svg'); ?>" alt="로그인" ></a>
+			    <a href="<?php echo site_url('login?url=' . urlencode(current_full_url())); ?>" ><i class="fa fa-user " style="font-size: 2.4em"></i></a>
 			    
 			<?php } ?>
 			</div>
@@ -141,10 +142,10 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 <aside class="menu" id="side_menu">
 	<div class="side_wr add_side_wr">
 		<div id="isroll_wrap" class="side_inner_rel">
-			<div class="side_inner_abs">
+			<div class="side_inner_abs" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0.001s; transform: translate(0px, 0px) translateZ(0px);">
 				<div class="side_menu_top">
 					<div class="m_logo">
-						<img src="<?php echo base_url('assets/images/logo_r_yellow.png'); ?>" alt="Artisan bakery logo">
+						<img src="<?php echo base_url('assets/images/logo_r.png'); ?>" alt="Artisan bakery logo">
 					</div>
 					<div class="m_login">
 						<?php if ($this->member->is_member()) { ?>
@@ -172,14 +173,15 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 										$menuhtml .= ' target="' . element('men_target', $mval) . '"';
 									}
 									$menuhtml .= ' title="' . html_escape(element('men_name', $mval)) . '" class="menu_category"><span class="icon_back"></span>' . html_escape(element('men_name', $mval)) . '</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="' . $mkey . '"><i class="fa fa-chevron-down"></i></a>
+
 									<ul class="dropdown-menu drop-downorder-' . $mkey . '">';
 
 									foreach (element(element('men_id', $mval), $menu) as $skey => $sval) {
-										$menuhtml .= '<li><a href="' . element('men_link', $sval) . '" ' . element('men_custom', $sval);
+										$menuhtml .= '<li><a data-uri="' . element('men_link', $sval) . '" ' . element('men_custom', $sval);
 										if (element('men_target', $sval)) {
 											$menuhtml .= ' target="' . element('men_target', $sval) . '"';
 										}
-										$menuhtml .= ' title="' . html_escape(element('men_name', $sval)) . '">' . html_escape(element('men_name', $sval)) . '</a></li>';
+										$menuhtml .= ' title="' . html_escape(element('men_name', $sval)) . '" class="md-ripple md-ripple-blue">' . html_escape(element('men_name', $sval)) . '</a></li>';
 									}
 									$menuhtml .= '</ul></li>';
 
@@ -226,7 +228,10 @@ $(document).on('click', '.viewmobileversion', function(){
 		
 		//end
 		});
+
+
 </script>
+
 <?php echo element('popup', $layout); ?>
 <?php echo $this->cbconfig->item('footer_script'); ?>
 

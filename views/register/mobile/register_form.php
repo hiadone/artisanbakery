@@ -48,22 +48,7 @@
 				<?php
 				}
 				?>
-					<li>
-						<span>정보공개</span>
-						<div class="form-text text-primary group">
-							<label for="mem_open_profile">
-								<input type="checkbox" name="mem_open_profile" id="mem_open_profile" value="1" <?php echo set_checkbox('mem_open_profile', '1', true); ?> />
-								다른분들이 나의 정보를 볼 수 있도록 합니다.
-							</label>
-							<?php
-							if (element('open_profile_description', $view)) {
-							?>
-								<p class="help-block"><?php echo element('open_profile_description', $view); ?></p>
-							<?php
-							}
-							?>
-						</div>
-					</li>
+					
 					<?php
 					if ($this->cbconfig->item('use_note')) {
 					?>
@@ -88,39 +73,8 @@
 					<?php
 					}
 					?>
-					<li>
-						<span>이메일수신여부</span>
-						<div class="form-text text-primary group">
-							<div class="checkbox">
-								<label for="mem_receive_email" >
-									<input type="checkbox" name="mem_receive_email" id="mem_receive_email" value="1" <?php echo set_checkbox('mem_receive_email', '1', true); ?> /> 수신
-								</label>
-							</div>
-						</div>
-					</li>
-					<li>
-						<span>SMS 문자수신</span>
-						<div class="form-text text-primary group">
-							<div class="checkbox">
-							<label for="mem_receive_sms">
-								<input type="checkbox" name="mem_receive_sms" id="mem_receive_sms" value="1" <?php echo set_checkbox('mem_receive_sms', '1', true); ?> /> 수신
-							</label>
-							</div>
-						</div>
-					</li>
-					<li>
-						<?php if ($this->cbconfig->item('use_recaptcha')) { ?>
-							<span></span>
-							<div class="form-text text-primary group captcha" id="recaptcha"><button type="button" id="captcha"></button></div>
-							<input type="hidden" name="recaptcha" />
-						<?php } else { ?>
-							<span><img src="<?php echo base_url('assets/images/preload.png'); ?>" width="160" height="40" id="captcha" alt="captcha" title="captcha" /></span>
-							<div class="form-text text-primary group">
-								<input type="text" name="captcha_key" id="captcha_key" class=" input px150" value="" />
-								<p class="help-block">좌측에 보이는 문자를 입력해주세요</p>
-							</div>
-						<?php } ?>
-					</li>
+					
+				
 					<li>
 						<span></span>
 						<div class="group">
@@ -168,7 +122,7 @@ $(function() {
 			<?php if ($this->cbconfig->item('use_recaptcha')) { ?>
 				, recaptcha : {recaptchaKey:true}
 			<?php } else { ?>
-				, captcha_key : {required: true, captchaKey:true}
+				, captcha_key : {required: false, captchaKey:true}
 			<?php } ?>
 		},
 		messages: {

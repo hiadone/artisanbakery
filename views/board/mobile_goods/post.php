@@ -98,8 +98,8 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 				</table>
 			</div>
 			<div class="btn_box">
-				<button class="btn-black btn_infoshow" value="#infoOrigin">원산지 정보</button>
-				<button class="btn-black btn_infoshow" value="#infoAllergy">알레르기 유발 성분</button>
+				<button class="btn-black btn_infoshow" value="#infoOrigin"><i class="fa fa-search-plus mr05"></i>원산지 정보</button>
+				<button class="btn-black btn_infoshow" value="#infoAllergy"><i class="fa fa-search-plus mr05"></i>알레르기 유발 성분</button>
 
 			</div>
 			<div class="black_back">
@@ -346,7 +346,9 @@ echo $this->board->latest_goods($config);
 ?>
 </div>
 
-<a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn-sm btn_more">전 체 목 록 <i class="fa fa-list"></i></a>
+
+<a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn_more"><i class="fa fa-th-list" style="color:yellow"></i> 전 체 목 록</a>
+
 
 
 

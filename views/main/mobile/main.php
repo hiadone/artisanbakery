@@ -93,7 +93,7 @@
 	
 	<article class="link_art link_art01">
 		<div class="link_box">
-			<h3 class="link_tit btn"><a href="">ARTISAN STORY<span class="blind">shorcut</span></a></h3>
+			<h3 class="link_tit btn"><a href="/document/artisanbakery_info">ARTISAN STORY<span class="blind">shorcut</span></a></h3>
 			<p class="link_txt">Fusce facilisis lorem sed aliquam feugiat.</p>
 		</div>
 		<div class="link_img_back" style="background-image: url(https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/20294344_2274795039459627_6411433453739904055_n.jpg?_nc_cat=103&_nc_ht=scontent-icn1-1.xx&oh=4988e0b25ca81e68ab0699ca5ac93e97&oe=5C8F3D8A)"></div>
@@ -102,14 +102,14 @@
 </section>
 
 
-<section class="mainpg_link02" style="background-image: url(https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/20294344_2274795039459627_6411433453739904055_n.jpg?_nc_cat=103&_nc_ht=scontent-icn1-1.xx&oh=4988e0b25ca81e68ab0699ca5ac93e97&oe=5C8F3D8A)">
+<!-- <section class="mainpg_link02" style="background-image: url(https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/20294344_2274795039459627_6411433453739904055_n.jpg?_nc_cat=103&_nc_ht=scontent-icn1-1.xx&oh=4988e0b25ca81e68ab0699ca5ac93e97&oe=5C8F3D8A)">
 	<h2 class="blind">quick link01</h2>
 	<div class="link_box">
 		<h3 class="link_tit btn"><a href="">ARTISAN STORY <span class="blind">shorcut</span></a></h3>
 		<p class="link_txt">Fusce facilisis lorem sed aliquam feugiat sed facilisis.</p>
 	</div>
 	
-</section>
+</section> -->
 <!-- txt_list01 뉴스-->
 
 <?php 

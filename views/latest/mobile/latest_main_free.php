@@ -37,5 +37,5 @@
         ?>
         
     </div>
-    <div class="btn_box"><a href="<?php echo board_url(element('brd_key', element('board', $view))); ?>" class="btn_more btn-success">View More</a></div>
+    <div class="btn_box"><a href="<?php echo board_url(element('brd_key', element('board', $view))); ?>" class="btn_more btn-success"><i class="fa fa-th-list mr05" style="color:yellow"></i>View More</a></div>
 </section>

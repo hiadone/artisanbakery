@@ -100,7 +100,7 @@ figure{
 .main .title01:after {
     content: '';
     display: block;
-    width: 24px;
+    width: 44px;
     height: 4px;
     background-color: #ffce32;
     margin: 6px auto 0;
@@ -409,11 +409,34 @@ footer .company li:last-child a{
 	width: 30px;
 	height: 30px;
 	margin-right: 10px;
-	background-image:url(http://placehold.it/30x30);
+	
+}
+
+#side_menu .m_menu li:nth-child(1) .icon_back{	
+	background-image:url('/assets/images/m_icon_product.svg');
 	background-repeat:no-repeat;
 	background-position:center;
 	background-size: contain;
 }
+#side_menu .m_menu li:nth-child(2) .icon_back{	
+	background-image:url('/assets/images/m_icon_news.svg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: contain;
+}
+#side_menu .m_menu li:nth-child(3) .icon_back{	
+	background-image:url('/assets/images/m_icon_shop.svg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: contain;
+}
+#side_menu .m_menu li:nth-child(4) .icon_back{	
+	background-image:url('/assets/images/m_icon_faq.svg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: contain;
+}
+
 #side_menu .dropdown-menu li a{
 	padding-left: 60px;
 }

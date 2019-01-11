@@ -97,12 +97,23 @@ jQuery(function($) {
 	});
 	
 	//seon 추가 sidemenu 드롭다운 slideToggle 
-	$('.subopen').on('click',function(){
+	$('.subopen').on('click',function(){		
 		$(this).next('.dropdown-menu').slideToggle(400,function(){
 			$(this).prev('.subopen').toggleClass('subclose');
+			$(this).parent('li.dropdown').children('ul.dropdown-menu').toggleClass('subclose');
 			$('.dropdown-menu').stop(true,true);
 		});
 		
 	});
 	//
+	$('ul.m_menu li.dropdown ul.dropdown-menu li a').on('click',function(){	
+
+		var tg = $(this).data('uri');
+        $(this).parent('li').append('<div class="mask"></div>');
+        setTimeout(function(){
+            $(location).attr('href',tg);
+        },500);
+        return false;	
+		
+	});
 });
