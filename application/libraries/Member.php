@@ -270,8 +270,10 @@ class Member extends CI_Controller
 		$this->CI->Scrap_model->delete_where($deletewhere);
 		$this->CI->Social_meta_model->delete_where($deletewhere);
 		$this->CI->Tempsave_model->delete_where($deletewhere);
+		$this->CI->Member_nickname_model->delete_where($deletewhere);
+		$this->CI->Member_userid_model->delete_where($deletewhere);
 
-		$this->CI->Member_userid_model->update($mem_id, array('mem_status' => 1));
+		
 
 		return true;
 	}
