@@ -26,8 +26,8 @@
                <h2><?php echo element('result_message', $view); ?></h2>
             </figcaption>
         </figure>       
-        <button>
-            <a href="<?php echo site_url(); ?>" class="btn" title="<?php echo html_escape($this->cbconfig->item('site_title'));?>">홈페이지로 이동
+        <button class="btn_more btn-success">
+            <a href="<?php echo site_url(); ?>" title="<?php echo html_escape($this->cbconfig->item('site_title'));?>">홈페이지로 이동
             </a>
         </button>
     </section>

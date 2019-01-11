@@ -347,7 +347,7 @@ echo $this->board->latest_goods($config);
 </div>
 
 
-<a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn_more"><i class="fa fa-th-list" style="color:yellow"></i> 전 체 목 록</a>
+<a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn_more"><i class="fa fa-th-list"></i> 전 체 목 록</a>
 
 
 

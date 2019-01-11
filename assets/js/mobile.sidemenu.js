@@ -81,7 +81,7 @@ jQuery(function($) {
 	$('#side_menu .btn_close').on('click',function(){
 		remove_side_data();
 	});
-	
+	//
 	var clickEventType= 'ontouchend' in document ? 'touchend' : 'click';
 
 	if( clickEventType == 'touchend'){

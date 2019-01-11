@@ -138,7 +138,7 @@ body,html{
 
 .title02 p span{
 	font-size:13px;
-	color: #25a4f4;
+	color: #009223;
 }
 
 /*상세의 타이틀 / 자유게시판 상세 타이틀*/
@@ -472,7 +472,7 @@ div.media div.media-body h4{
 	font-family: 'Nanum Gothic', sans-serif;
 }
 .main_category .main_cate_li .count{
-	color:#25a4f4;
+	color:#009223;
 	font-weight: bold;
 	font-size: 14px;
 }
@@ -498,8 +498,8 @@ div.media div.media-body h4{
 	border-bottom: 2px solid transparent;
 }
 .cont_category .active{
-	color: #25a4f4;
-	border-bottom-color: #25a4f4;
+	color: #009223;
+	border-bottom-color: #009223;
 	font-weight:600;
 }
 /* .cont_list 메인페이지 업소정보 리스트 */
@@ -609,7 +609,7 @@ div.media div.media-body h4{
 	height:1.5em;
 }
 .text_list .text_title .comment_num{
-	color:#25a4f4;
+	color:#009223;
 	
 }
 .text_list .text_cont{
@@ -1160,7 +1160,7 @@ div.media div.media-body h4{
 }
 
 .inquire form li span.color{
-	color: #25a4f4;
+	color: #009223;
 }
 
 .inquire form li .clear{
@@ -1373,7 +1373,7 @@ div.media div.media-body h4{
 	border-radius: 2px;
 	border:0;
 	outline:none;
-	background: #25a4f4;
+	background: #009223;
 	/* font-family: 'Jeju Gothic', sans-serif; */
 	color: #fff;
 }
@@ -1539,7 +1539,7 @@ div.media div.media-body h4{
 	outline: none;
 	border-radius: 5px;
 	color: #fff;
-	background-color: #25a4f4;
+	background-color: #009223;
 	/* font-family: 'Jeju Gothic', sans-serif; */
 	font-size: 12px;
 	float: right;
@@ -1728,13 +1728,13 @@ div.media div.media-body h4{
 }
 
 .info_logout figure img{
-	width: 35%;
-	margin-bottom: 3%;
+	width: 40%;
+	margin: 3% 0;
 }
 
 .info_logout figcaption h2{
 	/* font-family: 'Jeju Gothic', sans-serif; */
-	color: #25a4f4;
+	color: #009223;
 	font-size: 15px;
 	margin-bottom: 3%;
 }
@@ -1770,16 +1770,17 @@ div.media div.media-body h4{
 
 .logout_pw label{
 	width: 60px;
-	height: 25px;
-	line-height: 26px;
+	height: 30px;
+	line-height: 30px;
 	float: left;
 	display: inline-block;
+	font-weight: bold;
 	/* font-family: 'Jeju Gothic', sans-serif; */
 }
 
 .logout_pw input{
 	width: 170px;
-	height: 25px;
+	height: 31px;
 	padding:3px 5px;
 	border:1px solid #ededed;
 	box-sizing: border-box;
@@ -1805,8 +1806,12 @@ div.media div.media-body h4{
 }
 
 /*myinfo 의 회원정보수정 의 li 영역*/
+.info_modify{
+	overflow: hidden;
+}
 .info_modify ol{
 	margin-bottom: 6%;
+	font-size: 0;
 	border:1px solid #ededed;
 	box-sizing: border-box;
 }
@@ -1815,8 +1820,8 @@ div.media div.media-body h4{
 	width: 100%;
 	display: inline-block;
 	text-align: center;
+	font-size: 0;
 	border-bottom:1px solid #ededed;
-	text-align: center;
 }
 
 .info_modify ol li:last-child{
@@ -1836,13 +1841,16 @@ div.media div.media-body h4{
 	float: right;
 	width: 80%;
 	/* font-family: 'Jeju Gothic', sans-serif; */
+	font-size: 14px;
+	font-weight: bold;
 	box-sizing: border-box;
 	padding:2.5% 2%;
 	border-left: 1px solid #ededed;
 	text-align: left;
 }
-
-
+.info_modify ol li div strong{
+	color: #009223;
+}
 .info_modify ol li div a{
 	/* font-family: 'Jeju Gothic', sans-serif; */
 	font-size: 13px;
@@ -1864,9 +1872,10 @@ div.media div.media-body h4{
 	outline: none;
 	border-radius: 3px;
 	border:0;
-	background-color: #25a4f4;
-	color:#fff;
-	font-family:'Jeju Gothic', sans-serif;
+	background-color: #009223;
+	color: #fff;
+	font-weight: bold;
+	/* font-family:'Jeju Gothic', sans-serif; */
 }
 
 /*myinfo 의 정보수정의 패스워드 수정 클릭시 영역*/
@@ -1898,6 +1907,9 @@ div.media div.media-body h4{
 	text-align: right;
 	float: left;
 	display: inline-block;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-weight: bold;
 	/* font-family: 'Jeju Gothic', sans-serif; */
 }
 
@@ -1925,16 +1937,15 @@ div.media div.media-body h4{
 	float: right;
 	width: 100px;
 	margin-top: 3%;
-	height: 25px;
+	height: 30px;
 	outline: none;
-	background-color: #25a4f4;
+	background-color: #009223;
 	border:0;
 	border-radius: 3px;
 	color: #fff;
 	/* font-family: 'Jeju Gothic', sans-serif; */
-	font-size: 12px;
+	font-size: 14px;
 	box-sizing: border-box;
-	line-height: 25px;
 }
 
 .modify_pw label.error{
@@ -1954,7 +1965,7 @@ div.media div.media-body h4{
 	font-weight: 500;
 	padding-left: 3px;
 	font-weight: bold;
-	color:#25a4f4;
+	color:#009223;
 }
 .scrap_list .gallery-box{
 	position: relative;
@@ -2007,7 +2018,7 @@ div.media div.media-body h4{
 	display: inline-block;
 	float: left;
 	height: 16px;
-	background-color: #25a4f4;
+	background-color: #009223;
 	color: #fff;
 	line-height: 15px;
 	border-radius: 3px;
@@ -2501,8 +2512,7 @@ div {
     width:100%;
 }
 
-
-
+/* 서브메뉴클릭시 애니메이션 */
 ul.m_menu li.dropdown ul.dropdown-menu.subclose li{position:relative; overflow:hidden;}
 ul.m_menu li.dropdown ul.dropdown-menu.subclose li div.mask{display:block; border-radius:200px; position:absolute; left:50%; top:50%; width:0px; height:0px; background-color:#262626; opacity:0.1;  -webkit-animation:btn_effect 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; animation:btn_effect 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;}
 @keyframes btn_effect {

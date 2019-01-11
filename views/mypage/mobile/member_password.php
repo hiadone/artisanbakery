@@ -46,7 +46,7 @@
         ?>
             <label>비밀번호</label>
             <input type="password" id="mem_password" name="mem_password"/>
-            <button type="submit">확 인</button>
+            <button type="submit" class="btn btn-success">확 인</button>
         </div>
     </section>
     <?php echo form_close(); ?>
