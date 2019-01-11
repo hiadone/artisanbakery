@@ -14,7 +14,7 @@
 
 
 
-<div class="">
+<div class="write_form">
 
     <!-- <h3><?php echo html_escape(element('board_name', element('board', $view))); ?> 글쓰기</h3> -->
     <?php
@@ -32,7 +32,7 @@
              <input type="hidden"  name="post_email" id="post_email" value="<?php echo set_value('post_email', element('post_email', element('post', $view))); ?>" />
             <section class="write_info">
                 <figure>
-                    <img src="<?php echo base_url('assets/images/temp/write_img/write_user.png');?>" alt="user">
+                    <img src="<?php echo base_url('assets/images/write_user.png');?>" alt="user">
                     <figcaption>
                         <h2><?php echo set_value('post_nickname', element('post_nickname', element('post', $view))); ?></h2>
                         <span>작성일 : <?php echo date("Y.m.d") ?></span>
@@ -59,7 +59,7 @@
        
             <section class="write_info">
                 <figure>
-                    <img src="<?php echo base_url('assets/images/temp/write_img/write_user.png');?>" alt="user">
+                    <img src="<?php echo base_url('assets/images/write_user.png');?>" alt="user">
                     <figcaption>
                        <h2><?php echo $this->member->item('mem_nickname'); ?></h2>
                         <span>작성일 : <?php echo date("Y.m.d") ?></span>

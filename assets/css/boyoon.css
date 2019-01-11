@@ -1237,15 +1237,18 @@ div.media div.media-body h4{
 
 /*시크릿 투어,비자,렌트 카 클릭시 주의사항 영역*/
 .caution{
-	margin-bottom: 20px;
+	margin-top: 20px;
 	overflow: hidden;
-	padding: 3% 3% 0;
+	padding: 20px 3%;
+	background-color: #fff;
+	border-top: 1px solid #ddd;
 }
 .caution .tit{
 	margin-bottom: 3%;
-	color: #25a4f4;
+	color: #009223;
 	/* font-family: 'Jeju Gothic', sans-serif; */
 	font-size: 14px;
+	font-weight: bold;
 }
 
 .caution li{
@@ -1407,6 +1410,9 @@ div.media div.media-body h4{
 	box-sizing: border-box;
 	background-color:#fff;
 	border:1px solid #ededed;
+}
+.txt_list li{
+	line-height: 1;
 }
 .txt_list h2{
 	max-width: 100%;
@@ -2015,18 +2021,25 @@ div.media div.media-body h4{
 	color: #fff;
 	font-size: 13px;
 }
-
+/* 글쓰기영역 */
+.write_form{
+	padding: 10px 3%;
+	
+}
 /*업소후기,글쓰기 작성영역의 작성자 정보 영역*/
 .write_info figure{
-	background-color: #ecf4f9;
-	padding:3px 20px;
+	padding:3px 20px 0;
+	margin-bottom: 10px;
 	box-sizing: border-box;
-	border-radius:5px;
 	overflow:hidden;
+	background-color: #cce9d3;
+	border: 1px solid #e8e8e8;
+	border-radius:5px;
 }
 
 .write_info figure img{
 	height: 47px;
+	margin-top: 3px;
 }
 
 .write_info figcaption{
@@ -2037,29 +2050,34 @@ div.media div.media-body h4{
 }
 
 .write_info figcaption h2{
-	font-size: 18px;
 	margin-bottom: 3px;
+	font-size: 18px;
+	line-height: 1;
 }
 
 .write_info figcaption span{
 	font-size: 11px;
+	line-height: 1;
 }
 
 /*업소후기,글쓰기 작성영역의 제목 영역*/
 .write_title label.label_title{
-	width: 60px;
-	height: 25px;
-	line-height: 26px;
-	background-color: #25a4f4;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #009223;
 	display: inline-block;
 	color: #fff;
 	text-align:center;
 	/* font-family: 'Jeju Gothic', sans-serif; */
 	float: left;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .write_title input.text_title{
-	height: 25px;
+	height: 30px;
+	width: calc(100% - 70px)!important;
 	padding:3px 5px;
 	box-sizing: border-box;
 	font-size:15px;
@@ -2086,20 +2104,22 @@ div.media div.media-body h4{
 /*업소후기,글쓰기 작성영역의 업로드,링크 영역*/
 .write_upload label{
 	width: 70px;
-	height: 25px;
+	height: 30px;
 	margin-right: 10px;
-	line-height: 26px;
-	border-radius: 3px;
-	background-color: #25a4f4;
+	line-height: 30px;
+	border-radius: 2px;
+	background-color: #009223;
 	display: inline-block;
 	color: #fff;
 	text-align:center;
 	/* font-family: 'Jeju Gothic', sans-serif; */
 	float: left;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .write_upload input{
-	height: 25px;
+	height: 30px;
 	padding:3px 5px;
 	border:1px solid #ededed;
 	box-sizing: border-box;
@@ -2109,7 +2129,9 @@ div.media div.media-body h4{
 	float: right;
 	margin-bottom: 10px;
 }
-
+.write_upload .upload-name{
+	width: calc(100% - 80px)!important;
+}
 .write_upload input[type="file"]{
 	width: 1px;
 	height: 1px;
@@ -2128,17 +2150,18 @@ div.media div.media-body h4{
 
 .write_clear button{
 	width: 100px;
-	height: 30px;
-	line-height: 29px;
-	border-radius: 3px;
+	height: 36px;
+	border-radius: 2px;
 	display: inline-block;
 	color: #fff;
 	text-align: center;
 	/* font-family: 'Jeju Gothic', sans-serif; */
 	border: 0;
+	font-size: 14px;
+	font-weight: bold;
 }
 .write_clear button[type="submit"]{
-	background-color: #25a4f4;
+	background-color: #009223;
 }
 .write_clear button.btn-history-back{
 	background-color: #b7c2c8;

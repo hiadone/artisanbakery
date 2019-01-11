@@ -145,7 +145,7 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 			<div class="side_inner_abs" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0.001s; transform: translate(0px, 0px) translateZ(0px);">
 				<div class="side_menu_top">
 					<div class="m_logo">
-						<img src="<?php echo base_url('assets/images/logo_r.png'); ?>" alt="Artisan bakery logo">
+						<img src="<?php echo base_url('assets/images/m_logo.png'); ?>" alt="Artisan bakery logo">
 					</div>
 					<div class="m_login">
 						<?php if ($this->member->is_member()) { ?>
@@ -199,6 +199,7 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 					echo $menuhtml;
 					?>
 				</ul>
+				<button class="btn btn_close"><i class="fa fa-close"></i><span class="blind">close menu button</span></button>
 			</div>
 		</div>
 	</div>

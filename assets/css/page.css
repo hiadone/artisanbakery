@@ -25,7 +25,9 @@ table{
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+*{
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
+}
 /* blind 숨김 */
 .container .blind,
 .blind{
@@ -48,6 +50,7 @@ figure{
 }
 .wrap02{
 	padding-top: 30px;
+	box-sizing: border-box;
 }
 .main{
 	width: 100%;
@@ -328,7 +331,7 @@ footer .company li:last-child a{
 	padding: 16px 0;
 }
 #side_menu .m_logo img{
-	width: 90px;
+	width: 130px;
 }
 #side_menu .m_search .input{
 	width: 94%;
@@ -438,7 +441,26 @@ footer .company li:last-child a{
 }
 
 #side_menu .dropdown-menu li a{
-	padding-left: 60px;
+	/* padding-left: 60px; */
+}
+#side_menu .dropdown-menu li a:before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    vertical-align: middle;
+    background-color: #009223;
+    transform: rotate(45deg);
+    margin-right: 20px;
+}
+#side_menu .btn_close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 12px;
+	font-size: 28px;
+	line-height: 1;
+	color: #fff;
 }
 /* searchbox */
 .main .search_box{
@@ -717,7 +739,9 @@ footer .company li:last-child a{
 	border-bottom: none;
 }
 .page_top01 .page_top_li a{
+	display: inline-block;
 	color: #333;
+	min-width: 60%;
 }
 .page_top01 .page_top_ul .active a{
 	color: #ff8300;
@@ -776,7 +800,7 @@ footer .company li:last-child a{
 /* gallery_list01 제품리스트 */
 .gallery_list01{
 	width: 100%;
-	padding: 20px 0;
+	/* padding: 20px 0; */
 	box-sizing: border-box;
 }
 .gallery_list01 .gallery_list_ul{
@@ -875,11 +899,13 @@ footer .company li:last-child a{
 }
 /* gallery_list02 상품상세페이지 하단 제품리스트 */
 .gallery_list02{
-	background-color: #fff;
 	padding: 0 3% 10px;
 }
 .gallery_list02 .swiper-wrapper{
 	padding-bottom: 50px;
+}
+.gallery_list02 .list_box{
+	background-color: #fff;
 }
 .gallery_list04 .list_img,
 .gallery_list02 .list_img{
@@ -1467,7 +1493,9 @@ footer .company li:last-child a{
 	background: transparent;  /* optional: just make scrollbar invisible */
 }
 /* post */
-
+.post_wrap{
+	min-height: calc(100vh - 189px);
+}
 .information{
 	margin: 0 3% 20px;
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;

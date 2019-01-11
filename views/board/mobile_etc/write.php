@@ -92,11 +92,11 @@ if ($this->member->is_member() === false) {
         
             <div class="table-bottom text-center ">
                 <?php if(element('post_id',element('post', $view))){ ?>
-                <button type="submit" class="" style="width:45%">수정하기</button>
-                <button type="button" class="btn-history-back" style="width:45%">취소하기</button>
+                <button type="submit" class="btn-success" style="width:45%">수정하기</button>
+                <button type="button" class="btn-history-back btn-silver" style="width:45%">취소하기</button>
                 <?php }elseif(element('reply', $view) && element('origin', $view)){ ?>
-                <button type="submit" class="" style="width:45%">답변하기</button>
-                <button type="button" class="btn-history-back" style="width:45%">취소하기</button>
+                <button type="submit" class="btn-success" style="width:45%">답변하기</button>
+                <button type="button" class="btn-history-back btn-silver" style="width:45%">취소하기</button>
                 <?php } else { ?>
                 <button type="submit" class="btn-success">작 성 하 기</button>
                 <?php } ?>

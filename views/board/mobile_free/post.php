@@ -21,7 +21,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 
 <?php echo element('headercontent', element('board', $view)); ?>
 
-<div class="wrap02 bg_wh">
+<div class="wrap02 bg_wh post_wrap">
     <?php echo show_alert_message($this->session->flashdata('message'), '<div class="alert alert-auto-close alert-dismissible alert-info">', '</div>'); ?>
    <!--  <h3>
         <?php if (element('category', element('post', $view))) { ?>[<?php echo html_escape(element('bca_value', element('category', element('post', $view)))); ?>] <?php } ?>
@@ -142,7 +142,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
                     <a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-info btn-sm">검색목록</a>
             <?php } ?>
             <?php if (element('prev_post', $view)) { ?>
-                <a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-success btn-sm"><i class="fa fa-caret-left"></i>이전 글</a>
+                <a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-success btn-sm"><i class="fa fa-caret-left"></i> 이전 글</a>
             <?php } ?>
             <?php if (element('next_post', $view)) { ?>
                 <a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-success btn-sm">다음글 <i class="fa fa-caret-right"></i></a>

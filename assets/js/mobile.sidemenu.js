@@ -77,7 +77,11 @@ jQuery(function($) {
 			remove_side_data();
 		}
 	});
-
+	//seon 추가 close btn
+	$('#side_menu .btn_close').on('click',function(){
+		remove_side_data();
+	});
+	
 	var clickEventType= 'ontouchend' in document ? 'touchend' : 'click';
 
 	if( clickEventType == 'touchend'){
