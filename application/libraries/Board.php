@@ -1243,7 +1243,7 @@ class Board extends CI_Controller
 		}
 		$result = $this->CI->db->get();
 		$view['view']['latest'] = $latest = $result->result_array();
-		
+
 		$view['view']['latest_limit'] = $limit;
 		if ($latest && is_array($latest)) {
 			foreach ($latest as $key => $value) {
@@ -1260,6 +1260,7 @@ class Board extends CI_Controller
 						$view['view']['latest'][$key]['category'] = $this->CI->Board_category_model->get_category_info(element('brd_id', $value), element('post_category', $value));
 				}
 				if ($is_gallery) {
+
 					if (element('post_image', $value)) {
 						$imagewhere = array(
 							'post_id' => element('post_id', $value),
@@ -1267,11 +1268,11 @@ class Board extends CI_Controller
 						);
 						$file = $this->CI->Post_file_model->get_one('', '', $imagewhere, '', '', 'pfi_id', 'ASC');
 						if (element('pfi_filename', $file)) {
-							$view['view']['latest_main'][$key]['thumb_url'] = thumb_url('post', element('pfi_filename', $file), $image_width, $image_height);
+							$view['view']['latest'][$key]['thumb_url'] = thumb_url('post', element('pfi_filename', $file), $image_width, $image_height);
 						}
 					} else {
 						$thumb_url = get_post_image_url(element('post_content', $value), $image_width, $image_height);
-						$view['view']['latest_main'][$key]['thumb_url'] = $thumb_url ? $thumb_url : '';
+						$view['view']['latest'][$key]['thumb_url'] = $thumb_url ? $thumb_url : '';
 					}
 				}
 			}
