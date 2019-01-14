@@ -67,9 +67,9 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 			<div class="h_btn m_mypg pull-left">
 			<?php if ($this->member->is_member()) { ?>
 			    
-			    <a href="<?php echo site_url('mypage'); ?>" ><i class="fa fa-user-secret " style="font-size: 2.4em"></i></a>
+			    <a href="<?php echo site_url('mypage'); ?>" ><img src="<?php echo base_url('assets/images/h_icon_user_config.svg')?>" alt="회원정보"></a>
 			<?php } else { ?>
-			    <a href="<?php echo site_url('login?url=' . urlencode(current_full_url())); ?>" ><i class="fa fa-user " style="font-size: 2.4em"></i></a>
+			    <a href="<?php echo site_url('login?url=' . urlencode(current_full_url())); ?>" ><img src="<?php echo base_url('assets/images/h_icon_user.svg')?>" alt="로그인"></a>
 			    
 			<?php } ?>
 			</div>

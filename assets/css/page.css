@@ -385,14 +385,14 @@ footer .company li:last-child a{
 	color: #000;
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
-#side_menu .dropdown .subopen{
+#side_menu li.dropdown .subopen{
 	text-indent: 0;
 }
-#side_menu .dropdown .subopen .fa{
+#side_menu li.dropdown .subopen .fa{
 	color: #009223;
 	/* transition: transform 0.2s; */
 }
-#side_menu .dropdown .subclose .fa{
+#side_menu li.dropdown .subopen.subclose .fa{
 	color: #ff8300;
 	transform: rotate(-180deg);
 }
@@ -454,7 +454,7 @@ footer .company li:last-child a{
     vertical-align: middle;
     background-color: #009223;
     transform: rotate(45deg);
-    margin-right: 20px;
+    margin-right: 10px;
 }
 #side_menu .btn_close{
 	position: absolute;
@@ -916,7 +916,7 @@ footer .company li:last-child a{
 	text-align: center;
 	width:100%;
 	padding-bottom:100%;
-	margin-bottom: 8px;
+	/*margin-bottom: 8px;*/
 	background-color: #fff;
 }
 .gallery_list04 .list_img img,
@@ -930,7 +930,7 @@ footer .company li:last-child a{
 }
 .gallery_list02 .item_name{
 	text-align: center;
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: bold;
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }

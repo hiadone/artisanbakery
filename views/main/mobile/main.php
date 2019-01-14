@@ -115,7 +115,7 @@
 <?php 
 	$config = array(
 			'skin' => 'mobile',
-			'brd_key' => 'b-b-2',
+			'brd_key' => array('b-b-1','b-b-2'),
 			'is_gallery' => 1,
 			'limit' => 5,
 			'cache_minute' => 1,

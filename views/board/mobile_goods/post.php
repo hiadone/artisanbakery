@@ -375,7 +375,7 @@ client.on('ready', function( readyEvent ) {
 
 
     var swiper = new Swiper('.gallery_list02 .swiper-container', {
-      slidesPerView: 3,
+      slidesPerView: 2.5,
       spaceBetween: 10,
       freeMode: true,
       pagination: {

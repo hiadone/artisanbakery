@@ -2512,7 +2512,7 @@ div {
     width:100%;
 }
 
-/* 서브메뉴클릭시 애니메이션 */
+
 ul.m_menu li.dropdown ul.dropdown-menu.subclose li{position:relative; overflow:hidden;}
 ul.m_menu li.dropdown ul.dropdown-menu.subclose li div.mask{display:block; border-radius:200px; position:absolute; left:50%; top:50%; width:0px; height:0px; background-color:#262626; opacity:0.1;  -webkit-animation:btn_effect 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; animation:btn_effect 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;}
 @keyframes btn_effect {
