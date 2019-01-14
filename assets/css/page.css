@@ -212,7 +212,7 @@ figure{
 	width: 50px;
 	height: 40px;
 	vertical-align: bottom;
-	background: url(http://cmy.artisanbakery.vn/assets/images/back_tit11.svg) no-repeat center;
+	background: url(../images/back_tit11.svg) no-repeat center;
 	background-size: 100%;
 	margin: 0 0 0 -20px;
 	position: relative;
@@ -231,10 +231,10 @@ figure{
 }
 
 .main .title12:before{
-	background-image: url(http://cmy.artisanbakery.vn/assets/images/quotes_before.svg);
+	background-image: url(/assets/images/quotes_before.svg);
 }
 .main .title12:after{
-	background-image: url(http://cmy.artisanbakery.vn/assets/images/quotes_after.svg);
+	background-image: url(/assets/images/quotes_after.svg);
 }
 .main .title12:before,
 .main .title12:after {

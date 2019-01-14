@@ -1423,6 +1423,7 @@ div.media div.media-body h4{
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow:hidden;
+	line-height: 1.1;
 }
 .txt_list div{
 	max-width:100%;
@@ -1435,9 +1436,10 @@ div.media div.media-body h4{
 	text-overflow: ellipsis;
 }
 .txt_list div p{
-	white-space:nowrap;
-	text-overflow:ellipsis;
-	overflow:hidden; 
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden; 
+	line-height: 1.1;
 	}
 .txt_list span{
 	float: right;
@@ -1448,8 +1450,8 @@ div.media div.media-body h4{
 }
 /* 자유게시판 게시물에 사진 있을시 썸네일 추가 */
 .txt_list .thum_box {
-	width: 67px;
-	height: 67px;
+	width: 69px;
+	height: 69px;
 	margin: 0 10px 0 0; 
 	padding: 0;
 }
