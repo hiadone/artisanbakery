@@ -21,7 +21,7 @@
     </section>
 
 
-    <section class="info_modify ml10 mr10">
+    <section class="info_modify mg10">
     <?php
     echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>');
     echo show_alert_message(element('message', $view), '<div class="alert alert-auto-close alert-dismissible alert-info"><button type="button" class="close alertclose" >&times;</button>', '</div>');

@@ -857,7 +857,7 @@ class Board_write extends CB_Controller
 			}
 
 			if ($is_post_name || $is_admin==="super") {
-				$updatedata['post_nickname'] = $this->input->post('post_nickname', null, '');
+				$updatedata['post_nickname'] = empty($this->input->post('post_nickname')) ? $this->member->item('mem_nickname') : $this->input->post('post_nickname');
 				$updatedata['post_email'] = $this->input->post('post_email', null, '');
 				$updatedata['post_homepage'] = $this->input->post('post_homepage', null, '');
 			}
@@ -2175,7 +2175,7 @@ class Board_write extends CB_Controller
 			);
 
 			if ($is_post_name || $is_admin==="super") {
-				$updatedata['post_nickname'] = $this->input->post('post_nickname', null, '');
+				$updatedata['post_nickname'] = empty($this->input->post('post_nickname')) ? $this->member->item('mem_nickname') : $this->input->post('post_nickname');
 				$updatedata['post_email'] = $this->input->post('post_email', null, '');
 				$updatedata['post_homepage'] = $this->input->post('post_homepage', null, '');
 			}
