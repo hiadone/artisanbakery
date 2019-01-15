@@ -1,12 +1,8 @@
 <?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/style.css'); ?>
 
-<div class="wrap05 mypage">
-
-    
-    
+<div class="mypage">
     <section class="">
         <h2 class="title10">회원 정보 수정</h2>
-        <p><span>내 정보</span>를 수정 하실 수 있습니다.</p>
     </section>
 
     <section class="info_table">
@@ -23,7 +19,7 @@
         </table>
     </section>
     
-    <section class="info_modify">
+    <section class="info_modify mg10">
     <?php
     echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>');
     echo show_alert_message(element('message', $view), '<div class="alert alert-auto-close alert-dismissible alert-info"><button type="button" class="close alertclose" >&times;</button>', '</div>');
@@ -78,7 +74,10 @@
         </ol>
         <button type="submit">수 정 하 기</button>
     </section>
-    
+    <section class="ad" style="margin-bottom:0;">
+        <h4 class="hidden">ad</h4>
+        <?php echo banner("mypage_banner_1") ?>
+    </section>
     <?php echo form_close(); ?>
 </div>
 

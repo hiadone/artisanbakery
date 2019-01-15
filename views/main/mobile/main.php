@@ -79,7 +79,7 @@
 	  },
 	  navigation: {
 		nextEl: 'div.gallery_list06_container .swiper-button-next',
-		prevEl: 'div.gallery_list06_container.swiper-button-prev',
+		prevEl: 'div.gallery_list06_container .swiper-button-prev',
 	  },
 	});
 

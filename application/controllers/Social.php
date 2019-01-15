@@ -70,7 +70,7 @@ class Social extends CB_Controller
 		$fb = new Facebook\Facebook([
 		'app_id' => $this->cbconfig->item('facebook_app_id'),
 		'app_secret' => $this->cbconfig->item('facebook_secret'),
-		'default_graph_version' => 'v2.2',
+		'default_graph_version' => 'v3.2',
 		]);
 
 		$helper = $fb->getRedirectLoginHelper();

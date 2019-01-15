@@ -13,7 +13,7 @@
         foreach (element('latest_goods', $view) as $key => $value) {
     ?>
         <div class="swiper-slide list_box">
-            <a href="<?php echo element('url', $value); ?>" title="<?php echo html_escape(element('title', $value)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $value); ?>" style="width:100%;"></div><h4 class="item_name"><?php echo html_escape(element('title', $value)); ?></h4>
+            <a href="<?php echo element('url', $value); ?>?initialSlide=<?php echo $i; ?>" title="<?php echo html_escape(element('title', $value)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $value); ?>" style="width:100%;"></div><h4 class="item_name"><?php echo html_escape(element('title', $value)); ?></h4>
             </a>
             
         </div>
@@ -27,7 +27,7 @@
         <div class="swiper-pagination pagination_green"></div>
     </div>
     
-    
+    <a href="<?php echo board_url(element('brd_key',element('config', $view))) ?>" class="btn btn-info btn_more" style="margin-top:0px;margin-bottom:0px;"><i class="fa fa-th-list"></i> 전 체 목 록</a>
 </div>
 <!-- Initialize Swiper -->
   
