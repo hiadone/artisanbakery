@@ -1,5 +1,5 @@
 <section class="mainpg_news mainpg_txt_list">
-    <h2 class="title01">NEWS & NOTICE</h2>
+    <h2 class="title07 mb10">NEWS & NOTICE</h2>
     <div class="txt_list01">
         
         <?php
@@ -37,5 +37,5 @@
         ?>
         
     </div>
-    <div class="btn_box"><a href="<?php echo board_url(element('brd_key', element('board', $view))); ?>" class="btn_more btn-success"><i class="fa fa-th-list mr05" style="color: #ffce32;"></i>View More</a></div>
+    <div class="btn_box"><a href="<?php echo board_url(element('brd_key', element('board', $view))); ?>" class="btn_more"><i class="fa fa-th-list mr05"></i>View More</a></div>
 </section>

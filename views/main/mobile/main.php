@@ -70,8 +70,8 @@
 	});
 
 	var swiper = new Swiper('div.gallery_list06_container', {
-	  slidesPerView: 1,
-	  spaceBetween: 0,
+	  slidesPerView: 2,
+	  spaceBetween: 5,
 	  loop: true,
 	  pagination: {
 		el: 'div.gallery_list06_container .swiper-pagination',

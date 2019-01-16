@@ -1439,7 +1439,7 @@ div.media div.media-body h4{
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden; 
-	line-height: 1.1;
+	line-height: 1.2;
 	}
 .txt_list span{
 	float: right;
@@ -1450,8 +1450,8 @@ div.media div.media-body h4{
 }
 /* 자유게시판 게시물에 사진 있을시 썸네일 추가 */
 .txt_list .thum_box {
-	width: 69px;
-	height: 69px;
+	width: 70px;
+	height: 70px;
 	margin: 0 10px 0 0; 
 	padding: 0;
 }
