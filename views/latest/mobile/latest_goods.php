@@ -24,7 +24,7 @@
     ?>
         </div>
             <!-- Add Pagination -->
-        <div class="swiper-pagination pagination_green"></div>
+        <div class="swiper-pagination pagination_yellow"></div>
     </div>
     
     <a href="<?php echo board_url(element('brd_key',element('config', $view))) ?>" class="btn btn-info btn_more" style="margin-top:0px;margin-bottom:0px;"><i class="fa fa-th-list"></i> 전 체 목 록</a>

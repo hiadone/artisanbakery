@@ -137,7 +137,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
     <div class="border_button cont_tab mg10">
         <div class="pull-left">
             
-                <a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn-sm">목 록</a>
+                <a href="<?php echo element('list_url', $view); ?>" class="btn btn-danger btn-sm">목 록</a>
             <?php if (element('search_list_url', $view)) { ?>
                     <a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-info btn-sm">검색목록</a>
             <?php } ?>

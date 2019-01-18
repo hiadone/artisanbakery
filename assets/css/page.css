@@ -12,6 +12,7 @@
 	}
 }
 /* main and point color */
+/* main : #906d4f */
 /* 로즈골드:  #b08e72 */
 /* 노랑 : #ffce32 */
 /* 연노랑 : #fffcef */
@@ -56,7 +57,7 @@ figure{
 	width: 100%;
 	padding: 0;
 	box-sizing: border-box;
-	min-height: calc(100vh - 60px); /* 화면높이 - 푸터높이 */
+	min-height: calc(100vh - 45px); /* 화면높이 - 푸터높이 */
 	overflow: hidden;
 	background-color: #f4f4f4;
 }
@@ -72,7 +73,7 @@ figure{
 /* btn */
 .btn-blueline{
 	background-color: #fff;
-	border: 2px solid #01a5e2;
+	border: 2px solid #0fabd7;
 	padding: 2px 4px;
 }
 .pull-right .btn{
@@ -110,6 +111,10 @@ figure{
 	-webkit-animation: anititle01 0.4s ease-in 1;
 	-o-animation: anititle01 0.4s ease-in 1;
 	animation: anititle01 0.4s ease-in 1;
+}
+.main .title01 .fa{
+	color: #bababb;
+	margin: 0 3px;
 }
 /* title 회사소개(초안) 초록색 밑줄 */
 .main .title02{
@@ -166,7 +171,7 @@ figure{
 	padding: 6px 0;
 	border: none;
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
-	
+	color: #000;
 }
 /* title08 */
 .main .title08{
@@ -174,6 +179,7 @@ figure{
 	font-size: 20px;
 	font-weight: bold;
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
+	color: #000;
 }
 /* title09  */
 .main .title09{
@@ -185,16 +191,17 @@ figure{
 .main .title09 .sub_tit{
 	display: block;
 	font-size: 18px;
-	color: #009223;
+	color: #906d4f;
 }
 /* title10 회원가입 */
 .main .title10{
 	padding: 10px 15px;
+	box-sizing: border-box;
 	font-size: 18px;
 	font-weight: bold;
 	color: #000;
 	background-color: #fff;
-	border-bottom: 2px solid #009223;
+	border-bottom: 2px solid #906d4f;
 }
 /* title11 빵 배경*/
 .main .title11{
@@ -329,7 +336,7 @@ footer .company li:last-child a{
 	background: #fff;
 }
 #side_menu .side_menu_top{
-	background-color: #009223;
+	background-color: #906d4f;
 }
 #side_menu .m_logo{ 
 	text-align: center;
@@ -348,15 +355,15 @@ footer .company li:last-child a{
     text-align: center;
 	margin: 0;
     padding: 0;
-	border-bottom: 1px solid #009223;
+	border-bottom: 1px solid #906d4f;
 	
 }
 #side_menu .m_login span{
 	display: table-cell;
 	width: 1%;
 	line-height: 40px;
-	border-right: 1px solid #009223;
-	background-color: #ffce32;
+	border-right: 1px solid #906d4f;
+	background-color: #f7f0da;
 }
 #side_menu .m_login span:last-child{
 	border-right: none;
@@ -369,7 +376,7 @@ footer .company li:last-child a{
 	color: #000;
 }
 #side_menu .m_login .btn .fa{
-	color: #009223;
+	color: #906d4f;
 	font-size: 22px;
 	vertical-align: bottom;
 }
@@ -391,7 +398,7 @@ footer .company li:last-child a{
 	text-indent: 0;
 }
 #side_menu li.dropdown .subopen .fa{
-	color: #009223;
+	color: #906d4f;
 	/* transition: transform 0.2s; */
 }
 #side_menu li.dropdown .subopen.subclose .fa{
@@ -454,7 +461,7 @@ footer .company li:last-child a{
     width: 4px;
     height: 4px;
     vertical-align: middle;
-    background-color: #009223;
+    background-color: #906d4f;
     transform: rotate(45deg);
     margin-right: 10px;
 }
@@ -517,7 +524,7 @@ footer .company li:last-child a{
 /* .table_wrap FAQ Q&A*/
 .table_wrap{
 	margin-bottom: 30px;
-	border-top: 2px solid #009223;
+	border-top: 2px solid #906d4f;
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 }
 .table_wrap .table-box{
@@ -535,6 +542,7 @@ footer .company li:last-child a{
 .table_wrap .table-heading:before{
 	content: '+';
 	display: inline-block;
+	margin-left: 5px;
 	float:right;
 	font-size: 24px;
 	line-height: 24px;
@@ -571,7 +579,7 @@ footer .company li:last-child a{
 	border-bottom: 2px solid #666;
 }
 .table_wrap .table_open{
-	color: #01a5e2;
+	color: #0fabd7;
 	font-weight: bold;
 }
 .table_wrap .table_open:before{
@@ -680,7 +688,7 @@ footer .company li:last-child a{
 	font-family: Gothic,sans-serif;
 	font-weight: bold;
 	color: #fff;
-	background-color: #009223;
+	background-color: #906d4f;
 	border-bottom: 8px solid #ffce32;
 }
 .art_brand_story .brand_story_txt{
@@ -761,15 +769,15 @@ footer .company li:last-child a{
 .tag{
 	display: inline-block;
 	float: left;
-	padding: 5px 8px;
+	padding: 3px 8px;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	letter-spacing: 2px;
 	
 }
 .tag_event{
-	background-color: #01a5e2;
+	background-color: #0fabd7;
 	color: #fff;
 }
 .tag_hot{
@@ -789,11 +797,13 @@ footer .company li:last-child a{
 	height: 12px;
 	border-radius: 8px;
 	background-color: #ddd;
-	opacity: 1;
+	opacity: .7;
 	transition: width 0.3s;
 }
 .swiper-pagination .swiper-pagination-bullet-active{
 	width: 40px;
+	opacity: 1;
+	background-color: #fff;
 }
 .pagination_green .swiper-pagination-bullet-active{
 	background-color: #009223;
@@ -998,7 +1008,6 @@ footer .company li:last-child a{
 }
 .gallery_list04 .item_name{
 	font-size: 14px;
-	color: #009223;
 }
 /* gallery_list05 */
 .gallery_list05{
@@ -1195,7 +1204,7 @@ footer .company li:last-child a{
 	color: #333;
 }
 .post_views{
-	color: #01a5e2;
+	color: #0fabd7;
 	font-weight: bold;
 }
 .txt_list01 .txt_thum{
@@ -1499,8 +1508,8 @@ footer .company li:last-child a{
 	box-sizing: border-box;
 	overflow: hidden;
 	border-radius: 16px;
-	border: 8px solid #ffc300;
-	background-color: #ffc300;
+	border: 8px solid #b08e72;
+	background-color: #b08e72;
 }
 .info_ingredients .ingredients_box{
 	padding: 0 3%;
@@ -1520,7 +1529,7 @@ footer .company li:last-child a{
 }
 /* post */
 .post_wrap{
-	min-height: calc(100vh - 189px);
+	min-height: calc(100vh - 174px);
 }
 .information{
 	margin: 0 3% 20px;
@@ -1641,11 +1650,11 @@ footer .company li:last-child a{
 /* list */
 .board .post_list{
 	background-color: #fff;
-	border-top: 2px solid #009223;
+	border-top: 2px solid #906d4f;
 	table-layout: fixed;
 }
 .board .post_list thead{
-	border-top: 2px solid #009223;
+	border-top: 2px solid #906d4f;
 }
 .board .post_list td{
 	text-align: center;
@@ -1687,7 +1696,7 @@ footer .company li:last-child a{
 }
 .latest .table-box{
 	border: none;
-	border-top: 2px solid #009223;
+	border-top: 2px solid #906d4f;
 	border-bottom: 1px solid #bababb;
 }
 .latest .table-heading{
@@ -1762,7 +1771,7 @@ footer .company li:last-child a{
 .register,
 .provision,
 .findarea{
-	min-height: calc(100vh - 114px);
+	min-height: calc(100vh - 99px);
 	background-color: #fff;
 	box-sizing: border-box;
 }
@@ -1902,7 +1911,7 @@ footer .company li:last-child a{
 }
 .change_password .user_id strong{
 	font-size: 18px;
-	color: #01a5e2;
+	color: #0fabd7;
 }
 .access .loginform .inp_user_id span,
 .access .loginform .inp_password span,
@@ -1913,12 +1922,12 @@ footer .company li:last-child a{
 	text-align: left;
 	margin-bottom: 8px;
 }
-/* goods_detail */
+/* goods_detail 상품상세페이지 */
 .goods_detail{
 	background-color: #fff;
 }
 .goods_tit{
-	padding: 40px 3% 20px;
+	padding: 50px 3% 20px;
 	position: relative;
 	text-align: center;
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
@@ -1927,7 +1936,7 @@ footer .company li:last-child a{
 	margin-bottom: 10px;
 	font-size: 18px;
 	font-weight: bold;
-	color: #009223;
+	color: #ff8300;
 }
 .goods_tit .item_name{
 	padding-bottom: 0;
