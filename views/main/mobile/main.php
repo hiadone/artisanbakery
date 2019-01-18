@@ -72,34 +72,37 @@
 	var swiper = new Swiper('div.gallery_list06_container', {
 	  slidesPerView: 2,
 	  spaceBetween: 5,
-	  loop: true,
+	  // loop: true,
+	  freeMode: true,
+
 	  pagination: {
 		el: 'div.gallery_list06_container .swiper-pagination',
 		clickable: true,
 	  },
-	  navigation: {
+	  on: {
+	      init: function () {
+	        $('div.gallery_list06_container').css("visibility","visible");
+
+	      },
+	    },
+	  /*navigation: {
 		nextEl: 'div.gallery_list06_container .swiper-button-next',
 		prevEl: 'div.gallery_list06_container .swiper-button-prev',
-	  },
+	  },*/
 	});
 
+	
+	
+	
 
 	
 </script>
 <?php  ?>
-
-<section class="mainpg_link01">
-	<h2 class="blind">quick link01</h2>
-	
-	<article class="link_art link_art01">
-		<div class="link_box">
-			<h3 class="link_tit btn"><a href="/document/artisanbakery_info">ARTISAN STORY<span class="blind">shorcut</span></a></h3>
-			<p class="link_txt">Fusce facilisis lorem sed aliquam feugiat.</p>
-		</div>
-		<div class="link_img_back" style="background-image: url(https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/20294344_2274795039459627_6411433453739904055_n.jpg?_nc_cat=103&_nc_ht=scontent-icn1-1.xx&oh=4988e0b25ca81e68ab0699ca5ac93e97&oe=5C8F3D8A)"></div>
-	</article>
-	
+<section class="img_ad01">
+	<h2 class="blind">Have a good with Artisan</h2>
+	<?php echo banner('default_banner') ?>
 </section>
+
 
 
 <!-- <section class="mainpg_link02" style="background-image: url(https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/20294344_2274795039459627_6411433453739904055_n.jpg?_nc_cat=103&_nc_ht=scontent-icn1-1.xx&oh=4988e0b25ca81e68ab0699ca5ac93e97&oe=5C8F3D8A)">
@@ -123,7 +126,10 @@
 	echo $this->board->latest_main_free($config);
 
 	?>
-
+	<section class="img_ad01">
+		<h2 class="blind">artisan story shortcut</h2>
+		<a href="<?php echo base_url('document/artisanbakery_info') ?>"><img src="<?php echo base_url('assets/images/main_brand_stroy.jpg') ?>" alt="artisan story quick link"></a>
+	</section>
 <script>
 	function product_tab_change(product_tab){
 
@@ -135,5 +141,14 @@
 		
 	}
 
-	product_tab_change('b-a-1');
+	function product_tab_init(){
+
+		
+
+		$("div.gallery_list06_container.b-a-2").hide();
+		$("div.gallery_list06_container.b-a-3").hide();
+	    
+		
+	}
+	product_tab_init();
 </script>
