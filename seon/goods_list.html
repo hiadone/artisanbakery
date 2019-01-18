@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cake - 아티산 베이커리</title>
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/assets/css/boyoon.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/_layout/mobile/css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/assets/css/page.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Sans">
+	<link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://cmy.artisanbakery.vn/views/boacmyrd/mobile_goods/css/style.css"> -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		// 자바스크립트에서 사용하는 전역변수 선언
+		var cb_url = "http://cmy.artisanbakery.vn";
+		var cb_cookie_domain = "";
+		var cb_charset = "UTF-8";
+		var cb_time_ymd = "2019-01-18";
+		var cb_time_ymdhis = "2019-01-18 10:28:23";
+		var layout_skin_path = "_layout/mobile";
+		var view_skin_path = "board/mobile_goods";
+		var is_member = "";
+		var is_admin = "";
+		var cb_admin_url = "";
+		var cb_board = "b-a-1";
+		var cb_board_url = cb_url + "/board/b-a-1";
+		var cb_device_type = "mobile";
+		var cb_csrf_hash = "5dea116566682fa4dffe8ff46a196b26";
+		var cookie_prefix = "";
+	</script>
+
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/common.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.validate.extension.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/sideview.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.ba-outside-events.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/iscroll.min.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/mobile.sidemenu.js"></script>
+	<script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/js.cookie.js"></script>
+	<!-- <script type="text/javascript" src="http://cmy.artisanbakery.vn/assets/js/jquery.lazy.min.js"></script> -->
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header start -->
+		<!-- nav start -->
+		<header class="header navbar">
+			<div class="container">
+				<h1 class="logo">
+					<a href="http://cmy.artisanbakery.vn/" title="아티산 베이커리"><img src="http://cmy.artisanbakery.vn/assets/images/h_logo.png" alt="Artisan bakery"></a>
+				</h1>
+				<div class="h_btn m_nav pull-right">
+					<a href="javascript:;" id="btn_side"><i class="fa fa-bars " style="font-size: 2.4em"></i></a>
+				</div>
+				<div class="h_btn m_mypg pull-left">
+					<a href="http://cmy.artisanbakery.vn/login?url=https%3A%2F%2Fdev.artisanbakery.vn%2Fboard%2Fb-a-1"><img src="http://cmy.artisanbakery.vn/assets/images/h_icon_user.svg" alt="로그인"></a>
+
+				</div>
+
+			</div>
+
+		</header>
+
+		<!-- nav end -->
+		<!-- header end -->
+
+		<!-- main start -->
+		<div class="main">
+
+			<div class="container  wrap01">
+				<div class="page_top01">
+					<h2 class="title06 ">Cake</h2>
+					<div class="page_top_menu" style="top: 75px;">
+						<ul class="page_top_ul">
+							<li class="page_top_li active"><a href="/board/b-a-1">Cake</a></li>
+							<li class="page_top_li"><a href="/board/b-a-2">Bread</a></li>
+							<li class="page_top_li"><a href="/board/b-a-3">Donuts</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- 본문 시작 -->
+
+				<div class="board">
+					<form action="http://cmy.artisanbakery.vn/board/b-a-1" name="fboardlist" id="fboardlist" method="post" accept-charset="utf-8">
+						<input type="hidden" name="csrf_test_name" value="5dea116566682fa4dffe8ff46a196b26">
+						<style>
+							.gallery_list07{}
+							.gallery_list07 .gallery_list_ul{
+								overflow: hidden;
+							}
+							.gallery_list07 .gallery_list_li{
+								width: 48.5%;
+								margin-bottom: 10px;
+								position: relative;
+								padding-bottom: 10px;
+								background-color: #fff;
+							}
+							.gallery_list07 .gallery_list_li:nth-child(2n-1){
+								float: left;
+							}
+							.gallery_list07 .gallery_list_li:nth-child(2n){
+								float: right;
+							}
+							.list_img{
+								font-size: 0;
+							}
+							.list_img .img{ 
+								font-size: 10px;
+							}
+							.gallery_list07 .list_img img{
+								width: 100%;
+							}
+							.gallery_list07 .list_txt{
+								text-align: center;
+								padding: 0 4%;
+								margin-bottom: 5px;
+							}
+							.gallery_list07 .item_name{
+								font-size: 16px;
+								font-weight: bold;
+								white-space: nowrap;
+								text-overflow: ellipsis;
+								overflow: hidden;
+							}
+							.gallery_list07 .item_postinfo{
+								font-size: 13px;
+								color: #333;
+							}
+							.gallery_list07 .item_postinfo a{
+								overflow: hidden;
+								text-overflow: ellipsis;
+								display: -webkit-box;
+								-webkit-line-clamp: 3; /* 라인수 */
+								-webkit-box-orient: vertical;
+								word-wrap:break-word;
+								line-height: 1.5em;
+								height: 4.5em;
+							}
+							.gallery_list07 .item_price{
+								display: block;
+								color: #ff8300;
+							}
+							.gallery_list07 .price_num{
+								font-size: 16px;
+								
+							}
+							.gallery_list07 .dong{
+								font-size: 14px;
+								font-weight: normal;
+							}
+							.gallery_list07 .tag_box{
+								top: 5px;
+								left: 5px;
+							}
+						</style>
+
+
+						<div class="gallery_list07">
+							<ul class="gallery_list_ul">
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/61" title="통우유식빵(Half)">
+											<div class="list_img"><img src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-990bab467a7d937edf12e5847c2481a6_400x.jpg" alt="통우유식빵(Half)" title="통우유식빵(Half)" class="goods_thumbnail img-responsive"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name">
+										<a href="http://cmy.artisanbakery.vn/post/61" style="" title="통우유식빵(Half)" class="item_name">통우유식빵(Half) </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/61" title="30.7%우유 함량으로 쫄깃한 식감과 고소한 풍미가 일품인 통우유식빵">
+											30.7%우유 함량으로 쫄깃한 식감과 고소한 풍미가 일품인 통우유식빵
+
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/55" title="수제 호박케이크">
+											<div class="list_img"><img src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-e25c05137ef9ca92c773437e3d75069a_400x.jpg" alt="수제 호박케이크" title="수제 호박케이크" class="goods_thumbnail img-responsive"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/55" style="
+					" title="수제 호박케이크" class="item_name">수제 호박케이크 </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/55" title="늙은 호박을 사용해 맛과 향이 풍부한, 장인정신이 깃든 수제케이크">
+											늙은 호박을 사용해 맛과 향이 풍부한, 장인정신이 깃든 수제케이크
+
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+							</ul>
+							<ul class="gallery_list_ul">
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/54" title="한우 고로케">
+											<div class="list_img"><img src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-de2d3385df72afd8b4a7356239619e3b_400x.jpg" alt="한우 고로케" title="한우 고로케" class="goods_thumbnail img-responsive"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/54" style="
+					" title="한우 고로케" class="item_name">한우 고로케 </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/54" title="골고루 다진 한우와 신선한 야채가 들어있는 영양만점 고로케">
+											골고루 다진 한우와 신선한 야채가 들어있는 영양만점 고로케
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/53" title="상투앙금빵(1BOX 8개입)">
+											<div class="list_img"><img src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-a0d81f4dc54dcb0eb134d6677f117f89_400x.jpg" alt="상투앙금빵(1BOX 8개입)" title="상투앙금빵(1BOX 8개입)" class="goods_thumbnail img-responsive"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/53" style="
+					" title="상투앙금빵(1BOX 8개입)" class="item_name">부드러운 상투앙금빵(1BOX 8개입) </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/53" title="부드러운 상투 빵 속에 달콤한 앙금이 들어있는 빵">
+											부드러운 상투 빵 속에 달콤한 앙금이 들어있는 빵
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+							</ul>
+							<ul class="gallery_list_ul">
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/52" title="초콜릿 브라우찌">
+											<div class="list_img"><img alt="초콜릿 브라우찌" title="초콜릿 브라우찌" class="goods_thumbnail img-responsive lazy" src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-fd29501b647dbdd8744828353c9c03e7_400x.jpg" style="display: block;"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/52" style="
+					" title="초콜릿 브라우찌" class="item_name">초콜릿 브라우찌 </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/52" title="벨기에산 다크초콜릿과 프랑스산 생크림을 사용해 진한 초콜릿의 풍미와 카카오 파우더의 달콤 쌉싸름한 맛을 그대로 담아낸 초콜릿 브라우찌">
+											벨기에산 다크초콜릿과 프랑스산 생크림을 사용해 진한 초콜릿의 풍미와 카카오 파우더의 달콤 쌉싸름한 맛을 그대로 담아낸 초콜릿 브라우찌
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/45" title="Buffalo Chicken salad">
+											<div class="list_img"><img alt="Buffalo Chicken salad" title="Buffalo Chicken salad" class="goods_thumbnail img-responsive lazy" src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-d512aa2bfc2d46443ec0aab82fe7ea20_400x.png" style="display: block;"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/45" style="
+					" title="Buffalo Chicken salad" class="item_name">Buffalo Chicken salad </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/45" title="Turn your favourite sub into a salad today for a lighter option than your usual sub.">
+											Turn your favourite sub into a salad today for a lighter option than your usual sub.
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+							</ul>
+							<ul class="gallery_list_ul">
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/34" title="당근케이크">
+											<div class="list_img"><img alt="당근케이크" title="당근케이크" class="goods_thumbnail img-responsive lazy" src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-aa84a27f2969dc2f752315f641010be3_400x.png"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/34" style="
+					" title="당근케이크" class="item_name">당근케이크 </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/34" title="촉촉한 당근시트에 크림치즈와 향긋한 계피향이 어우러진 케이크">
+											촉촉한 당근시트에 크림치즈와 향긋한 계피향이 어우러진 케이크
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/33" title="밤＆자색고구마케이크">
+											<div class="list_img"><img src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-00a2ffce9fa2db972405bf206ce22b06_400x.jpg" alt="밤＆자색고구마케이크" title="밤＆자색고구마케이크" class="goods_thumbnail img-responsive lazy"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/33" style="" title="밤＆자색고구마케이크" class="item_name">밤＆자색고구마케이크 </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/33" title="돌아온 보랏빛고구마! 밤페이스트, 자색고구마무스, 노란빛고구마무스가 함께 어우러진 은은한 보랏빛의 자색고구마케이크">
+											돌아온 보랏빛고구마! 밤페이스트, 자색고구마무스, 노란빛고구마무스가 함께 어우러진 은은한 보랏빛의 자색고구마케이크
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+							</ul>
+							<ul class="gallery_list_ul">
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/32" title="유자닮은 고흥 유자크림빵">
+											<div class="list_img"><img src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-ab922eae6de5afabf5f0998395f2d80c_400x.jpg" alt="유자닮은 고흥 유자크림빵" title="유자닮은 고흥 유자크림빵" class="goods_thumbnail img-responsive lazy"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/32" style="
+					" title="유자닮은 고흥 유자크림빵" class="item_name">유자닮은 고흥 유자크림빵 </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/32" title="부드러운 브리오쉬에 바삭한 비스켓을 올려 빵속에 달콤한 크림고 고흥 유자로 만든 새콤한 유자청이 가득한 유자를 닮은 크림빵">
+											부드러운 브리오쉬에 바삭한 비스켓을 올려 빵속에 달콤한 크림고 고흥 유자로 만든 새콤한 유자청이 가득한 유자를 닮은 크림빵
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+								<li class="gallery_list_li" style="">
+
+									<div>
+										<a href="http://cmy.artisanbakery.vn/post/31" title="흑미 찹쌀 토스트 식빵">
+											<div class="list_img"><img src="https://dev.artisanbakery.vn/uploads/cache/post/2019/01/thumb-73262309562047347aa28d0d9f738ad5_400x.jpg" alt="흑미 찹쌀 토스트 식빵" title="흑미 찹쌀 토스트 식빵" class="goods_thumbnail img-responsive lazy"></div>
+										</a>
+									</div>
+									<p class="list_txt item_name ">
+										<a href="http://cmy.artisanbakery.vn/post/31" style="
+					" title="흑미 찹쌀 토스트 식빵" class="item_name">흑미 찹쌀 토스트 식빵 </a>
+									</p>
+									<p class="list_txt item_postinfo">
+										<a href="http://cmy.artisanbakery.vn/post/31" title="찹쌀탕종과 흑미찹쌀이 만난 특유의 쫄깃한 식감이 특징인 제품">
+											찹쌀탕종과 흑미찹쌀이 만난 특유의 쫄깃한 식감이 특징인 제품
+										</a>
+										<strong class="item_price">
+											<span class="price_num">00,000</span> <span class="dong">₫</span>
+										</strong>
+									</p>
+
+									<!-- tag tag_new tag_hot tag_event -->
+
+									<div class="tag_box">
+										<span class="tag tag_new">New</span>
+									</div>
+
+									<!--  -->
+								</li>
+							</ul>
+						</div>
+					</form>
+
+					<nav></nav>
+					<div class="table-bottom ">
+						<div class="pull-left mr10 ml3per">
+							<!-- <a href="https://dev.artisanbakery.vn/board/b-a-1?" class="btn btn-default btn-sm">목록</a> -->
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- <script>
+					$(function() {
+						$('img.lazy').lazy({
+							effect: "fadeIn",
+							effectTime: 1000,
+							threshold: 0,
+
+						});
+					});
+				</script>  -->
+				<!-- 본문 끝 -->
+
+			</div>
+		</div>
+		<!-- main end -->
+
+		<!-- footer start -->
+
+		<footer>
+			<div class="container">
+				<ul class="company">
+					<li><a href="http://cmy.artisanbakery.vn/document/aboutus" title="회사소개">회사소개</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/provision" title="이용약관">이용약관</a></li>
+					<li><a href="http://cmy.artisanbakery.vn/document/privacy" title="개인정보 취급방침">개인정보 취급방침</a></li>
+
+				</ul>
+
+			</div>
+		</footer>
+		<!-- footer end -->
+	</div>
+
+	<aside class="menu" id="side_menu">
+		<div class="side_wr add_side_wr" style="right: -250px;">
+			<div id="isroll_wrap" class="side_inner_rel">
+				<div class="side_inner_abs" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0.001s; transform: translate(0px, 0px) translateZ(0px);">
+					<div class="side_menu_top">
+						<div class="m_logo">
+							<img src="http://cmy.artisanbakery.vn/assets/images/m_logo.png" alt="Artisan bakery logo">
+						</div>
+						<div class="m_login">
+							<span><a href="http://cmy.artisanbakery.vn/login?url=https%3A%2F%2Fdev.artisanbakery.vn%2Fboard%2Fb-a-1" class="btn btn-primary" title="로그인"><i class="fa fa-sign-in"></i> LOGIN</a></span>
+							<span><a href="http://cmy.artisanbakery.vn/register" class="btn btn-primary" title="회원가입"><i class="fa fa-user"></i> 회원가입</a></span>
+						</div>
+					</div>
+
+					<ul class="m_menu">
+						<li class="dropdown">
+							<a href="/board/b-a-1" title="Artisan Menu" class="menu_category"><span class="icon_back"></span>Artisan Menu</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="1"><i class="fa fa-chevron-down"></i></a>
+
+							<ul class="dropdown-menu drop-downorder-1">
+								<li><a data-uri="/board/b-a-1" title="Cake" class="md-ripple md-ripple-blue">Cake</a></li>
+								<li><a data-uri="/board/b-a-2" title="Bread" class="md-ripple md-ripple-blue">Bread</a></li>
+								<li><a data-uri="/board/b-a-3" title="Donuts" class="md-ripple md-ripple-blue">Donuts</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/board/b-b-1" title="News" class="menu_category"><span class="icon_back"></span>News</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="5"><i class="fa fa-chevron-down"></i></a>
+
+							<ul class="dropdown-menu drop-downorder-5">
+								<li><a data-uri="/board/b-b-1" title="Event" class="md-ripple md-ripple-blue">Event</a></li>
+								<li><a data-uri="/board/b-b-2" title="Notice" class="md-ripple md-ripple-blue">Notice</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/document/artisanbakery_info" title="아티산 베이커리" class="menu_category"><span class="icon_back"></span>아티산 베이커리</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="9"><i class="fa fa-chevron-down"></i></a>
+
+							<ul class="dropdown-menu drop-downorder-9">
+								<li><a data-uri="/document/artisanbakery_info" title="ARTISAN Story" class="md-ripple md-ripple-blue">ARTISAN Story</a></li>
+								<li><a data-uri="/board/b-d-1" title="매장 찾기" class="md-ripple md-ripple-blue">매장 찾기</a></li>
+								<li><a data-uri="/board/b-c-1" title="자유게시판" class="md-ripple md-ripple-blue">자유게시판</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="/faq/faq" title="고객센터" class="menu_category"><span class="icon_back"></span>고객센터</a><a href="#" style="width:25px;float:right;" class="subopen" data-menu-order="13"><i class="fa fa-chevron-down"></i></a>
+
+							<ul class="dropdown-menu drop-downorder-13">
+								<li><a data-uri="/faq/faq" title="FAQ" class="md-ripple md-ripple-blue">FAQ</a></li>
+								<li><a data-uri="/write/b-d-2" title="1:1 문의" class="md-ripple md-ripple-blue">1:1 문의</a></li>
+							</ul>
+						</li>
+					</ul>
+					<button class="btn btn_close"><i class="fa fa-close"></i><span class="blind">close menu button</span></button>
+				</div>
+			</div>
+		</div>
+	</aside>
+
+	<script type="text/javascript">
+		$(document).on('click', '.viewpcversion', function() {
+			Cookies.set('device_view_type', 'desktop', {
+				expires: 1
+			});
+		});
+		$(document).on('click', '.viewmobileversion', function() {
+			Cookies.set('device_view_type', 'mobile', {
+				expires: 1
+			});
+		});
+
+		$(function() {
+			//page_top_menu 위치
+			var titHeight = $('.page_top_menu').siblings('.title06').outerHeight();
+			$('.page_top_menu').css('top', titHeight);
+			//open list_menu
+			$('.page_top01 .title06').on('click', function() {
+				var $listmenu = $(this).siblings('.page_top_menu')
+				$listmenu.slideToggle(400, function() {
+					$listmenu.stop(true, true);
+				});
+
+			});
+
+
+			//end
+		});
+	</script>
+
+
+	<!--
+Layout Directory : _layout/mobile,
+Layout URL : https://dev.artisanbakery.vn/views/_layout/mobile,
+Skin Directory : board/mobile_goods,
+Skin URL : https://dev.artisanbakery.vn/views/board/mobile_goods,
+-->
+
+
+
+</body>
+
+</html>
