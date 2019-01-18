@@ -65,12 +65,12 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 <div class="border_button  cont_tab mg10">
         <div class="pull-left" >
             
-                <a href="<?php echo element('list_url', $view); ?>" class="btn btn-info btn-sm">목 록</a>
+                <a href="<?php echo element('list_url', $view); ?>" class="btn btn-danger btn-sm">목 록</a>
             <?php if (element('search_list_url', $view)) { ?>
                     <a href="<?php echo element('search_list_url', $view); ?>" class="btn btn-info btn-sm">검색목록</a>
             <?php } ?>
             <?php if (element('prev_post', $view)) { ?>
-                <a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-success btn-sm"><i class="fa fa-caret-left"></i>이전 글</a>
+                <a href="<?php echo element('url', element('prev_post', $view)); ?>" class="btn btn-success btn-sm"><i class="fa fa-caret-left"></i> 이전 글</a>
             <?php } ?>
             <?php if (element('next_post', $view)) { ?>
                 <a href="<?php echo element('url', element('next_post', $view)); ?>" class="btn btn-success btn-sm">다음글 <i class="fa fa-caret-right"></i></a>
