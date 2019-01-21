@@ -450,7 +450,7 @@ small {font-size: 11px;padding-left: 10px;}
 
 body.over_hidden{overflow:hidden} 
 
-.sidr{display:none;position:fixed;top:0;z-index:999999;width:200px;overflow-x:none;overflow-y:auto;color:#3A77A6;height:2000px;}
+.sidr{display:none;position:fixed;top:0;z-index:999999;width:200px;overflow-x:hidden;overflow-y:auto;color:#3A77A6;height:2000px;}
 .sidr.right{left:auto;right:-260px;}
 .sidr.left{left:-260px;right:auto;}
 .sidr .sidr-inner {
