@@ -1154,7 +1154,74 @@ footer .company li:last-child a{
 .gallery_list06 .swiper-button-prev:focus{
 	outline: none;
 }
-
+/* gallery_list07 상품리스트 2줄씩 노출 */
+.gallery_list07 .gallery_list_ul{
+	overflow: hidden;
+}
+.gallery_list07 .gallery_list_li{
+	width: 48.5%;
+	margin-bottom: 10px;
+	position: relative;
+	padding-bottom: 10px;
+	background-color: #fff;
+}
+.gallery_list07 .gallery_list_li:nth-child(2n-1){
+	float: left;
+}
+.gallery_list07 .gallery_list_li:nth-child(2n){
+	float: right;
+}
+.list_img{
+	font-size: 0;
+}
+.list_img .img{ 
+	font-size: 10px;
+}
+.gallery_list07 .list_img img{
+	width: 100%;
+}
+.gallery_list07 .list_txt{
+	text-align: center;
+	padding: 0 4%;
+	margin-bottom: 5px;
+}
+.gallery_list07 .item_name{
+	font-size: 16px;
+	font-weight: bold;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.gallery_list07 .item_postinfo{
+	font-size: 13px;
+	color: #333;
+}
+.gallery_list07 .item_postinfo a{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* 라인수 */
+	-webkit-box-orient: vertical;
+	word-wrap:break-word;
+	line-height: 1.5em;
+	height: 4.5em;
+}
+.gallery_list07 .item_price{
+	display: block;
+	color: #ff8300;
+}
+.gallery_list07 .price_num{
+	font-size: 16px;
+	
+}
+.gallery_list07 .dong{
+	font-size: 14px;
+	font-weight: normal;
+}
+.gallery_list07 .tag_box{
+	top: 5px;
+	left: 5px;
+}
 /* txt_list01 게시판 공지사항 */
 .txt_list01{
 	border-top: 2px solid #906d4f;
@@ -1435,6 +1502,10 @@ footer .company li:last-child a{
 	font-size: 22px;
 	margin-left: 3px;
 	vertical-align: text-bottom;
+}
+.btn_more:hover{
+	background-color: #7d5f45;
+	border-color: #7d5f45;
 }
 /* post 영양성분표 */
 .table_nutrient{
