@@ -510,11 +510,11 @@ box-sizing: border-box;
 }
 .table-bottom {overflow: hidden;}
 .pagination {text-align: center;margin: 10px auto ;}
-.pagination .active {/* border: 1px solid #ddd;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset; */padding: 2px 8px;margin: 0 2px;display: inline-block;line-height: 20px;background: #ff8300;border-radius:30px;}
+.pagination .active {/* border: 1px solid #ddd;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset; */padding: 2px 8px;margin: 0 2px;display: inline-block;line-height: 20px;background: #ff8300;}
 .pagination .active a {color: #fff;font-weight: bold;}
-.pagination li{font-size: 12px;line-height: 24px;display: inline-block;/* background-image: -moz-linear-gradient(center top , #fff, #E0E0E0);border: 1px solid #bababb;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset; */padding: 0 7px;margin: 0 4px;/* background-color:#fff; */}
+.pagination li{font-size: 12px;line-height: 24px;display: inline-block;/* background-image: -moz-linear-gradient(center top , #fff, #E0E0E0);border: 1px solid #bababb;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset; */padding: 0 7px;margin: 0 4px;/* background-color:#fff; */border-radius:30px;}
 .pagination a{font-size: 18px; font-family: 'Noto Sans',Arial,sans-serif; font-weight: bold;color: #906d4f;}
-.pagination li:hover{background: #428bca;}
+.pagination li:hover{background: #ccc;}
 .pagination li:hover a {color: #fff;}
 .table-answer{padding: 20px;}
 

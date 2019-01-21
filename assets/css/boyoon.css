@@ -1075,7 +1075,14 @@ div.media div.media-body h4{
 .write_area label{
 	text-align: right !important;
 }
-
+.write_area .write_label{
+	display: inline-block;
+	margin-bottom: 3px;
+	font-size: 15px;
+	text-indent: 8px;
+	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
+	font-weight: bold;
+}
 /* 시크릿 투어,비자,렌트 카 클릭시 작성완료 버튼 영역 */
 .write_area button{
 	width: 100%;
