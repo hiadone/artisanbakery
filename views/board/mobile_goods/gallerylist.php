@@ -1,3 +1,4 @@
+<?php $this->managelayout->add_js(base_url('assets/js/jquery.lazy.min.js')); ?>
 <?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/style.css'); ?>
 
 <?php echo element('headercontent', element('board', element('list', $view))); ?>
@@ -21,7 +22,7 @@
 
 	
 
-	<div class="gallery_list01">
+	<div class="gallery_list01 table-image">
 	<?php
 	$i = 0;
 	$open = false;
@@ -36,9 +37,16 @@
 	?>
 		<li class="gallery-box gallery_list_li" style="width:<?php echo element('gallery_percent', element('board', element('list', $view))); ?>%;margin-right:<?php echo $marginright;?>%;">
 			<?php if (element('is_admin', $view)) { ?><input type="checkbox" name="chk_post_id[]" value="<?php echo element('post_id', $result); ?>" /><?php } ?>
+
+            <?php if($i < 4) {?>
 			<div>
-				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="thumbnail img-responsive"  /></div></a>
+				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="goods_thumbnail img-responsive"   /></div></a>
 			</div>
+            <?php } else { ?>
+            <div>
+                <a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img data-src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="goods_thumbnail img-responsive lazy"   /></div></a>
+            </div>
+            <?php } ?>
 			<p class="list_txt item_name ">
 				<a href="<?php echo element('post_url', $result); ?>" style="
 					<?php
@@ -60,17 +68,18 @@
 				<p class="list_txt item_postinfo">
 					<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('post_sub_title', $result)); ?>" >
 					<?php echo element('post_sub_title', $result); ?>
-					<strong class="item_price mt10">
+                    </a>
+					<strong class="item_price ">
 						<span class="price_num">00,000</span>&#32;<span class="dong">₫</span>
 					</strong>
-					</a>
+					
 				</p>
 
 				<!-- tag tag_new tag_hot tag_event -->
 
 				<?php if (element('is_new', $result)) { ?>
 				<div class="tag_box">
-					<span class="tag tag_new">New</span>
+					<span class="label label-warning tag_new">New</span>
 				</div>
 				<?php } ?>
 				
@@ -144,3 +153,17 @@ $('#fboardlist').highlight([<?php echo element('highlight_keyword', element('lis
 //]]>
 </script>
 <?php } ?>
+
+<script>
+
+    $(function() {
+        $('img.lazy').lazy({
+            effect: "fadeIn",
+          effectTime: 1000,
+          threshold: 0,
+          
+        });
+    });
+
+    
+</script>

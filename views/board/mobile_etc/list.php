@@ -1,6 +1,6 @@
-<?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/global.css?'.$this->cbconfig->item('browser_cache_version')); ?>
-<?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/reset.css?'.$this->cbconfig->item('browser_cache_version')); ?>
-<?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/page.css?'.$this->cbconfig->item('browser_cache_version')); ?>
+
+
+
 <?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/style.css?'.$this->cbconfig->item('browser_cache_version')); ?>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <style>
@@ -10,7 +10,7 @@
   </style>
 <?php echo element('headercontent', element('board', element('list', $view))); ?>
 
-<div class="">
+<div class="" id="aaaa">
     <section class="inquire">
     
         <div class="board">
@@ -187,12 +187,13 @@
 <div id="dialog_tour"  style="display:none;" title="비밀번호 확인">
     <?php 
 
-    $attributes = array('class' => 'form-horizontal', 'name' => 'fpassword', 'id' => 'fpassword');
+    $attributes = array('class' => 'form-horizontal', 'name' => 'fpassword', 'id' => 'fpassword','onsubmit'=>'faq_open_confirm();return false;');
     echo form_open(current_full_url(), $attributes);
      ?>
     <input type="hidden" name="<?php echo element('primary_key', $view); ?>"    value="<?php echo element(element('primary_key', $view), element('post', $view)); ?>" />
+
     <label for="password">Password</label>
-    <input type="password" name="modify_password" id="modify_password" value="" class="text">
+    <input type="password" name="modify_password" id="modify_password" value="" class="text" autocomplete="new-password">
     <?php echo form_close(); ?>
    
 
@@ -241,12 +242,14 @@ var guest_post_id;
     $(document).ready(function(){
 
 
-        $('.inquire .form-group input').css('width' , $('.inquire .form-group').width()-35);
+        // $('.inquire .form-group input').css('width' , $('.inquire .form-group').width()-35);
 
 
         $( "#dialog_tour" ).dialog({
           autoOpen: false,
           modal : true,
+          show :true,
+         
           buttons: {
             "확 인": faq_open_confirm,
             Cancel: function() {
@@ -263,6 +266,29 @@ var guest_post_id;
           },
           // open: function() { jQuery('div.ui-widget-overlay').bind('click', function() { jQuery('#dialog_tour').dialog('close'); }) }
         });
+
+
+
+ // $( "#dialog_tour" ).dialog( "open" );
+
+        $('.guest_post').click(function(){
+
+
+            var $heading_ = $(this).find('div.table-box div.question');
+
+            if ($heading_.is(':visible')) {
+                $heading_.slideUp();
+            } else {
+                $('.table-answer.answer:visible').css('display', 'none');
+                guest_post_id=$(this).data('post_id');
+                $( "#dialog_tour" ).dialog( "open" );
+            }
+            
+            
+
+          
+        });
+    });
 
 function faq_open_confirm(){
     
@@ -306,27 +332,4 @@ function faq_open_confirm(){
 
     jQuery('#dialog_tour').dialog('close');
 }
-
- // $( "#dialog_tour" ).dialog( "open" );
-
-        $('.guest_post').click(function(){
-
-
-            var $heading_ = $(this).find('div.table-box div.question');
-
-            if ($heading_.is(':visible')) {
-                $heading_.slideUp();
-            } else {
-                $('.table-answer.answer:visible').css('display', 'none');
-                guest_post_id=$(this).data('post_id');
-                $( "#dialog_tour" ).dialog( "open" );
-            }
-            
-            
-
-          
-        });
-    });
-
-
 </script>

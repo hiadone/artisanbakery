@@ -1,5 +1,5 @@
 <section class="mainpg_news mainpg_txt_list">
-    <h2 class="title07 mb10">NEWS & NOTICE</h2>
+    <h2 class="title07 mb10">NEWS & EVENT</h2>
     <div class="txt_list01">
         
         <?php
@@ -21,7 +21,7 @@
                     <h4 class="txt_tit"><strong class="post_title"><?php echo html_escape(element('title', $value)); ?></strong><span class="post_views"><span class="blind">views</span><?php if(element('post_comment_count', $value)) echo '['.element('post_comment_count', $value).']' ;?></span></h4>
                     
                     <div class="txt_txt">
-                        <?php echo html_escape(element('title', $value)) ?>
+                        <?php echo html_escape(element('sub_title', $value)) ?>
                     </div>
 
                     
@@ -37,5 +37,5 @@
         ?>
         
     </div>
-    <div class="btn_box"><a href="<?php echo board_url(element('brd_key', element('board', $view))); ?>" class="btn_more"><i class="fa fa-th-list mr05"></i>View More</a></div>
+    <div class="btn_box"><a href="<?php echo board_url(element(0,element('brd_key', element('config', $view)))); ?>" class="btn_more"><i class="fa fa-th-list mr05"></i>View More</a></div>
 </section>

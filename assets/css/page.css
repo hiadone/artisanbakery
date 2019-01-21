@@ -829,7 +829,7 @@ footer .company li:last-child a{
 }
 .gallery_list01 .list_img{
 	margin-bottom: 10px;
-	background-color: #000;
+	/*background-color: #000;*/
 }
 .gallery_list01 .list_img img{
 	display: block;
@@ -844,10 +844,14 @@ footer .company li:last-child a{
 	word-break: keep-all;
 }
 .gallery_list01 .item_name{
-	font-size: 20px;
+	
 	font-family: 'Noto Sans',Arial,'Malgun Gothic',Dotum,sans-serif;
 	font-weight: bold;
 	margin-bottom: 0;
+	font-size: 16px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .gallery_list01 .item_txt{
 	font-size: 15px;
@@ -857,6 +861,17 @@ footer .company li:last-child a{
 	margin-bottom: 10px;
 	font-size: 13px;
 	color: #666;
+}
+
+.gallery_list01 .item_postinfo a{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* 라인수 */
+	-webkit-box-orient: vertical;
+	word-wrap:break-word;
+	line-height: 1.5em;
+	height: 4.5em;
 }
 .gallery_list01 .tag_box{
 	top: 5px;
@@ -1072,7 +1087,7 @@ footer .company li:last-child a{
 }
 .gallery_list06 .gallery_list_ul{}
 .gallery_list06 .gallery_list_li{
-	padding-bottom: 10px;
+	padding-bottom: 40px;
 }
 .gallery_list06 .list_img{
 	width: 75%;
@@ -2091,6 +2106,7 @@ footer .company li:last-child a{
 /* img_ad */
 .img_ad01{
 	font-size: 0;
+	background-color: #fff
 }
 .img_ad01 img{
 	width: 100%;

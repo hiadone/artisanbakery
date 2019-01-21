@@ -15,7 +15,7 @@ if ( ! element('post_hide_comment', element('post', $view)) && element('is_admin
 }
 if (element('can_comment_write', element('comment', $view)) OR element('show_textarea', element('comment', $view))) {
 ?>
-	<div id="comment_write_box">
+	<div id="comment_write_box ">
 		<div class="well comment_write_box_inner">
 			<div class="alert alert-auto-close alert-dismissible alert-comment-message" style="display:none;"><button type="button" class="close alertclose">×</button><span class="alert-comment-message-content"></span></div>
 			<?php

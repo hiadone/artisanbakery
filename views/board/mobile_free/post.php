@@ -21,7 +21,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 
 <?php echo element('headercontent', element('board', $view)); ?>
 
-<div class="wrap02 bg_wh post_wrap">
+<div class="wrap02  post_wrap">
     <?php echo show_alert_message($this->session->flashdata('message'), '<div class="alert alert-auto-close alert-dismissible alert-info">', '</div>'); ?>
    <!--  <h3>
         <?php if (element('category', element('post', $view))) { ?>[<?php echo html_escape(element('bca_value', element('category', element('post', $view)))); ?>] <?php } ?>
@@ -164,7 +164,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
     <?php
     
 
-        if ( ! element('post_hide_comment', element('post', $view))) { ?>
+        if (element('show_textarea', element('comment', $view))) { ?>
             <section class="reply_write ">
                 <?php   $this->load->view(element('view_skin_path', $layout) . '/comment_write'); ?>
                 <section id="viewcomment" class="mb0" style="display:block"></section>
@@ -175,10 +175,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
     
     ?>
  
-    <section class="ad" style="margin-bottom:0;">
-        
-        <?php echo banner("review_post_banner_1") ?>
-    </section>
+    
 
 
 

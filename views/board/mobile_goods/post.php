@@ -312,9 +312,12 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
         <?php } ?>
     </div>
 	
-
+<section class="img_ad01">
+	<h2 class="blind">Have a good with Artisan</h2>
+	<?php echo banner('default_banner') ?>
+</section>
 <?php
-
+/*
 
     if ( ! element('post_hide_comment', element('post', $view))) { ?>
         <section class="reply_write ">
@@ -324,15 +327,15 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
         
     <?php
     }
-
+*/
 ?>
 
 	
 	
-	
 
 
-<div class="group">
+
+<div class="group mb10">
 <?php 
 $config = array(
 		'skin' => 'mobile',

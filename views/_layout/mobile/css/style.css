@@ -484,6 +484,8 @@ box-sizing: border-box;
 .table>thead{border-top: 2px solid #000;}
 .table-top input{margin-bottom: 0;margin-top: 0;}
 
+.goods_thumbnail {display: block;padding: 4px;margin-bottom: 10px;line-height: 1.42857143;background-color: #fff;border: 1px solid #ddd;}
+
 .thumbnail {display: block;padding: 4px;margin-bottom: 10px;line-height: 1.42857143;background-color: #fff;border: 1px solid #ddd;/* border-radius: 4px; */-webkit-transition: all .2s ease-in-out;transition: all .2s ease-in-out;}
 
 .thumbnail>img, .thumbnail a>img {margin-left: auto;margin-right: auto;display: block;max-width: 100%;}
