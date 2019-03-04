@@ -58,6 +58,9 @@
 		</header>
 		<div class="main">
 			<div class="container wrap wrap01">
+
+
+
 				<div class="board">
 					<div class="page_top01">
 						<h3 class="title06">Product01</h3>
@@ -72,42 +75,13 @@
 						</div>
 					</div>
 					
-					<div class="table-top">
-						<select class="input" onchange="location.href='http://cmy.artisanbakery.vn/board/b-a-1?category_id=&amp;findex=' + this.value;">
-							<option value="">정렬하기</option>
-							<option value="post_datetime desc">날짜순</option>
-							<option value="post_hit desc">조회수</option>
-							<option value="post_comment_count desc">댓글수</option>
-							<option value="post_like desc">추천순</option>
-						</select>
-						<script type="text/javascript">
-							//<![CDATA[
-							function postSearch(f) {
-								var skeyword = f.skeyword.value.replace(/(^\s*)|(\s*$)/g, '');
-								if (skeyword.length < 2) {
-									alert('2글자 이상으로 검색해 주세요');
-									f.skeyword.focus();
-									return false;
-								}
-								return true;
-							}
-
-							function toggleSearchbox() {
-								$('.searchbox').show();
-								$('.searchbuttonbox').hide();
-							}
-							$(document).on('click', '.btn-point-info', function() {
-								$('.point-info-content').toggle();
-							});
-							//]]>
-						</script>
-					</div>
+					
 				<!-- 제품리스트 -->
 				<!-- 이미지는 흰배경에 누끼딴 이미지를 추천  -->
 				<!-- 예시 subway 제품리스트 -->
 					<div class="gallery_list01">
 						<ul class="gallery_list_ul">
-							<li class="gallery_list_li">
+							<li class="gallery_list_li close_event">
 								<a href="">
 									<div class="list_img">
 										<img src="http://m.subway.co.kr/images/menu/sandwich_fl01.jpg" alt="item_name">
@@ -117,7 +91,7 @@
 										<div class="item_price_box">
 											<strong class="item_price"><span class="price_num">00,000</span>&#32;<span class="dong">₫</span></strong>
 										</div>
-										<p class="item_txt">Duis et odio vel libero cursus pellentesque pretium porta orci.</p>
+										<p class="item_txt ">Duis et odio vel libero cursus pellentesque pretium porta orci.</p>
 									</div>
 									<div class="tag_box">
 										
@@ -205,6 +179,17 @@
 					<nav></nav>
 				</div>
 			</div>
+
+
+
+
+
+
+
+
+
+
+			
 		</div>
 		<footer class="footer">
 			<div class="container">

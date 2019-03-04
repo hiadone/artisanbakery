@@ -1,6 +1,5 @@
-<?php $this->managelayout->add_js(base_url('assets/js/jquery.lazy.min.js')); ?>
 <?php $this->managelayout->add_css(element('view_skin_url', $layout) . '/css/style.css'); ?>
-
+<?php $this->managelayout->add_js(base_url('/assets/js/jquery.fade-in.min.js')); ?>
 <?php echo element('headercontent', element('board', element('list', $view))); ?>
 
 
@@ -30,23 +29,19 @@
 	if (element('list', element('data', element('list', $view)))) {
 		foreach (element('list', element('data', element('list', $view))) as $result) {
 			if ($cols && $i % $cols === 0) {
-				echo '<ul class="gallery_list_ul">';
+				echo '<ul class="gallery_list_ul fade-in" >';
 				$open = true;
 			}
 			$marginright = (($i+1)% $cols === 0) ? 0 : 2;
 	?>
-		<li class="gallery-box gallery_list_li" style="width:<?php echo element('gallery_percent', element('board', element('list', $view))); ?>%;margin-right:<?php echo $marginright;?>%;">
+		<li class="gallery-box gallery_list_li " style="width:<?php echo element('gallery_percent', element('board', element('list', $view))); ?>%;margin-right:<?php echo $marginright;?>%;">
 			<?php if (element('is_admin', $view)) { ?><input type="checkbox" name="chk_post_id[]" value="<?php echo element('post_id', $result); ?>" /><?php } ?>
 
-            <?php if($i < 4) {?>
+
 			<div>
 				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="goods_thumbnail img-responsive"   /></div></a>
 			</div>
-            <?php } else { ?>
-            <div>
-                <a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img data-src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="goods_thumbnail img-responsive lazy"   /></div></a>
-            </div>
-            <?php } ?>
+            
 			<p class="list_txt item_name ">
 				<a href="<?php echo element('post_url', $result); ?>" style="
 					<?php
@@ -154,16 +149,3 @@ $('#fboardlist').highlight([<?php echo element('highlight_keyword', element('lis
 </script>
 <?php } ?>
 
-<script>
-
-    $(function() {
-        $('img.lazy').lazy({
-            effect: "fadeIn",
-          effectTime: 1000,
-          threshold: 0,
-          
-        });
-    });
-
-    
-</script>
