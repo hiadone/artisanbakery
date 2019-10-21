@@ -29,7 +29,12 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
         <h3 class="item_name"><?php echo html_escape(element('post_title', element('post', $view))); ?></h3>
         <p class="item_subtit"><?php echo html_escape(element('post_sub_title', element('post', $view))); ?></p>
 
-        <p class="item_kcal"><span class="price_num">00,000</span>&#32;<span class="dong">₫</span></p>
+        <p class="item_kcal">
+        	<?php if(element('display_price', element('post', $view))){ ?>
+        	<span class="price_num"><?php echo number_format(element('display_price', element('post', $view))); ?></span>&#32;
+        	<span class="dong">₫</span>
+        	<?php } ?>
+        </p>
 
 
         <?php
@@ -82,7 +87,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	</div>
 	
 	<section class="nutrient">
-	<?php if (element('extra_content', $view)) { ?>
+	<?php if (element('extra_content', $view) && false) { ?>
 		
 			<h4 class="title07">영양성분표</h4>
 			<div class="table-box table_nutrient">
@@ -242,7 +247,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	<?php } ?>
 	</section>
 </section>
-
+D:\dev\htdocs\artisanbakery\views\board\mobile_goods\post.php
 <section class="gallery_list05">
 	<h4 class="title09"><strong class="tit">Artisan</strong><span class="sub_tit">Artisan 의 자부심</span></h4>
 	<div class="swiper-container">
@@ -342,7 +347,8 @@ $config = array(
 		'brd_key' => element('brd_key', element('board', $view)),
 		'post_id' => element('post_id', element('post', $view)),
 		'is_gallery' => 1,
-		'cache_minute' => 1,
+		'cache_minute' => 120,
+		'image_width' => 200,
 	);
 echo $this->board->latest_goods($config);
 
@@ -384,6 +390,7 @@ client.on('ready', function( readyEvent ) {
       pagination: {
         el: '.gallery_list02 .swiper-pagination',
         clickable: true,
+        dynamicBullets : true,
       },
       <?php if($this->input->get('initialSlide')) 
       echo 'initialSlide:'.$this->input->get('initialSlide');

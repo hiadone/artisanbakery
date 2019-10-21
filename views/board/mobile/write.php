@@ -39,6 +39,7 @@
 					<button type="button" class="btn btn-sm btn-default" id="btn_google_map" onClick="open_google_map();" >지도</button>
 				</span>
 			<?php } ?>
+			
 		</li>
 		<li>
 			<span>부 제목</span>
@@ -149,11 +150,17 @@
 			<li>
 				<span><?php echo element('display_name', $value); ?></span>
 				<?php echo element('input', $value); ?>
+				<?php if (element('use_google_map', element('board', $view)) && element('field_name', $value) === 'google_map') { ?>
+				
+					<button type="button" class="btn btn-sm btn-default" id="btn_google_map" onClick="open_google_map();" >지도</button>
+				
+				<?php } ?>
 			</li>
 		<?php
 			}
 		}
 		?>
+
 		<?php if ( ! element('use_dhtml', element('board', $view)) AND (element('post_min_length', element('board', $view)) OR element('post_max_length', element('board', $view)))) { ?>
 			<div class="well well-sm" style="margin-bottom:15px;">
 				현재 <strong><span id="char_count">0</span></strong> 글자이며,

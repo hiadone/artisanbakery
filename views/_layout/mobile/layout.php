@@ -95,7 +95,7 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 	        if (element(element(0,element('active',$menu)), $menu)) {
 	        	
 	            $select = '<div class="page_top01">
-	            				<h2 class="title06 ">'.element('men_name',element(element(1,element('active',$menu)),element(element(0,element('active',$menu)), $menu))).'</h2>
+	            				<h2 id="btn_page_top_menu" class="title06 ">'.element('men_name',element(element(1,element('active',$menu)),element(element(0,element('active',$menu)), $menu))).'</h2>
 									<div class="page_top_menu">
 									 	<ul class="page_top_ul">
 							';
@@ -219,14 +219,23 @@ $(document).on('click', '.viewmobileversion', function(){
 		var titHeight = $('.page_top_menu').siblings('.title06').outerHeight();
 		$('.page_top_menu').css('top',titHeight);
 		//open list_menu
-			$('.page_top01 .title06').on('click',function(){
+			$('#btn_page_top_menu').on('click',function(){
 				var $listmenu = $(this).siblings('.page_top_menu')
-				$listmenu.slideToggle(400,function(){
+				$listmenu.slideToggle(400,function(){					
 					$listmenu.stop(true,true);
 				});
 			
 			});
-		
+			
+			// $('div.page_top_menu').on('clickoutside', function(e){
+				
+			// 	if ($('.page_top_menu').is(":visible")){
+			// 		$('.page_top_menu').slideUp(400,function(){
+										
+			// 							$('.page_top_menu').stop(true,true);
+			// 						});
+			// 	}
+			// });
 		
 		//end
 		});

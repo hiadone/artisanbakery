@@ -2,7 +2,7 @@
 <?php echo element('headercontent', element('board', $view)); ?>
 
 <div class="board">
-	<h3><?php echo html_escape(element('board_name', element('board', $view))); ?> 글쓰기</h3>
+	<h3 class="text-center"><?php echo html_escape(element('board_name', element('board', $view))); ?> 글쓰기</h3>
 	<?php
 	echo validation_errors('<div class="alert alert-warning" role="alert">', '</div>');
 	echo show_alert_message(element('message', $view), '<div class="alert alert-auto-close alert-dismissible alert-info"><button type="button" class="close alertclose" >&times;</button>', '</div>');
@@ -43,6 +43,12 @@
 		<li>
 			<span>부 제목</span>
 			<input type="text" class="input per95" name="post_sub_title" id="post_sub_title" value="<?php echo set_value('post_sub_title', element('post_sub_title', element('post', $view))); ?>" />
+			
+		</li>
+
+		<li>
+			<span>가격</span>
+			<input type="text" class="input " name="post_val1" id="post_val1" value="<?php echo set_value('post_val1', element('post_val1', element('post', $view))); ?>" /> ₫
 			
 		</li>
 		<?php if (element('use_subject_style', element('board', $view))) { ?>
@@ -87,7 +93,7 @@
 				</label>
 			</li>
 		<?php } ?>
-		<?php if (element('can_post_notice', element('post', $view)) OR element('can_post_secret', element('post', $view)) OR element('can_post_receive_email', element('post', $view))) { ?>
+		<?php /*if (element('can_post_notice', element('post', $view)) OR element('can_post_secret', element('post', $view)) OR element('can_post_receive_email', element('post', $view))) { ?>
 			<li>
 				<span>옵션</span>
 				<?php if (element('can_post_notice', element('post', $view))) { ?>
@@ -109,7 +115,7 @@
 					</label>
 				<?php } ?>
 			</li>
-		<?php } ?>
+		<?php } */?>
 		<?php if (element('use_category', element('board', $view))) { ?>
 			<li>
 				<span>카테고리</span>
