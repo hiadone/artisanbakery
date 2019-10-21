@@ -10,7 +10,7 @@
 div#map { position: relative; overflow:hidden; }
 div#crosshair {position: absolute;top: 214px;height: 22px;width: 22px;left: 50%;margin-left: -10px;display: block;background-image: url('../img/crosshair.gif');background-position: center center;background-repeat: no-repeat;}
 </style>
-<script src="http://maps.google.com/maps/api/js?v=3.3&sensor=true&language=ko"></script>
+<script src="//maps.google.com/maps/api/js?v=3.3&key=AIzaSyBBhdbnaePy1E81jy0S5blybATqrd5u_CY&sensor=true&language=ko"></script>
 <script type="text/javascript">
 var map;
 var geocoder;
@@ -147,9 +147,9 @@ function geocodeResult(results, status) {
 					</colgroup>
 					<tbody>
 						<tr>
-							<th>검색</th>
+							<th class="px30">검색</th>
 							<td>
-								<input type="text" id="address" class="form-control" onKeyDown="if (event.keyCode ==13) {geocode();}" />
+								<input type="text" id="address" class="form-control input per100" onKeyDown="if (event.keyCode ==13) {geocode();}" />
 								<input type="hidden" id="map_lat" value="<?php echo $lat; ?>" />
 								<input type="hidden" id="map_lng" value="<?php echo $lng; ?>" />
 								<input type="hidden" id="map_zoom" value="<?php echo $zoom;?>" />
@@ -167,19 +167,20 @@ function geocodeResult(results, status) {
 						<tr>
 							<th>마커</th>
 							<td>
-								<input type="text" id="map_marker" class="form-control" />
+								<input type="text" id="map_marker" class="form-control input per100" placeholder="마커명을 입력해 주세요" />
 							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>코드</th>
-							<td><textarea id="map_code" name="map_code" class="form-control" placeholder="생성된 지도코드를 복사하여 붙여넣어 주세요"></textarea></td>
+							<td><textarea id="map_code" name="map_code" class="form-control per100" rows=3 placeholder="생선된 코드를 편집기에 붙여넣기 하세요" ></textarea></td>
 							<td><button type="button" class="btn btn-primary" onclick="geocode_submit()">생성</button></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
+		
 	</div>
 </div>
 
@@ -189,6 +190,7 @@ function geocodeResult(results, status) {
 </div>
 
 <script type="text/javascript">
+//<![CDATA[
 function geocode_submit() {
 	var code_lat = document.getElementById('map_lat').value;
 	var code_lng = document.getElementById('map_lng').value;
@@ -207,4 +209,8 @@ function geocode_submit() {
 addLoadEvent(function() {
 	initialize();
 });
+
+
+//]]>
 </script>
+

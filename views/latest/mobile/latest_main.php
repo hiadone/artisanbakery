@@ -28,7 +28,7 @@
         ?>
         </ul>
         <!-- Add Pagination -->
-         <div class="swiper-pagination pagination_yellow"></div>
+         <div class="swiper-pagination dynamicBullets pagination_yellow"></div>
         <!-- Add Arrows -->
         <!-- <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div> -->

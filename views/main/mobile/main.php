@@ -38,8 +38,9 @@
 			'skin' => 'mobile',
 			'brd_key' => element('brd_key', $value),
 			'is_gallery' => 1,
-			'cache_minute' => 1,
+			'cache_minute' => 120,
 			'active' => $active,
+			'image_width' => 200,
 		);
 		echo $this->board->latest_main($config);
 	}
@@ -55,10 +56,10 @@
 		slidesPerView: 1,
 		spaceBetween: 0,
 		loop: true,
-		autoplay: {
-			delay: 4000,
-			disableOnInteraction: false,
-		},
+		// autoplay: {
+		// 	delay: 4000,
+		// 	disableOnInteraction: false,
+		// },
 		pagination: {
 			el: '.slide_bnr01 .swiper-pagination',
 			clickable: true,
@@ -78,6 +79,7 @@
 	  pagination: {
 		el: 'div.gallery_list06_container .swiper-pagination',
 		clickable: true,
+		dynamicBullets: true,
 	  },
 	  on: {
 	      init: function () {
@@ -121,7 +123,7 @@
 			'brd_key' => array('b-b-1','b-b-2'),
 			'is_gallery' => 1,
 			'limit' => 5,
-			'cache_minute' => 1,
+			'cache_minute' => 120,
 		);
 	echo $this->board->latest_main_free($config);
 
@@ -145,8 +147,8 @@
 
 		
 
-		$("div.gallery_list06_container.b-a-2").hide();
-		$("div.gallery_list06_container.b-a-3").hide();
+		$("div.gallery_list06_container.swiper-container:not(.active)").hide();
+		
 	    
 		
 	}

@@ -14,9 +14,9 @@ $zoom = $zoom ? $zoom : 14;
 <title>구글지도보기</title>
 <style type="text/css">
 body { margin:0; padding:0; font:normal 12px dotum; -webkit-text-size-adjust:100%; }
-.infowindow { min-width:180px; max-width:280px; line-height:22px; }
+.infowindow {  max-width:280px; line-height:22px; }
 </style>
-<script src="http://maps.google.com/maps/api/js?v=3.3&sensor=false&language=ko"></script>
+<script src="//maps.google.com/maps/api/js?v=3.3&key=AIzaSyBBhdbnaePy1E81jy0S5blybATqrd5u_CY&sensor=false&language=ko"></script>
 <script type="text/javascript">
 // 구글맵
 var map;
