@@ -6,6 +6,11 @@ if (typeof(COMMON_JS) === 'undefined') {
 		history.back();
 	});
 
+	$(document).on('click', '.btn-self-close', function() {
+		self.close();
+	});
+
+
 	$(document).on('click', '.alertclose' , function() {
 		$(this).closest('.alert').hide();
 	});

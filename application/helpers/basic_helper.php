@@ -1019,6 +1019,7 @@ if ( ! function_exists('get_view_thumbnail')) {
 			if (isset($p['host']) && $p['host'] === $CI->input->server('HTTP_HOST')
 				&& strpos($p['path'], '/' . config_item('uploads_dir') . '/editor/') !== false) {
 				$thumb_tag = '<img src="' . thumb_url('editor', str_replace(site_url(config_item('uploads_dir') . '/editor') . '/', '', $src), $thumb_width) . '" ';
+				// $thumb_tag = '<img src="' . $src . '" ';
 			} else {
 				$thumb_tag = '<img src="' . $src . '" ';
 			}

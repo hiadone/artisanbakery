@@ -155,68 +155,81 @@ class Editorfileupload extends CB_Controller
 	 */
 	public function ckeditor()
 	{
-		// 이벤트 라이브러리를 로딩합니다
-		$eventname = 'event_editorfileupload_ckeditor';
-		$this->load->event($eventname);
+        // 이벤트 라이브러리를 로딩합니다
+        $eventname = 'event_editorfileupload_ckeditor';
+        $this->load->event($eventname);
 
-		// 이벤트가 존재하면 실행합니다
-		Events::trigger('before', $eventname);
+        // 이벤트가 존재하면 실행합니다
+        Events::trigger('before', $eventname);
 
-		$this->_init();
+        $this->output->set_content_type('application/json');
 
-		$mem_id = (int) $this->member->item('mem_id');
 
-		$upload_path = config_item('uploads_dir') . '/editor/' . cdate('Y') . '/' . cdate('m') . '/';
 
-		$uploadconfig = array(
-			'upload_path' => $upload_path,
-			'allowed_types' => 'jpg|jpeg|png|gif',
-			'max_size' => 10 * 1024,
-			'encrypt_name' => true,
-		);
 
-		if (isset($_FILES)
-			&& isset($_FILES['upload'])
-			&& isset($_FILES['upload']['name'])) {
+    
 
-			$this->upload->initialize($uploadconfig);
-			$_FILES['userfile']['name'] = $_FILES['upload']['name'];
-			$_FILES['userfile']['type'] = $_FILES['upload']['type'];
-			$_FILES['userfile']['tmp_name'] = $_FILES['upload']['tmp_name'];
-			$_FILES['userfile']['error'] = $_FILES['upload']['error'];
-			$_FILES['userfile']['size'] = $_FILES['upload']['size'];
+        $this->_init();
 
-			if ($this->upload->do_upload()) {
+        $mem_id = (int) $this->member->item('mem_id');
 
-				// 이벤트가 존재하면 실행합니다
-				Events::trigger('doupload', $eventname);
+        $upload_path = config_item('uploads_dir') . '/editor/' . cdate('Y') . '/' . cdate('m') . '/';
 
-				$filedata = $this->upload->data();
-				$fileupdate = array(
-					'mem_id' => $mem_id,
-					'eim_originname' => element('orig_name', $filedata),
-					'eim_filename' => cdate('Y') . '/' . cdate('m') . '/' . element('file_name', $filedata),
-					'eim_filesize' => intval(element('file_size', $filedata) * 1024),
-					'eim_width' => element('image_width', $filedata) ? element('image_width', $filedata) : 0,
-					'eim_height' => element('image_height', $filedata) ? element('image_height', $filedata) : 0,
-					'eim_type' => str_replace('.', '', element('file_ext', $filedata)),
-					'eim_datetime' => cdate('Y-m-d H:i:s'),
-					'eim_ip' => $this->input->ip_address(),
-				);
-				$this->Editor_image_model->insert($fileupdate);
-				$image_url = site_url(config_item('uploads_dir') . '/editor/' . cdate('Y') . '/' . cdate('m') . '/' . element('file_name', $filedata));
+        $uploadconfig = array(
+            'upload_path' => $upload_path,
+            'allowed_types' => 'jpg|jpeg|png|gif',
+            'max_size' => 10 * 1024,
+            'encrypt_name' => true,
+        );
 
-				// 이벤트가 존재하면 실행합니다
-				Events::trigger('doupload_after', $eventname);
+        if (isset($_FILES)
+            && isset($_FILES['upload'])
+            && isset($_FILES['upload']['name'])) {
 
-				echo "<script>window.parent.CKEDITOR.tools.callFunction("
-					. $this->input->get('CKEditorFuncNum', null, '') . ", '"
-					. $image_url . "', '업로드완료');</script>";
-			} else {
-				echo $this->upload->display_errors();
-			}
-		}
-	}
+            $this->upload->initialize($uploadconfig);
+            $_FILES['userfile']['name'] = $_FILES['upload']['name'];
+            $_FILES['userfile']['type'] = $_FILES['upload']['type'];
+            $_FILES['userfile']['tmp_name'] = $_FILES['upload']['tmp_name'];
+            $_FILES['userfile']['error'] = $_FILES['upload']['error'];
+            $_FILES['userfile']['size'] = $_FILES['upload']['size'];
+
+            if ($this->upload->do_upload()) {
+
+                // 이벤트가 존재하면 실행합니다
+                Events::trigger('doupload', $eventname);
+
+                $filedata = $this->upload->data();
+                $fileupdate = array(
+                    'mem_id' => $mem_id,
+                    'eim_originname' => element('orig_name', $filedata),
+                    'eim_filename' => cdate('Y') . '/' . cdate('m') . '/' . element('file_name', $filedata),
+                    'eim_filesize' => intval(element('file_size', $filedata) * 1024),
+                    'eim_width' => element('image_width', $filedata) ? element('image_width', $filedata) : 0,
+                    'eim_height' => element('image_height', $filedata) ? element('image_height', $filedata) : 0,
+                    'eim_type' => str_replace('.', '', element('file_ext', $filedata)),
+                    'eim_datetime' => cdate('Y-m-d H:i:s'),
+                    'eim_ip' => $this->input->ip_address(),
+                );
+                $this->Editor_image_model->insert($fileupdate);
+                $image_url = site_url(config_item('uploads_dir') . '/editor/' . cdate('Y') . '/' . cdate('m') . '/' . element('file_name', $filedata));
+
+                // 이벤트가 존재하면 실행합니다
+                Events::trigger('doupload_after', $eventname);
+
+                $result = array('uploaded' => true , 'url'=>$image_url);
+                exit(json_encode($result));
+                        
+                // echo "<script>window.parent.CKEDITOR.tools.callFunction("
+                //  . $this->input->get('CKEditorFuncNum', null, '') . ", '"
+                //  . $image_url . "', '업로드완료');</script>";
+            } else {
+                $result = array('uploaded' => false , 'error'=>array('message' => 'could not upload this image'));
+                exit(json_encode($result));
+
+                ;
+            }
+        }
+    }
 
 
 	public function _init()

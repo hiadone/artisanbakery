@@ -536,6 +536,8 @@ class Board_post extends CB_Controller
 		$autolink = $autourl ? true : false;
 		$popup = $target_blank ? true : false;
 
+		$view['view']['post']['display_price'] = (int) element('post_val1', $post);
+
 		$view['view']['post']['content'] = '';
 
 		if (element('post_del', $post)) {
@@ -1314,8 +1316,8 @@ class Board_post extends CB_Controller
 						$thumb_url = get_post_image_url(element('post_content', $val), $gallery_image_width, $gallery_image_height);
 						$result['list'][$key]['thumb_url'] = $thumb_url
 							? $thumb_url
-							: '';
-							// : thumb_url('', '', $gallery_image_width, $gallery_image_height);
+							// : '';
+							: thumb_url('', '', $gallery_image_width, $gallery_image_height);
 
 						$result['list'][$key]['origin_image_url'] = $thumb_url;
 					}

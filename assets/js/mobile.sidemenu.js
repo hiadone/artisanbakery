@@ -73,6 +73,7 @@ jQuery(function($) {
 	}
 
 	$('#side_menu .side_wr').on('clickoutside', function(e){
+		
 		if ( ! $(e.target).closest('#btn_side').length && $btn_side.data('toggle_enable')){
 			remove_side_data();
 		}

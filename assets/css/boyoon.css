@@ -2405,7 +2405,7 @@ div.media div.media-body h4{
 
 .writeform {font-size:12px;}
 .writeform li {display: block;margin: 0px; clear: both; margin-bottom: 15px;}
-.writeform li>span {float: left;width: 13%;padding-right: 20px;margin-top: 5px;color: #000;font-weight: bold;}
+.writeform li>span {float: left;padding-right: 20px;margin-top: 5px;color: #000;font-weight: bold;}
 
 .lucky {font-size:11px;}
 .lucky .luckypoint{color:#E71A41;}

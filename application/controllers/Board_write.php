@@ -297,7 +297,7 @@ class Board_write extends CB_Controller
 			= ($this->cbconfig->get_device_view_type() === 'mobile')
 			? element('mobile_post_default_content', $board)
 			: element('post_default_content', $board);
-		$view['view']['post']['can_post_notice'] = $can_post_notice = ($is_admin !== false) ? true : false;
+		$view['view']['post']['can_post_notice'] = $can_post_notice = ($is_admin !== false) ? false : false;
 		$view['view']['post']['can_post_secret'] = $can_post_secret
 			= element('use_post_secret', $board) === '1' ? true : false;
 		$view['view']['post']['post_secret'] = element('use_post_secret_selected', $board) ? '1' : '';
@@ -820,6 +820,7 @@ class Board_write extends CB_Controller
 
 			$post_title = $this->input->post('post_title', null, '');
 			$post_sub_title = $this->input->post('post_sub_title', null, '');
+			$post_val1 = $this->input->post('post_val1', null, '');
 			$post_content = $this->input->post('post_content', null, '');
 			if (element('save_external_image', $board)) {
 				$post_content = $this->imagelib->replace_external_image($post_content);
@@ -830,6 +831,7 @@ class Board_write extends CB_Controller
 				'post_reply' => $post_reply,
 				'post_title' => $post_title,
 				'post_sub_title' => $post_sub_title,
+				'post_val1' => $post_val1,
 				'post_content' => $post_content,
 				'post_html' => $content_type,
 				'post_datetime' => cdate('Y-m-d H:i:s'),
@@ -1678,7 +1680,7 @@ class Board_write extends CB_Controller
 		$view['view']['post']['is_post_name'] = $is_post_name
             = ($this->member->is_member() === false OR ($is_admin === false && $mem_id !== (int) element('mem_id', $post))) ? true : false;
             
-		$view['view']['post']['can_post_notice'] = $can_post_notice = ($is_admin !== false) ? true : false;
+		$view['view']['post']['can_post_notice'] = $can_post_notice = ($is_admin !== false) ? false : false;
 		$view['view']['post']['can_post_secret'] = $can_post_secret
 			= element('use_post_secret', $board) === '1' ? true : false;
 		$view['view']['post']['can_post_receive_email'] = $can_post_receive_email = element('use_post_receive_email', $board) ? true : false;
@@ -2006,7 +2008,7 @@ class Board_write extends CB_Controller
 						} elseif (element('field_type', $value) === 'phone') {
 							$extra_content[$k]['input'] .= '<input type="text" id="' . element('field_name', $value) . '" name="' . element('field_name', $value) . '" class="form-control input validphone" value="' . set_value(element('field_name', $value), $item) . '" ' . $required . ' />';
 						} else {
-							$extra_content[$k]['input'] .= '<input type="' . element('field_type', $value) . '" id="' . element('field_name', $value) . '" name="' . element('field_name', $value) . '" class="form-control input" value="' . set_value(element('field_name', $value), $item) . '" ' . $required . ' />';
+							$extra_content[$k]['input'] .= '<input type="' . element('field_type', $value) . '" id="' . element('field_name', $value) . '" name="' . element('field_name', $value) . '" class="form-control input " value="' . set_value(element('field_name', $value), $item) . '" ' . $required . ' />';
 						}
 					} elseif (element('field_type', $value) === 'textarea') {
 						$extra_content[$k]['input'] .= '<textarea id="' . element('field_name', $value) . '" name="' . element('field_name', $value) . '" class="form-control input" ' . $required . ' >' . set_value(element('field_name', $value), $item) . '</textarea>';
@@ -2159,6 +2161,7 @@ class Board_write extends CB_Controller
 
 			$post_title = $this->input->post('post_title', null, '');
 			$post_sub_title = $this->input->post('post_sub_title', null, '');
+			$post_val1 = $this->input->post('post_val1', null, '');
 			$post_content = $this->input->post('post_content', null, '');
 			if (element('save_external_image', $board)) {
 				$post_content = $this->imagelib->replace_external_image($post_content);
@@ -2168,6 +2171,7 @@ class Board_write extends CB_Controller
 			$updatedata = array(
 				'post_title' => $post_title,
 				'post_sub_title' => $post_sub_title,
+				'post_val1' => $post_val1,
 				'post_content' => $post_content,
 				'post_html' => $content_type,
 				'post_updated_datetime' => cdate('Y-m-d H:i:s'),

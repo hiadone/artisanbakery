@@ -448,6 +448,10 @@ if ( ! function_exists('prep_url'))
 			return '';
 		}
 
+		if ($str === '/' OR $str === '//')
+		{
+			return $str;
+		}
 		$url = parse_url($str);
 
 		if ( ! $url OR ! isset($url['scheme']))

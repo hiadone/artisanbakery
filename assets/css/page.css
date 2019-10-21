@@ -47,7 +47,7 @@ figure{
 .wrap{
 }
 .wrap01{
-	padding-top: 54px;
+	/*padding-top: 54px;*/
 }
 .wrap02{
 	padding-top: 30px;
@@ -273,7 +273,7 @@ figure{
 }
 /* header */
 .header{
-	position: fixed;
+	/*position: fixed;*/
 	top: 0;
 	width: 100%;
 	z-index: 800;
@@ -800,10 +800,10 @@ footer .company li:last-child a{
 	opacity: .7;
 	transition: width 0.3s;
 }
-.swiper-pagination .swiper-pagination-bullet-active{
+.swiper-pagination:not(.dynamicBullets) .swiper-pagination-bullet-active{
 	width: 40px;
 	opacity: 1;
-	background-color: #fff;
+	/*background-color: #fff;*/
 }
 .pagination_green .swiper-pagination-bullet-active{
 	background-color: #009223;
