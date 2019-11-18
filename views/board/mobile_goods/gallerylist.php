@@ -60,7 +60,7 @@
 					?>" title="<?php echo html_escape(element('title', $result)); ?>" class="item_name"><?php echo html_escape(element('title', $result)); ?>
 				</a>
 			</p>
-				<p class="list_txt item_postinfo">
+				<!-- <p class="list_txt item_postinfo">
 					<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('post_sub_title', $result)); ?>" >
 					<?php echo element('post_sub_title', $result); ?>
                     </a>
@@ -68,7 +68,7 @@
 						<span class="price_num">00,000</span>&#32;<span class="dong">₫</span>
 					</strong>
 					
-				</p>
+				</p> -->
 
 				<!-- tag tag_new tag_hot tag_event -->
 
