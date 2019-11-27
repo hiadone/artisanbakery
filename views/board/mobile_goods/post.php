@@ -247,7 +247,7 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 	<?php } ?>
 	</section>
 </section>
-D:\dev\htdocs\artisanbakery\views\board\mobile_goods\post.php
+
 <section class="gallery_list05">
 	<h4 class="title09"><strong class="tit">Artisan</strong><span class="sub_tit">Artisan 의 자부심</span></h4>
 	<div class="swiper-container">

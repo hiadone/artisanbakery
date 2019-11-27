@@ -136,7 +136,7 @@ var cookie_prefix = "<?php echo config_item('cookie_prefix'); ?>";
 	<!-- main end -->
 
 	<!-- footer start -->
-    <?php echo $this->managelayout->display_footer(); ?>
+    <?php //echo $this->managelayout->display_footer(); ?>
 	<!-- footer end -->
 </div>
 

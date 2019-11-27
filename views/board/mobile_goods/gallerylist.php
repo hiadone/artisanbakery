@@ -7,7 +7,26 @@
 <div class="board">
 	
 	
+<?php
 
+    if (element('use_category', element('board', element('list', $view))) && element('cat_display_style', element('board', element('list', $view))) === 'tab') {
+        $category = element('category', element('board', element('list', $view)));
+    ?>
+    <div >
+        <ul class="nav nav-tabs clearfix">
+            <li role="presentation" <?php if ( ! $this->input->get('category_id')) { ?>class="active" <?php } ?>><a href="<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>?findex=<?php echo html_escape($this->input->get('findex')); ?>&category_id=">전체</a></li>
+            <?php
+            if (element(0, $category)) {
+                foreach (element(0, $category) as $ckey => $cval) {
+            ?>
+                <li role="presentation" <?php if ($this->input->get('category_id') === element('bca_key', $cval)) { ?>class="active" <?php } ?>><a href="<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>?findex=<?php echo html_escape($this->input->get('findex')); ?>&category_id=<?php echo element('bca_key', $cval); ?>"><?php echo html_escape(element('bca_value', $cval)); ?></a></li>
+            <?php
+                }
+            }
+            ?>
+        </ul>
+    </div>
+    <?php } ?>
 	
 
 	<?php
