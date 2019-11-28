@@ -389,6 +389,9 @@ client.on('ready', function( readyEvent ) {
       slidesPerView: 2.5,
       spaceBetween: 10,
       freeMode: true,
+      lazy : {
+	      loadPrevNext : true // 이전, 다음 이미지는 미리 로딩
+	  },
       pagination: {
         el: '.gallery_list02 .swiper-pagination',
         clickable: true,

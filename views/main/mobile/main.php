@@ -33,7 +33,8 @@
 	foreach(element('product_list', $view) as $key => $value){
 
 		if($key===0)  $active ="active";
-        else break;
+        else $active ="";
+        
 		$config = array(
 			'skin' => 'mobile',
 			'brd_key' => element('brd_key', $value),
@@ -75,7 +76,9 @@
 	  spaceBetween: 5,
 	  // loop: true,
 	  freeMode: true,
-
+	  lazy : {
+	      loadPrevNext : true // 이전, 다음 이미지는 미리 로딩
+	  },
 	  pagination: {
 		el: 'div.gallery_list06_container .swiper-pagination',
 		clickable: true,

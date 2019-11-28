@@ -9,7 +9,7 @@
             <li class="gallery_list_li swiper-slide">
                 <a href="<?php echo element('url', $value); ?>" title="<?php echo html_escape(element('title', $value)); ?>">
                     <div class="list_img">
-                        <img src="<?php echo element('origin_image_url', $value); ?>" style="width:100%;">
+                        <img data-src="<?php echo element('origin_image_url', $value); ?>" style="width:100%;" class="swiper-lazy">
                     </div>
                     <div class="list_txt">
                     <h4 class="item_name"><?php echo html_escape(element('title', $value)); ?></h4>
