@@ -33,7 +33,7 @@
 	foreach(element('product_list', $view) as $key => $value){
 
 		if($key===0)  $active ="active";
-        else $active ="";
+        else break;
 		$config = array(
 			'skin' => 'mobile',
 			'brd_key' => element('brd_key', $value),
