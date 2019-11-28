@@ -964,9 +964,12 @@ class Board extends CI_Controller
 						if (element('pfi_filename', $file)) {
 							$view['view']['latest_goods'][$key]['thumb_url'] = thumb_url('post', element('pfi_filename', $file), $image_width, $image_height);
 						}
+						$view['view']['latest_goods'][$key]['origin_image_url'] = thumb_url('post', element('pfi_filename', $file));
 					} else {
 						$thumb_url = get_post_image_url(element('post_content', $value), $image_width, $image_height);
 						$view['view']['latest_goods'][$key]['thumb_url'] = $thumb_url ? $thumb_url : thumb_url('', '', $image_width, $image_height);
+						$view['view']['latest_goods'][$key]['origin_image_url'] = get_post_image_url(element('post_content', $value));
+						
 					}
 				}
 			}
@@ -1114,9 +1117,11 @@ class Board extends CI_Controller
 						if (element('pfi_filename', $file)) {
 							$view['view']['latest_main'][$key]['thumb_url'] = thumb_url('post', element('pfi_filename', $file), $image_width, $image_height);
 						}
+						$view['view']['latest_main'][$key]['origin_image_url'] = thumb_url('post', element('pfi_filename', $file));
 					} else {
 						$thumb_url = get_post_image_url(element('post_content', $value), $image_width, $image_height);
 						$view['view']['latest_main'][$key]['thumb_url'] = $thumb_url ? $thumb_url : thumb_url('', '', $image_width, $image_height);
+						$view['view']['latest_main'][$key]['origin_image_url'] = get_post_image_url(element('post_content', $value));
 					}
 				}
 			}

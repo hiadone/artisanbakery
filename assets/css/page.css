@@ -331,7 +331,6 @@ footer .company li:last-child a{
 }
 
 /* side menu */
-.menu{}
 #side_menu .side_wr{
 	background: #fff;
 }
@@ -972,7 +971,6 @@ footer .company li:last-child a{
 	height: 2.6em;
 }
 /* gallery_list03 영양성분표pop*/
-.gallery_list03{}
 .gallery_list03 .gallery_list_li{
 	padding: 18px 0 14px;
 	overflow: hidden;
@@ -1017,7 +1015,6 @@ footer .company li:last-child a{
 	margin: 0 4px 8px;
 	box-sizing: border-box;
 }
-.gallery_list04 .list_img{}
 .gallery_list04 .thumnail{
 	width: 100%;
 }
@@ -1037,7 +1034,6 @@ footer .company li:last-child a{
 	bottom: -4px;
 	text-align: right;
 }
-.gallery_list05 .gallery_list_ul{}
 .gallery_list05 .gallery_list_li{
 	padding: 0 3% 50px;
 	box-sizing: border-box;
@@ -1059,7 +1055,6 @@ footer .company li:last-child a{
 	bottom: 0;
 	right: 0;
 	background-color: #fff;
-	
 }
 .gallery_list05 .list_tit{
 	margin-bottom: 16px;
@@ -1085,7 +1080,6 @@ footer .company li:last-child a{
 	padding: 15px 3%;
 	background-color: #fff;
 }
-.gallery_list06 .gallery_list_ul{}
 .gallery_list06 .gallery_list_li{
 	padding-bottom: 40px;
 }
@@ -1308,11 +1302,12 @@ footer .company li:last-child a{
 /* tab_cate01 ul.tab_cate01>li */
 .tab_cate01{
 	text-align: center;
-	margin: 0 0 16px;
+	margin: 0 0 11px;
 }
 .tab_cate01 li{
 	display: inline-block;
 	padding: 0 5px;
+	margin-bottom: 5px;
 }
 .tab_cate01 li a{
 	display: inline-block;
@@ -1326,7 +1321,6 @@ footer .company li:last-child a{
 	border-bottom: 2px solid #906d4f;
 }
 /* 메인페이지 슬라이드 배너 */
-.slide_bnr01 {}
 .slide_bnr01 .slide_bnr_li {
 	width: 100%;
 	height: 100vw;
@@ -1530,7 +1524,6 @@ footer .company li:last-child a{
 	border-left: none;
 	border-bottom: 1px solid #bababb;
 }
-.table_nutrient .table-body{}
 .table_nutrient .table-body td,
 .table_nutrient .table-body th{
 	text-align: left;

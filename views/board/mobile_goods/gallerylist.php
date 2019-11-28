@@ -13,7 +13,7 @@
         $category = element('category', element('board', element('list', $view)));
     ?>
     <div >
-        <ul class="nav nav-tabs clearfix">
+        <ul class="tab_cate01">
             <li role="presentation" <?php if ( ! $this->input->get('category_id')) { ?>class="active" <?php } ?>><a href="<?php echo board_url(element('brd_key', element('board', element('list', $view)))); ?>?findex=<?php echo html_escape($this->input->get('findex')); ?>&category_id=">전체</a></li>
             <?php
             if (element(0, $category)) {
@@ -58,7 +58,7 @@
 
 
 			<div>
-				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img src="<?php echo element('thumb_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="goods_thumbnail img-responsive"   /></div></a>
+				<a href="<?php echo element('post_url', $result); ?>" title="<?php echo html_escape(element('title', $result)); ?>"><div class="list_img"><img src="<?php echo element('origin_image_url', $result); ?>" alt="<?php echo html_escape(element('title', $result)); ?>" title="<?php echo html_escape(element('title', $result)); ?>" class="goods_thumbnail img-responsive"   /></div></a>
 			</div>
             
 			<p class="list_txt item_name ">

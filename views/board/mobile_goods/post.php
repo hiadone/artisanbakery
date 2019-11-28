@@ -69,21 +69,23 @@ if (element('syntax_highlighter', element('board', $view)) OR element('comment_s
 
 
 	<div class="contents-view goods_post">
-		<!-- <div class="contents-view-img">
+		<div class="contents-view-img">
 			<?php
 			if (element('file_image', $view)) {
 				foreach (element('file_image', $view) as $key => $value) {
 			?>
-				<img src="<?php echo element('thumb_image_url', $value); ?>" alt="<?php echo html_escape(element('pfi_originname', $value)); ?>" title="<?php echo html_escape(element('pfi_originname', $value)); ?>" class="view_full_image" data-origin-image-url="<?php echo element('origin_image_url', $value); ?>" style="max-width:100%;" />
+				<img src="<?php echo element('origin_image_url', $value); ?>" alt="<?php echo html_escape(element('pfi_originname', $value)); ?>" title="<?php echo html_escape(element('pfi_originname', $value)); ?>" class="view_full_image" data-origin-image-url="<?php echo element('origin_image_url', $value); ?>" style="max-width:100%;" />
 			<?php
 				}
-			}
+			} else { ?>
+				<!-- 본문 내용 시작 -->
+				<div id="post-content goods_txt"><?php echo element('content', element('post', $view)); ?></div>
+				<!-- 본문 내용 끝 -->
+			<?php }
 			?>
-		</div> -->
+		</div>
 
-		<!-- 본문 내용 시작 -->
-		<div id="post-content goods_txt"><?php echo element('content', element('post', $view)); ?></div>
-		<!-- 본문 내용 끝 -->
+		
 	</div>
 	
 	<section class="nutrient">
