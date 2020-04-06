@@ -14,6 +14,7 @@ class _Common
 
 	function init()
 	{
+		show_404();
 		$CI =& get_instance();
 
 		if ($CI->uri->segment(1) === 'install') {
